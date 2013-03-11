@@ -207,7 +207,7 @@ Partial Class Form1
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(553, 333)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Manage Keyboard Bind's"
+        Me.TabPage1.Text = "Manage Keyboard Binds"
         '
         'btnReset
         '
