@@ -7,18 +7,21 @@
 'but WITHOUT ANY WARRANTY; without even the implied warranty of
 'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 'GNU General Public License for more details.
-
 'You should have received a copy of the GNU General Public License
 'along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Option Strict Off
 Imports System.Threading
-
 Public Class Form1
+    Dim currentpage As Integer = 0
+    Dim CapTxt As String = ""
+    Private trd0 As Thread
+    Dim skipsavesettings As Boolean = False
     Private WithEvents kbHook As New kbhook
     Private WithEvents mHook As New MouseHook
     Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As Integer
     Private Declare Function GetForegroundWindow Lib "user32" Alias "GetForegroundWindow" () As IntPtr
     Private Declare Auto Function GetWindowText Lib "user32" (ByVal hWnd As System.IntPtr, ByVal lpString As System.Text.StringBuilder, ByVal cch As Integer) As Integer
-    'Dim KeyList As New ArrayList
+
     Dim inisettings As New ini(Application.StartupPath & "\Keybinds.sav")
     Dim GTALocation As String = ""
     Dim keybinderdisabled As Boolean = False
@@ -28,11 +31,7 @@ Public Class Form1
         GetWindowText(hWnd, Caption, Caption.Capacity)
         Return Caption.ToString()
     End Function
-    Sub Thread1Sub()
-
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Sub Thread1()
         If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "gta_sa_exe", Nothing) Is Nothing Then
             MsgBox("GTA_SA.exe Not Detected (SACNR can not be directly launched)", vbCritical, "ERROR")
         Else
@@ -40,248 +39,278 @@ Public Class Form1
         End If
         GTALocation = GTALocation.Replace("gta_sa.exe", "samp.exe")
         GTALocation = Chr(34) + GTALocation + Chr(34) + " server.sacnr.com:7777"
-
-        'Dim Keylist1 As ArrayList = KeyList.Clone
-        'Dim Keylist2 As ArrayList = KeyList.Clone
-        'Dim Keylist3 As ArrayList = KeyList.Clone
-        'Dim Keylist4 As ArrayList = KeyList.Clone
-        'Dim Keylist5 As ArrayList = KeyList.Clone
-        'Dim Keylist6 As ArrayList = KeyList.Clone
-        'Dim Keylist7 As ArrayList = KeyList.Clone
-        'Dim Keylist8 As ArrayList = KeyList.Clone
-        'Dim Keylist9 As ArrayList = KeyList.Clone
-        'Dim Keylist10 As ArrayList = KeyList.Clone
-        'Dim Keylist11 As ArrayList = KeyList.Clone
-        'Dim Keylist12 As ArrayList = KeyList.Clone
-        'Dim Keylist13 As ArrayList = KeyList.Clone
-        'Dim Keylist14 As ArrayList = KeyList.Clone
-        'Dim Keylist15 As ArrayList = KeyList.Clone
-        'Dim Keylist16 As ArrayList = KeyList.Clone
-        'Dim Keylist17 As ArrayList = KeyList.Clone
-        'Dim Keylist18 As ArrayList = KeyList.Clone
-        'Dim Keylist19 As ArrayList = KeyList.Clone
-        'ReactorComboBox1.DataSource = KeyList
-        'ReactorComboBox2.DataSource = Keylist1
-        'ReactorComboBox3.DataSource = Keylist2
-        'ReactorComboBox4.DataSource = Keylist3
-        'ReactorComboBox5.DataSource = Keylist4
-        'ReactorComboBox6.DataSource = Keylist5
-        'ReactorComboBox7.DataSource = Keylist6
-        'ReactorComboBox8.DataSource = Keylist7
-        'ReactorComboBox9.DataSource = Keylist8
-        'ReactorComboBox10.DataSource = Keylist9
-        'ReactorComboBox11.DataSource = Keylist10
-        'ReactorComboBox12.DataSource = Keylist11
-        'ReactorComboBox13.DataSource = Keylist12
-        'ReactorComboBox14.DataSource = Keylist13
-        'ReactorComboBox15.DataSource = Keylist14
-        'ReactorComboBox16.DataSource = Keylist15
-        'ReactorComboBox17.DataSource = Keylist16
-        'ReactorComboBox18.DataSource = Keylist17
-        'ReactorComboBox19.DataSource = Keylist18
-        'ReactorComboBox20.DataSource = Keylist19
-        For Each ctrl In Me.ReactorTabControl1.TabPages(0).Controls
+        For Each ctrl In Me.ReactorTabControl2.TabPages(0).Controls
             If TypeOf ctrl Is ReactorTextBox Then
                 Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
                 ctrl.text = inisettings.GetString("SendKey", optionname, ctrl.text)
-            ElseIf TypeOf ctrl Is ReactorComboBox Then
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D1, "1"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D2, "2"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D3, "3"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D4, "4"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D5, "5"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D6, "6"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D7, "7"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D8, "8"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D9, "9"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D0, "0"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Add, "+"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Multiply, "*"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Subtract, "-"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Divide, "/"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad0, "NumPad0"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad1, "NumPad1"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad2, "NumPad2"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad3, "NumPad3"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad4, "NumPad4"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad5, "NumPad5"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad6, "NumPad6"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad7, "NumPad7"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad8, "NumPad8"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad9, "NumPad9"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Decimal, "Decimal"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.A, "A"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.B, "B"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.C, "C"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D, "D"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.E, "E"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F, "F"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.G, "G"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.H, "H"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.I, "I"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.J, "J"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.K, "K"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.L, "L"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.M, "M"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.N, "N"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.O, "O"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.P, "P"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Q, "Q"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.R, "R"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.S, "S"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.U, "U"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.V, "V"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.W, "W"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.X, "X"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Y, "Y"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Z, "Z"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F2, "F2"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F3, "F3"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F4, "F4"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F5, "F5"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F6, "F6"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F7, "F7"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F8, "F8"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F9, "F9"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F10, "F10"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F11, "F11"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F12, "F12"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Insert, "Insert"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Delete, "Delete"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Home, "Home"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.End, "End"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.PageUp, "PageUp"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.PageDown, "PageDown"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.LControlKey, "Left Control"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.RControlKey, "Right Control"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Up, "Up"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Down, "Down"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Left, "Left"))
-                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Right, "Right"))
-                Dim optionname As String = ctrl.name.replace("ReactorComboBox", "Key")
-                ctrl.text = inisettings.GetString("HotKey", optionname, "N/A")
+            ElseIf TypeOf ctrl Is TextBox Then
+                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
+                ctrl.text = inisettings.GetString("HotKey", optionname, "")
+                ReactorProgressBar1.Value = ReactorProgressBar1.Value + 1
             ElseIf TypeOf ctrl Is ReactorCheckBox Then
                 Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
                 ctrl.checked = inisettings.GetString("Activate", activation, False)
             End If
         Next
+        For Each ctrl In Me.ReactorTabControl2.TabPages(1).Controls
+            If TypeOf ctrl Is ReactorTextBox Then
+                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
+                ctrl.text = inisettings.GetString("SendKey", optionname, ctrl.text)
+            ElseIf TypeOf ctrl Is TextBox Then
+                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
+                ctrl.text = inisettings.GetString("HotKey", optionname, "")
+                ReactorProgressBar1.Value = ReactorProgressBar1.Value + 1
+            ElseIf TypeOf ctrl Is ReactorCheckBox Then
+                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
+                ctrl.checked = inisettings.GetString("Activate", activation, False)
+            End If
+        Next
+        chkSettingToggle.Checked = inisettings.GetString("Settings", "EnableToggle", False)
+        If chkSettingToggle.Checked = True Then
+            currentpage = 1
+        End If
+        TextBox21.Text = inisettings.GetString("Settings", "ToggleKey", "")
+        txtlmb.Text = inisettings.GetString("Mouse", "LeftClick", Nothing)
+        txtRMB.Text = inisettings.GetString("Mouse", "RightClick", Nothing)
+        txtMMB.Text = inisettings.GetString("Mouse", "MiddleClick", Nothing)
+        txtWheelUp.Text = inisettings.GetString("Mouse", "WheelUp", Nothing)
+        txtWheelDown.Text = inisettings.GetString("Mouse", "WheelDown", Nothing)
+        txtSB1.Text = inisettings.GetString("Mouse", "SB1Click", Nothing)
+        txtSB2.Text = inisettings.GetString("Mouse", "SB2Click", Nothing)
+        chkLMB.Checked = inisettings.GetString("Mouse", "LeftClickActivated", False)
+        chkRMB.Checked = inisettings.GetString("Mouse", "RightClickActivated", False)
+        chkMMB.Checked = inisettings.GetString("Mouse", "MiddleClickActivated", False)
+        chkWheelUp.Checked = inisettings.GetString("Mouse", "WheelUpActivated", False)
+        chkWheelDown.Checked = inisettings.GetString("Mouse", "WheelDownActivated", False)
+        chkSB1.Checked = inisettings.GetString("Mouse", "SB1ClickActivated", False)
+        chkSB2.Checked = inisettings.GetString("Mouse", "SB2ClickActivated", False)
+        ReactorProgressBar1.Visible = False
+        ReactorProgressBar1.Value = 0
+        ReactorProgressBar1.Dispose()
     End Sub
-    Private Sub kbHook_KeyDown(ByVal Key As System.Windows.Forms.Keys) Handles kbHook.KeyDown
-        Dim CapTxt As String = GetCaption()
+    Private Sub mHook_Mouse_Left() Handles mHook.Mouse_Left
+        CapTxt = GetCaption()
+        If DebugChkSkipWindowCheck.Checked = True Then
+            CapTxt = "GTA:SA:MP"
+        End If
         If CapTxt = "GTA:SA:MP" Then
             If keybinderdisabled = False Then
-                If ReactorCheckBox1.Checked = True Then
-                    If Key = ReactorComboBox1.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox1.Text + "{Enter}")
-                    End If
+                If chkLMB.Checked = True Then
+                    sendkeys.sendwait("t" + txtlmb.Text + "{Enter}")
                 End If
-                If ReactorCheckBox2.Checked = True Then
-                    If Key = ReactorComboBox2.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox2.Text + "{Enter}")
-                    End If
+            End If
+        End If
+    End Sub
+
+    Private Sub mHook_Mouse_Middle() Handles mHook.Mouse_Middle
+        CapTxt = GetCaption()
+        If DebugChkSkipWindowCheck.Checked = True Then
+            CapTxt = "GTA:SA:MP"
+        End If
+        If CapTxt = "GTA:SA:MP" Then
+            If keybinderdisabled = False Then
+                If chkMMB.Checked = True Then
+                    sendkeys.sendwait("t" + txtMMB.Text + "{Enter}")
                 End If
-                If ReactorCheckBox3.Checked = True Then
-                    If Key = ReactorComboBox3.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox3.Text + "{Enter}")
-                    End If
+            End If
+        End If
+    End Sub
+    Private Sub mHook_Mouse_Right() Handles mHook.Mouse_Right
+        CapTxt = GetCaption()
+        If DebugChkSkipWindowCheck.Checked = True Then
+            CapTxt = "GTA:SA:MP"
+        End If
+        If CapTxt = "GTA:SA:MP" Then
+            If keybinderdisabled = False Then
+                If chkRMB.Checked = True Then
+                    sendkeys.sendwait("t" + txtRMB.Text + "{Enter}")
                 End If
-                If ReactorCheckBox4.Checked = True Then
-                    If Key = ReactorComboBox4.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox4.Text + "{Enter}")
+            End If
+        End If
+    End Sub
+
+    Private Sub mHook_Mouse_Wheel(ByVal Direction As MouseHook.Wheel_Direction) Handles mHook.Mouse_Wheel
+        CapTxt = GetCaption()
+        If DebugChkSkipWindowCheck.Checked = True Then
+            CapTxt = "GTA:SA:MP"
+        End If
+        If CapTxt = "GTA:SA:MP" Then
+            If keybinderdisabled = False Then
+                If Direction.ToString = "WheelUp" Then
+                    If chkWheelUp.Checked = True Then
+                        sendkeys.sendwait("t" + txtWheelUp.Text + "{Enter}")
                     End If
-                End If
-                If ReactorCheckBox5.Checked = True Then
-                    If Key = ReactorComboBox5.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox5.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox6.Checked = True Then
-                    If Key = ReactorComboBox6.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox6.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox7.Checked = True Then
-                    If Key = ReactorComboBox7.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox7.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox8.Checked = True Then
-                    If Key = ReactorComboBox8.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox8.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox9.Checked = True Then
-                    If Key = ReactorComboBox9.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox9.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox10.Checked = True Then
-                    If Key = ReactorComboBox10.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox10.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox11.Checked = True Then
-                    If Key = ReactorComboBox11.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox11.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox12.Checked = True Then
-                    If Key = ReactorComboBox12.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox12.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox13.Checked = True Then
-                    If Key = ReactorComboBox13.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox13.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox14.Checked = True Then
-                    If Key = ReactorComboBox14.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox14.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox15.Checked = True Then
-                    If Key = ReactorComboBox15.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox15.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox16.Checked = True Then
-                    If Key = ReactorComboBox16.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox16.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox17.Checked = True Then
-                    If Key = ReactorComboBox17.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox17.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox18.Checked = True Then
-                    If Key = ReactorComboBox18.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox18.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox19.Checked = True Then
-                    If Key = ReactorComboBox19.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox19.Text + "{Enter}")
-                    End If
-                End If
-                If ReactorCheckBox20.Checked = True Then
-                    If Key = ReactorComboBox20.SelectedValue Then
-                        SendKeys.Send("t" + ReactorTextBox20.Text + "{Enter}")
+                Else
+                    If chkWheelDown.Checked = True Then
+                        sendkeys.sendwait("t" + txtWheelDown.Text + "{Enter}")
                     End If
                 End If
             End If
         End If
-        If Key = System.Windows.Forms.Keys.F6 Then
+    End Sub
+    Private Sub mHook_Mouse_XButton1() Handles mHook.Mouse_XButton1
+        CapTxt = GetCaption()
+        If DebugChkSkipWindowCheck.Checked = True Then
+            CapTxt = "GTA:SA:MP"
+        End If
+        If CapTxt = "GTA:SA:MP" Then
+            If keybinderdisabled = False Then
+                If chkSB1.Checked = True Then
+                    sendkeys.sendwait("t" + chkSB1.Text + "{Enter}")
+                End If
+            End If
+        End If
+    End Sub
+    Private Sub mHook_Mouse_XButton2() Handles mHook.Mouse_XButton2
+        CapTxt = GetCaption()
+        If DebugChkSkipWindowCheck.Checked = True Then
+            CapTxt = "GTA:SA:MP"
+        End If
+        If CapTxt = "GTA:SA:MP" Then
+            If keybinderdisabled = False Then
+                If chkSB2.Checked = True Then
+                    sendkeys.sendwait("t" + txtSB2.Text + "{Enter}")
+                End If
+            End If
+        End If
+    End Sub
+    Private Sub kbHook_KeyDown(ByVal Key As System.Windows.Forms.Keys) Handles kbHook.KeyDown
+        If chkSettingToggle.Checked = True Then
+            If Key.ToString = TextBox21.Text Then
+                If currentpage <> 1 Then
+                    currentpage = 1
+                Else
+                    currentpage = 2
+                End If
+            End If
+        End If
+
+
+        CapTxt = GetCaption()
+        If DebugChkSkipWindowCheck.Checked = True Then
+            CapTxt = "GTA:SA:MP"
+        End If
+        If CapTxt = "GTA:SA:MP" Then
+            If keybinderdisabled = False Then
+                If currentpage <> 2 Then
+                    If ReactorCheckBox1.Checked = True Then
+                        If Key.ToString = TextBox1.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox1.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox2.Checked = True Then
+                        If Key.ToString = TextBox2.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox2.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox3.Checked = True Then
+                        If Key.ToString = TextBox3.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox3.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox4.Checked = True Then
+                        If Key.ToString = TextBox4.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox4.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox5.Checked = True Then
+                        If Key.ToString = TextBox5.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox5.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox6.Checked = True Then
+                        If Key.ToString = TextBox6.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox6.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox7.Checked = True Then
+                        If Key.ToString = TextBox7.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox7.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox8.Checked = True Then
+                        If Key.ToString = TextBox8.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox8.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox9.Checked = True Then
+                        If Key.ToString = TextBox9.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox9.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox10.Checked = True Then
+                        If Key.ToString = TextBox10.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox10.Text + "{Enter}")
+                        End If
+                    End If
+                End If
+                If currentpage <> 1 Then
+                    If ReactorCheckBox11.Checked = True Then
+                        If Key.ToString = TextBox11.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox11.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox12.Checked = True Then
+                        If Key.ToString = TextBox12.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox12.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox13.Checked = True Then
+                        If Key.ToString = TextBox13.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox13.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox14.Checked = True Then
+                        If Key.ToString = TextBox14.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox14.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox15.Checked = True Then
+                        If Key.ToString = TextBox15.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox15.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox16.Checked = True Then
+                        If Key.ToString = TextBox16.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox16.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox17.Checked = True Then
+                        If Key.ToString = TextBox17.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox17.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox18.Checked = True Then
+                        If Key.ToString = TextBox18.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox18.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox19.Checked = True Then
+                        If Key.ToString = TextBox19.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox19.Text + "{Enter}")
+                        End If
+                    End If
+                    If ReactorCheckBox20.Checked = True Then
+                        If Key.ToString = TextBox20.Text Then
+                            SendKeys.SendWait("t" + ReactorTextBox20.Text + "{Enter}")
+                        End If
+                    End If
+                End If
+            End If
+        End If
+        If Key.ToString = "F6" Then
             keybinderdisabled = True
         End If
-        If Key = System.Windows.Forms.Keys.Enter Then
+        If Key.ToString = "Enter" Then
             keybinderdisabled = False
         End If
-        If Key = System.Windows.Forms.Keys.Escape Then
+        If Key.ToString = "Escape" Then
             keybinderdisabled = False
         End If
-        If Key = System.Windows.Forms.Keys.T Then
+        If Key.ToString = "T" Then
+            keybinderdisabled = True
+        End If
+        If Key.ToString = "`" Then
             keybinderdisabled = True
         End If
     End Sub
@@ -292,18 +321,20 @@ Public Class Form1
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         If My.Computer.FileSystem.FileExists(Application.StartupPath & "\Keybinds.sav") Then
             IO.File.Delete(Application.StartupPath & "\Keybinds.sav")
+            MsgBox("Default settings restored! Application will now restart", vbInformation, "Success!")
+            IO.File.Create(Application.StartupPath & "\skipsave")
+            Application.Restart()
         End If
-        MsgBox("Default settings restored! Application will now restart", vbInformation, "Success!")
-        Application.Restart()
+
     End Sub
     Sub savesettings()
-        For Each ctrl In Me.ReactorTabControl1.TabPages(0).Controls
+        For Each ctrl In Me.ReactorTabControl2.TabPages(0).Controls
             If TypeOf ctrl Is ReactorTextBox Then
                 Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
                 inisettings.WriteString("SendKey", optionname, ctrl.Text)
             End If
-            If TypeOf ctrl Is ReactorComboBox Then
-                Dim optionname As String = ctrl.name.replace("ReactorComboBox", "Key")
+            If TypeOf ctrl Is TextBox Then
+                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
                 If ctrl.text = Nothing Then
                 Else
                     inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
@@ -314,10 +345,43 @@ Public Class Form1
                 inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
             End If
         Next
+        For Each ctrl In Me.ReactorTabControl2.TabPages(1).Controls
+            If TypeOf ctrl Is ReactorTextBox Then
+                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
+                inisettings.WriteString("SendKey", optionname, ctrl.Text)
+            End If
+            If TypeOf ctrl Is TextBox Then
+                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
+                If ctrl.text = Nothing Then
+                Else
+                    inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
+                End If
+            End If
+            If TypeOf ctrl Is ReactorCheckBox Then
+                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
+                inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
+            End If
+        Next
+        inisettings.WriteString("Settings", "EnableToggle", chkSettingToggle.Checked.ToString)
+        inisettings.WriteString("Settings", "ToggleKey", TextBox21.Text)
+        inisettings.WriteString("Mouse", "LeftClick", txtlmb.Text)
+        inisettings.WriteString("Mouse", "RightClick", txtRMB.Text)
+        inisettings.WriteString("Mouse", "MiddleClick", txtMMB.Text)
+        inisettings.WriteString("Mouse", "WheelUp", txtWheelUp.Text)
+        inisettings.WriteString("Mouse", "WheelDown", txtWheelDown.Text)
+        inisettings.WriteString("Mouse", "SB1Click", txtSB1.Text)
+        inisettings.WriteString("Mouse", "SB2Click", txtSB2.Text)
+        inisettings.WriteString("Mouse", "LeftClickActivated", chkLMB.Checked.ToString)
+        inisettings.WriteString("Mouse", "RightClickActivated", chkRMB.Checked.ToString)
+        inisettings.WriteString("Mouse", "MiddleClickActivated", chkMMB.Checked.ToString)
+        inisettings.WriteString("Mouse", "WheelUpActivated", chkWheelUp.Checked.ToString)
+        inisettings.WriteString("Mouse", "WheelDownActivated", chkWheelDown.Checked.ToString)
+        inisettings.WriteString("Mouse", "SB1ClickActivated", chkSB1.Checked.ToString)
+        inisettings.WriteString("Mouse", "SB2ClickActivated", chkSB2.Checked.ToString)
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        SaveSettings()
+        savesettings()
     End Sub
 
     Private Sub btnLaunch_Click(sender As Object, e As EventArgs) Handles btnLaunch.Click
@@ -325,7 +389,9 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        savesettings()
+        If skipsavesettings = False Then
+            savesettings()
+        End If
     End Sub
 
     Private Sub NotifyIcon1_Click(sender As Object, e As EventArgs) Handles NotifyIcon1.Click
@@ -340,27 +406,38 @@ Public Class Form1
             Me.ShowInTaskbar = False
         End If
     End Sub
-End Class
-
-
-Public Class ValueDescriptionPair
-    Private m_Value As Object
-    Private m_Description As String
-    Public ReadOnly Property Value() As Object
-        Get
-            Return m_Value
-        End Get
-    End Property
-    Public ReadOnly Property Description() As String
-        Get
-            Return m_Description
-        End Get
-    End Property
-    Public Sub New(ByVal NewValue As Object, ByVal NewDescription As String)
-        m_Value = NewValue
-        m_Description = NewDescription
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        keybinderdisabled = False
+        If IO.File.Exists(Application.StartupPath & "\skipsave") Then
+            skipsavesettings = True
+            IO.File.Delete(Application.StartupPath & "\skipsave")
+        Else
+            skipsavesettings = False
+        End If
+        CheckForIllegalCrossThreadCalls = False
+        trd0 = New Thread(AddressOf Thread1)
+        trd0.IsBackground = True
+        trd0.Start()
     End Sub
-    Public Overrides Function ToString() As String
-        Return m_Description
+
+    Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
+        If msg.WParam.ToInt32() = CInt(Keys.Enter) Then
+            sendkeys.sendwait("{Tab}")
+            Return True
+        End If
+        Return MyBase.ProcessCmdKey(msg, keyData)
     End Function
+
+    Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox9.KeyDown, TextBox8.KeyDown, TextBox7.KeyDown, TextBox6.KeyDown, TextBox5.KeyDown, TextBox4.KeyDown, TextBox3.KeyDown, TextBox2.KeyDown, TextBox10.KeyDown, TextBox1.KeyDown, TextBox20.KeyDown, TextBox19.KeyDown, TextBox18.KeyDown, TextBox17.KeyDown, TextBox16.KeyDown, TextBox15.KeyDown, TextBox14.KeyDown, TextBox13.KeyDown, TextBox12.KeyDown, TextBox11.KeyDown, TextBox21.KeyDown
+        sender.text = ""
+        sender.tag = e.KeyCode
+        sender.text = e.KeyCode.ToString.ToUpper
+        e.SuppressKeyPress = True
+    End Sub
+
+    Private Sub chkSettingToggle_CheckedChanged(sender As Object) Handles chkSettingToggle.CheckedChanged
+        If sender.checked = False Then
+            currentpage = 0
+        End If
+    End Sub
 End Class
