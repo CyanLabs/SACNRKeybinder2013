@@ -173,8 +173,9 @@ Public Class Form1
         End If
     End Sub
     Private Sub kbHook_KeyDown(ByVal Key As System.Windows.Forms.Keys) Handles kbHook.KeyDown
+        'Debug.WriteLine("Key = " & Key.ToString.ToUpper & " Textbox = " & TextBox3.Text)
         If chkSettingToggle.Checked = True Then
-            If Key.ToString = TextBox21.Text Then
+            If Key.ToString.ToUpper = TextBox21.Text.ToUpper Then
                 If currentpage <> 1 Then
                     currentpage = 1
                 Else
@@ -191,123 +192,123 @@ Public Class Form1
             If keybinderdisabled = False Then
                 If currentpage <> 2 Then
                     If ReactorCheckBox1.Checked = True Then
-                        If Key.ToString = TextBox1.Text Then
+                        If Key.ToString.ToUpper = TextBox1.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox1.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox2.Checked = True Then
-                        If Key.ToString = TextBox2.Text Then
+                        If Key.ToString.ToUpper = TextBox2.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox2.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox3.Checked = True Then
-                        If Key.ToString = TextBox3.Text Then
+                        If Key.ToString.ToUpper = TextBox3.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox3.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox4.Checked = True Then
-                        If Key.ToString = TextBox4.Text Then
+                        If Key.ToString.ToUpper = TextBox4.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox4.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox5.Checked = True Then
-                        If Key.ToString = TextBox5.Text Then
+                        If Key.ToString.ToUpper = TextBox5.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox5.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox6.Checked = True Then
-                        If Key.ToString = TextBox6.Text Then
+                        If Key.ToString.ToUpper = TextBox6.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox6.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox7.Checked = True Then
-                        If Key.ToString = TextBox7.Text Then
+                        If Key.ToString.ToUpper = TextBox7.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox7.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox8.Checked = True Then
-                        If Key.ToString = TextBox8.Text Then
+                        If Key.ToString.ToUpper = TextBox8.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox8.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox9.Checked = True Then
-                        If Key.ToString = TextBox9.Text Then
+                        If Key.ToString.ToUpper = TextBox9.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox9.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox10.Checked = True Then
-                        If Key.ToString = TextBox10.Text Then
+                        If Key.ToString.ToUpper = TextBox10.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox10.Text + "{Enter}")
                         End If
                     End If
                 End If
                 If currentpage <> 1 Then
                     If ReactorCheckBox11.Checked = True Then
-                        If Key.ToString = TextBox11.Text Then
+                        If Key.ToString.ToUpper = TextBox11.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox11.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox12.Checked = True Then
-                        If Key.ToString = TextBox12.Text Then
+                        If Key.ToString.ToUpper = TextBox12.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox12.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox13.Checked = True Then
-                        If Key.ToString = TextBox13.Text Then
+                        If Key.ToString.ToUpper = TextBox13.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox13.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox14.Checked = True Then
-                        If Key.ToString = TextBox14.Text Then
+                        If Key.ToString.ToUpper = TextBox14.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox14.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox15.Checked = True Then
-                        If Key.ToString = TextBox15.Text Then
+                        If Key.ToString.ToUpper = TextBox15.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox15.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox16.Checked = True Then
-                        If Key.ToString = TextBox16.Text Then
+                        If Key.ToString.ToUpper = TextBox16.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox16.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox17.Checked = True Then
-                        If Key.ToString = TextBox17.Text Then
+                        If Key.ToString.ToUpper = TextBox17.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox17.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox18.Checked = True Then
-                        If Key.ToString = TextBox18.Text Then
+                        If Key.ToString.ToUpper = TextBox18.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox18.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox19.Checked = True Then
-                        If Key.ToString = TextBox19.Text Then
+                        If Key.ToString.ToUpper = TextBox19.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox19.Text + "{Enter}")
                         End If
                     End If
                     If ReactorCheckBox20.Checked = True Then
-                        If Key.ToString = TextBox20.Text Then
+                        If Key.ToString.ToUpper = TextBox20.Text.ToUpper Then
                             SendKeys.SendWait("t" + ReactorTextBox20.Text + "{Enter}")
                         End If
                     End If
                 End If
             End If
         End If
-        If Key.ToString = "F6" Then
+        If Key.ToString.ToUpper = "F6" Then
             keybinderdisabled = True
         End If
-        If Key.ToString = "Return" Then
+        If Key.ToString.ToUpper = "Return" Then
             keybinderdisabled = False
         End If
-        If Key.ToString = "Escape" Then
+        If Key.ToString.ToUpper = "Escape" Then
             keybinderdisabled = False
         End If
-        If Key.ToString = "T" Then
+        If Key.ToString.ToUpper = "T" Then
             keybinderdisabled = True
         End If
-        If Key.ToString = "`" Then
+        If Key.ToString.ToUpper = "`" Then
             keybinderdisabled = True
         End If
     End Sub

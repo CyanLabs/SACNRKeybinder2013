@@ -1626,11 +1626,11 @@ Partial Class Form1
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(134, 318)
+        Me.Label3.Location = New System.Drawing.Point(105, 318)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(317, 14)
+        Me.Label3.Size = New System.Drawing.Size(326, 14)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Copyright 2013 Fma965 (CyanLabs)                           Version 1.1"
+        Me.Label3.Text = "Copyright 2013 Fma965 (CyanLabs)                           Version 1.1.1"
         '
         'RichTextBox1
         '
