@@ -35,6 +35,7 @@ Partial Class Form1
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.ReactorTabControl2 = New SACNR_Keybinder_2013_Edition.ReactorTabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -70,6 +71,7 @@ Partial Class Form1
         Me.ReactorCheckBox8 = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.ReactorTextBox3 = New SACNR_Keybinder_2013_Edition.ReactorTextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -137,11 +139,9 @@ Partial Class Form1
         Me.ReactorGroupBox1 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
         Me.DebugChkSkipWindowCheck = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
         Me.ReactorTheme1.SuspendLayout()
         CType(Me.imgLogo2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ReactorTabControl1.SuspendLayout()
@@ -195,7 +195,7 @@ Partial Class Form1
         '
         Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
         Me.btnReset.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReset.Location = New System.Drawing.Point(13, 479)
+        Me.btnReset.Location = New System.Drawing.Point(9, 479)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(132, 41)
         Me.btnReset.TabIndex = 50
@@ -205,7 +205,7 @@ Partial Class Form1
         '
         Me.btnLaunch.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
         Me.btnLaunch.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLaunch.Location = New System.Drawing.Point(372, 479)
+        Me.btnLaunch.Location = New System.Drawing.Point(371, 479)
         Me.btnLaunch.Name = "btnLaunch"
         Me.btnLaunch.Size = New System.Drawing.Size(220, 41)
         Me.btnLaunch.TabIndex = 50
@@ -225,7 +225,7 @@ Partial Class Form1
         '
         Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(148, 479)
+        Me.btnSave.Location = New System.Drawing.Point(147, 479)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(218, 41)
         Me.btnSave.TabIndex = 49
@@ -314,6 +314,17 @@ Partial Class Form1
         Me.TabPage4.Size = New System.Drawing.Size(574, 311)
         Me.TabPage4.TabIndex = 0
         Me.TabPage4.Text = "Page 1"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.White
+        Me.Label23.Location = New System.Drawing.Point(153, 5)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(43, 17)
+        Me.Label23.TabIndex = 90
+        Me.Label23.Text = "Page 1"
         '
         'Label4
         '
@@ -773,6 +784,17 @@ Partial Class Form1
         Me.TabPage5.Size = New System.Drawing.Size(574, 311)
         Me.TabPage5.TabIndex = 1
         Me.TabPage5.Text = "Page 2"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.Color.White
+        Me.Label22.Location = New System.Drawing.Point(153, 5)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(45, 17)
+        Me.Label22.TabIndex = 89
+        Me.Label22.Text = "Page 2"
         '
         'Label6
         '
@@ -1589,8 +1611,8 @@ Partial Class Form1
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage2.Controls.Add(Me.RichTextBox1)
         Me.TabPage2.Controls.Add(Me.Label3)
+        Me.TabPage2.Controls.Add(Me.RichTextBox1)
         Me.TabPage2.Controls.Add(Me.Label1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
@@ -1598,27 +1620,28 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "About SACNR Keybinder"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(134, 318)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(317, 14)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Copyright 2013 Fma965 (CyanLabs)                           Version 1.1"
+        '
         'RichTextBox1
         '
         Me.RichTextBox1.BackColor = System.Drawing.Color.Black
         Me.RichTextBox1.ForeColor = System.Drawing.Color.PowderBlue
         Me.RichTextBox1.Location = New System.Drawing.Point(24, 32)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(530, 326)
+        Me.RichTextBox1.Size = New System.Drawing.Size(530, 283)
         Me.RichTextBox1.TabIndex = 2
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         Me.RichTextBox1.WordWrap = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(191, 360)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(181, 14)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Copyright 2013 Fma965 (CyanLabs)"
         '
         'Label1
         '
@@ -1630,28 +1653,6 @@ Partial Class Form1
         Me.Label1.Size = New System.Drawing.Size(517, 26)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "SACNR Keybinder 2013 Edition is licensed under GNU GPL V3"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Location = New System.Drawing.Point(153, 5)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(45, 17)
-        Me.Label22.TabIndex = 89
-        Me.Label22.Text = "Page 2"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.Color.White
-        Me.Label23.Location = New System.Drawing.Point(153, 5)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(43, 17)
-        Me.Label23.TabIndex = 90
-        Me.Label23.Text = "Page 1"
         '
         'Form1
         '
@@ -1684,28 +1685,18 @@ Partial Class Form1
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents ReactorTheme1 As SACNR_Keybinder_2013_Edition.ReactorTheme
-    Friend WithEvents imgLogo2 As System.Windows.Forms.PictureBox
+    Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
     Friend WithEvents ReactorTabControl1 As SACNR_Keybinder_2013_Edition.ReactorTabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents btnReset As SACNR_Keybinder_2013_Edition.ReactorButton
-    Friend WithEvents btnLaunch As SACNR_Keybinder_2013_Edition.ReactorButton
-    Friend WithEvents btnSave As SACNR_Keybinder_2013_Edition.ReactorButton
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
-    Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents ReactorProgressBar1 As SACNR_Keybinder_2013_Edition.ReactorProgressBar
     Friend WithEvents ReactorTabControl2 As SACNR_Keybinder_2013_Edition.ReactorTabControl
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
+    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents ReactorTextBox1 As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents ReactorTextBox2 As SACNR_Keybinder_2013_Edition.ReactorTextBox
-    Friend WithEvents ReactorTextBox3 As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
     Friend WithEvents ReactorTextBox4 As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
@@ -1733,8 +1724,9 @@ Partial Class Form1
     Friend WithEvents ReactorCheckBox7 As SACNR_Keybinder_2013_Edition.ReactorCheckBox
     Friend WithEvents ReactorCheckBox9 As SACNR_Keybinder_2013_Edition.ReactorCheckBox
     Friend WithEvents ReactorCheckBox8 As SACNR_Keybinder_2013_Edition.ReactorCheckBox
+    Friend WithEvents ReactorTextBox3 As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
@@ -1769,38 +1761,47 @@ Partial Class Form1
     Friend WithEvents ReactorCheckBox18 As SACNR_Keybinder_2013_Edition.ReactorCheckBox
     Friend WithEvents ReactorCheckBox19 As SACNR_Keybinder_2013_Edition.ReactorCheckBox
     Friend WithEvents ReactorCheckBox20 As SACNR_Keybinder_2013_Edition.ReactorCheckBox
-    Friend WithEvents DebugChkSkipWindowCheck As SACNR_Keybinder_2013_Edition.ReactorCheckBox
-    Friend WithEvents ReactorGroupBox1 As SACNR_Keybinder_2013_Edition.ReactorGroupBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
-    Friend WithEvents chkSettingToggle As SACNR_Keybinder_2013_Edition.ReactorCheckBox
-    Friend WithEvents ReactorGroupBox3 As SACNR_Keybinder_2013_Edition.ReactorGroupBox
     Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents chkWheelDown As SACNR_Keybinder_2013_Edition.ReactorCheckBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents chkWheelUp As SACNR_Keybinder_2013_Edition.ReactorCheckBox
     Friend WithEvents chkLMB As SACNR_Keybinder_2013_Edition.ReactorCheckBox
     Friend WithEvents chkMMB As SACNR_Keybinder_2013_Edition.ReactorCheckBox
     Friend WithEvents chkRMB As SACNR_Keybinder_2013_Edition.ReactorCheckBox
     Friend WithEvents chkSB1 As SACNR_Keybinder_2013_Edition.ReactorCheckBox
+    Friend WithEvents txtWheelDown As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents chkSB2 As SACNR_Keybinder_2013_Edition.ReactorCheckBox
+    Friend WithEvents txtWheelUp As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents txtlmb As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents txtMMB As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents txtRMB As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents txtSB1 As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents txtSB2 As SACNR_Keybinder_2013_Edition.ReactorTextBox
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents chkWheelDown As SACNR_Keybinder_2013_Edition.ReactorCheckBox
-    Friend WithEvents chkWheelUp As SACNR_Keybinder_2013_Edition.ReactorCheckBox
-    Friend WithEvents txtWheelDown As SACNR_Keybinder_2013_Edition.ReactorTextBox
-    Friend WithEvents txtWheelUp As SACNR_Keybinder_2013_Edition.ReactorTextBox
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+    Friend WithEvents ReactorGroupBox3 As SACNR_Keybinder_2013_Edition.ReactorGroupBox
+    Friend WithEvents chkSettingToggle As SACNR_Keybinder_2013_Edition.ReactorCheckBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
+    Friend WithEvents ReactorGroupBox1 As SACNR_Keybinder_2013_Edition.ReactorGroupBox
+    Friend WithEvents DebugChkSkipWindowCheck As SACNR_Keybinder_2013_Edition.ReactorCheckBox
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnSave As SACNR_Keybinder_2013_Edition.ReactorButton
+    Friend WithEvents imgLogo2 As System.Windows.Forms.PictureBox
+    Friend WithEvents btnLaunch As SACNR_Keybinder_2013_Edition.ReactorButton
+    Friend WithEvents btnReset As SACNR_Keybinder_2013_Edition.ReactorButton
+    Friend WithEvents ReactorProgressBar1 As SACNR_Keybinder_2013_Edition.ReactorProgressBar
+    Friend WithEvents ReactorTheme1 As SACNR_Keybinder_2013_Edition.ReactorTheme
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 
 End Class

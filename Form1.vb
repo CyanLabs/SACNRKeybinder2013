@@ -85,8 +85,6 @@ Public Class Form1
         chkSB1.Checked = inisettings.GetString("Mouse", "SB1ClickActivated", False)
         chkSB2.Checked = inisettings.GetString("Mouse", "SB2ClickActivated", False)
         ReactorProgressBar1.Visible = False
-        ReactorProgressBar1.Value = 0
-        ReactorProgressBar1.Dispose()
     End Sub
     Private Sub mHook_Mouse_Left() Handles mHook.Mouse_Left
         CapTxt = GetCaption()
@@ -184,7 +182,6 @@ Public Class Form1
                 End If
             End If
         End If
-
 
         CapTxt = GetCaption()
         If DebugChkSkipWindowCheck.Checked = True Then
@@ -301,7 +298,7 @@ Public Class Form1
         If Key.ToString = "F6" Then
             keybinderdisabled = True
         End If
-        If Key.ToString = "Enter" Then
+        If Key.ToString = "Return" Then
             keybinderdisabled = False
         End If
         If Key.ToString = "Escape" Then
@@ -319,13 +316,13 @@ Public Class Form1
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-        If My.Computer.FileSystem.FileExists(Application.StartupPath & "\Keybinds.sav") Then
-            IO.File.Delete(Application.StartupPath & "\Keybinds.sav")
+        Dim result = MsgBox("Are you sure you wish to reset all settings and keybinds?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
+        If result = vbYes Then
+            skipsavesettings = True
+            If IO.File.Exists(Application.StartupPath & "\Keybinds.sav") Then IO.File.Delete(Application.StartupPath & "\Keybinds.sav")
             MsgBox("Default settings restored! Application will now restart", vbInformation, "Success!")
-            IO.File.Create(Application.StartupPath & "\skipsave")
             Application.Restart()
         End If
-
     End Sub
     Sub savesettings()
         For Each ctrl In Me.ReactorTabControl2.TabPages(0).Controls
@@ -408,12 +405,6 @@ Public Class Form1
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         keybinderdisabled = False
-        If IO.File.Exists(Application.StartupPath & "\skipsave") Then
-            skipsavesettings = True
-            IO.File.Delete(Application.StartupPath & "\skipsave")
-        Else
-            skipsavesettings = False
-        End If
         CheckForIllegalCrossThreadCalls = False
         trd0 = New Thread(AddressOf Thread1)
         trd0.IsBackground = True

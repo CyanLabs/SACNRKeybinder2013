@@ -46,8 +46,6 @@ Public Class kbhook
             Select Case wParam
                 Case WM_KEYDOWN, WM_SYSKEYDOWN
                     RaiseEvent KeyDown(CType(CType(Marshal.PtrToStructure(lParam, struct.GetType()), KBDLLHOOKSTRUCT).vkCode, Keys))
-                Case WM_KEYUP, WM_SYSKEYUP
-                    RaiseEvent KeyUp(CType(CType(Marshal.PtrToStructure(lParam, struct.GetType()), KBDLLHOOKSTRUCT).vkCode, Keys))
             End Select
         End If
         Return CallNextHookEx(IntPtr.Zero, nCode, wParam, lParam)
