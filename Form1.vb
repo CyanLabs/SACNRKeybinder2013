@@ -18,7 +18,7 @@ Public Class Form1
     Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As Integer
     Private Declare Function GetForegroundWindow Lib "user32" Alias "GetForegroundWindow" () As IntPtr
     Private Declare Auto Function GetWindowText Lib "user32" (ByVal hWnd As System.IntPtr, ByVal lpString As System.Text.StringBuilder, ByVal cch As Integer) As Integer
-    Dim KeyList As New ArrayList
+    'Dim KeyList As New ArrayList
     Dim inisettings As New ini(Application.StartupPath & "\Keybinds.sav")
     Dim GTALocation As String = ""
     Dim keybinderdisabled As Boolean = False
@@ -40,132 +40,131 @@ Public Class Form1
         End If
         GTALocation = GTALocation.Replace("gta_sa.exe", "samp.exe")
         GTALocation = Chr(34) + GTALocation + Chr(34) + " server.sacnr.com:7777"
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D1, "1"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D2, "2"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D3, "3"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D4, "4"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D5, "5"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D6, "6"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D7, "7"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D8, "8"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D9, "9"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D0, "0"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Add, "+"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Multiply, "*"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Subtract, "-"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Divide, "/"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad0, "NumPad0"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad1, "NumPad1"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad2, "NumPad2"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad3, "NumPad3"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad4, "NumPad4"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad5, "NumPad5"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad6, "NumPad6"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad7, "NumPad7"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad8, "NumPad8"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad9, "NumPad9"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Decimal, "Decimal"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.A, "A"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.B, "B"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.C, "C"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.D, "D"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.E, "E"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F, "F"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.G, "G"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.H, "H"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.I, "I"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.J, "J"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.K, "K"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.L, "L"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.M, "M"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.N, "N"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.O, "O"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.P, "P"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Q, "Q"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.R, "R"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.S, "S"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.U, "U"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.V, "V"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.W, "W"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.X, "X"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Y, "Y"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Z, "Z"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F2, "F2"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F3, "F3"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F4, "F4"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F5, "F5"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F6, "F6"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F7, "F7"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F8, "F8"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F9, "F9"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F10, "F10"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F11, "F11"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.F12, "F12"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Insert, "Insert"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Delete, "Delete"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Home, "Home"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.End, "End"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.PageUp, "PageUp"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.PageDown, "PageDown"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.LControlKey, "Left Control"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.RControlKey, "Right Control"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Up, "Up"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Down, "Down"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Left, "Left"))
-        KeyList.Add(New ValueDescriptionPair(System.Windows.Forms.Keys.Right, "Right"))
-        Dim Keylist1 As ArrayList = KeyList.Clone
-        Dim Keylist2 As ArrayList = KeyList.Clone
-        Dim Keylist3 As ArrayList = KeyList.Clone
-        Dim Keylist4 As ArrayList = KeyList.Clone
-        Dim Keylist5 As ArrayList = KeyList.Clone
-        Dim Keylist6 As ArrayList = KeyList.Clone
-        Dim Keylist7 As ArrayList = KeyList.Clone
-        Dim Keylist8 As ArrayList = KeyList.Clone
-        Dim Keylist9 As ArrayList = KeyList.Clone
-        Dim Keylist10 As ArrayList = KeyList.Clone
-        Dim Keylist11 As ArrayList = KeyList.Clone
-        Dim Keylist12 As ArrayList = KeyList.Clone
-        Dim Keylist13 As ArrayList = KeyList.Clone
-        Dim Keylist14 As ArrayList = KeyList.Clone
-        Dim Keylist15 As ArrayList = KeyList.Clone
-        Dim Keylist16 As ArrayList = KeyList.Clone
-        Dim Keylist17 As ArrayList = KeyList.Clone
-        Dim Keylist18 As ArrayList = KeyList.Clone
-        Dim Keylist19 As ArrayList = KeyList.Clone
-        ReactorComboBox1.DataSource = KeyList
-        ReactorComboBox2.DataSource = Keylist1
-        ReactorComboBox3.DataSource = Keylist2
-        ReactorComboBox4.DataSource = Keylist3
-        ReactorComboBox5.DataSource = Keylist4
-        ReactorComboBox6.DataSource = Keylist5
-        ReactorComboBox7.DataSource = Keylist6
-        ReactorComboBox8.DataSource = Keylist7
-        ReactorComboBox9.DataSource = Keylist8
-        ReactorComboBox10.DataSource = Keylist9
-        ReactorComboBox11.DataSource = Keylist10
-        ReactorComboBox12.DataSource = Keylist11
-        ReactorComboBox13.DataSource = Keylist12
-        ReactorComboBox14.DataSource = Keylist13
-        ReactorComboBox15.DataSource = Keylist14
-        ReactorComboBox16.DataSource = Keylist15
-        ReactorComboBox17.DataSource = Keylist16
-        ReactorComboBox18.DataSource = Keylist17
-        ReactorComboBox19.DataSource = Keylist18
-        ReactorComboBox20.DataSource = Keylist19
+
+        'Dim Keylist1 As ArrayList = KeyList.Clone
+        'Dim Keylist2 As ArrayList = KeyList.Clone
+        'Dim Keylist3 As ArrayList = KeyList.Clone
+        'Dim Keylist4 As ArrayList = KeyList.Clone
+        'Dim Keylist5 As ArrayList = KeyList.Clone
+        'Dim Keylist6 As ArrayList = KeyList.Clone
+        'Dim Keylist7 As ArrayList = KeyList.Clone
+        'Dim Keylist8 As ArrayList = KeyList.Clone
+        'Dim Keylist9 As ArrayList = KeyList.Clone
+        'Dim Keylist10 As ArrayList = KeyList.Clone
+        'Dim Keylist11 As ArrayList = KeyList.Clone
+        'Dim Keylist12 As ArrayList = KeyList.Clone
+        'Dim Keylist13 As ArrayList = KeyList.Clone
+        'Dim Keylist14 As ArrayList = KeyList.Clone
+        'Dim Keylist15 As ArrayList = KeyList.Clone
+        'Dim Keylist16 As ArrayList = KeyList.Clone
+        'Dim Keylist17 As ArrayList = KeyList.Clone
+        'Dim Keylist18 As ArrayList = KeyList.Clone
+        'Dim Keylist19 As ArrayList = KeyList.Clone
+        'ReactorComboBox1.DataSource = KeyList
+        'ReactorComboBox2.DataSource = Keylist1
+        'ReactorComboBox3.DataSource = Keylist2
+        'ReactorComboBox4.DataSource = Keylist3
+        'ReactorComboBox5.DataSource = Keylist4
+        'ReactorComboBox6.DataSource = Keylist5
+        'ReactorComboBox7.DataSource = Keylist6
+        'ReactorComboBox8.DataSource = Keylist7
+        'ReactorComboBox9.DataSource = Keylist8
+        'ReactorComboBox10.DataSource = Keylist9
+        'ReactorComboBox11.DataSource = Keylist10
+        'ReactorComboBox12.DataSource = Keylist11
+        'ReactorComboBox13.DataSource = Keylist12
+        'ReactorComboBox14.DataSource = Keylist13
+        'ReactorComboBox15.DataSource = Keylist14
+        'ReactorComboBox16.DataSource = Keylist15
+        'ReactorComboBox17.DataSource = Keylist16
+        'ReactorComboBox18.DataSource = Keylist17
+        'ReactorComboBox19.DataSource = Keylist18
+        'ReactorComboBox20.DataSource = Keylist19
         For Each ctrl In Me.ReactorTabControl1.TabPages(0).Controls
             If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("TextBox", "Send")
+                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
                 ctrl.text = inisettings.GetString("SendKey", optionname, ctrl.text)
-            End If
-            If TypeOf ctrl Is ReactorComboBox Then
-                Dim optionname As String = ctrl.name.replace("ComboBox", "Key")
+            ElseIf TypeOf ctrl Is ReactorComboBox Then
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D1, "1"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D2, "2"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D3, "3"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D4, "4"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D5, "5"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D6, "6"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D7, "7"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D8, "8"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D9, "9"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D0, "0"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Add, "+"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Multiply, "*"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Subtract, "-"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Divide, "/"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad0, "NumPad0"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad1, "NumPad1"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad2, "NumPad2"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad3, "NumPad3"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad4, "NumPad4"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad5, "NumPad5"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad6, "NumPad6"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad7, "NumPad7"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad8, "NumPad8"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.NumPad9, "NumPad9"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Decimal, "Decimal"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.A, "A"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.B, "B"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.C, "C"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.D, "D"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.E, "E"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F, "F"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.G, "G"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.H, "H"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.I, "I"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.J, "J"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.K, "K"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.L, "L"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.M, "M"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.N, "N"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.O, "O"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.P, "P"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Q, "Q"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.R, "R"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.S, "S"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.U, "U"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.V, "V"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.W, "W"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.X, "X"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Y, "Y"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Z, "Z"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F2, "F2"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F3, "F3"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F4, "F4"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F5, "F5"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F6, "F6"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F7, "F7"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F8, "F8"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F9, "F9"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F10, "F10"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F11, "F11"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.F12, "F12"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Insert, "Insert"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Delete, "Delete"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Home, "Home"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.End, "End"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.PageUp, "PageUp"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.PageDown, "PageDown"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.LControlKey, "Left Control"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.RControlKey, "Right Control"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Up, "Up"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Down, "Down"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Left, "Left"))
+                ctrl.items.add(New ValueDescriptionPair(System.Windows.Forms.Keys.Right, "Right"))
+                Dim optionname As String = ctrl.name.replace("ReactorComboBox", "Key")
                 ctrl.text = inisettings.GetString("HotKey", optionname, "N/A")
-            End If
-            If TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("CheckBox", "act")
+            ElseIf TypeOf ctrl Is ReactorCheckBox Then
+                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
                 ctrl.checked = inisettings.GetString("Activate", activation, False)
             End If
-            Next
+        Next
     End Sub
     Private Sub kbHook_KeyDown(ByVal Key As System.Windows.Forms.Keys) Handles kbHook.KeyDown
         Dim CapTxt As String = GetCaption()
@@ -300,18 +299,18 @@ Public Class Form1
     Sub savesettings()
         For Each ctrl In Me.ReactorTabControl1.TabPages(0).Controls
             If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("TextBox", "Send")
+                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
                 inisettings.WriteString("SendKey", optionname, ctrl.Text)
             End If
             If TypeOf ctrl Is ReactorComboBox Then
-                Dim optionname As String = ctrl.name.replace("ComboBox", "Key")
+                Dim optionname As String = ctrl.name.replace("ReactorComboBox", "Key")
                 If ctrl.text = Nothing Then
                 Else
                     inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
                 End If
             End If
             If TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("CheckBox", "act")
+                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
                 inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
             End If
         Next
