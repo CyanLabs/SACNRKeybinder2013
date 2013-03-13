@@ -1630,7 +1630,7 @@ Partial Class Form1
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(326, 14)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Copyright 2013 Fma965 (CyanLabs)                           Version 1.1.1"
+        Me.Label3.Text = "Copyright 2013 Fma965 (CyanLabs)                           Version 1.1.2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'RichTextBox1
         '

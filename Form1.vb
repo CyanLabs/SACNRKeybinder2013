@@ -296,19 +296,19 @@ Public Class Form1
                 End If
             End If
         End If
-        If Key.ToString.ToUpper = "F6" Then
+        If Key.ToString = "F6" Then
             keybinderdisabled = True
         End If
-        If Key.ToString.ToUpper = "Return" Then
+        If Key.ToString = "Return" Then
             keybinderdisabled = False
         End If
-        If Key.ToString.ToUpper = "Escape" Then
+        If Key.ToString = "Escape" Then
             keybinderdisabled = False
         End If
-        If Key.ToString.ToUpper = "T" Then
+        If Key.ToString = "T" Then
             keybinderdisabled = True
         End If
-        If Key.ToString.ToUpper = "`" Then
+        If Key.ToString = "`" Then
             keybinderdisabled = True
         End If
     End Sub
