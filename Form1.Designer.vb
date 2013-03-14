@@ -301,10 +301,10 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.ReactorCheckBox9)
         Me.TabPage4.Controls.Add(Me.ReactorCheckBox8)
         Me.TabPage4.Controls.Add(Me.ReactorTextBox3)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 25)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(574, 314)
+        Me.TabPage4.Size = New System.Drawing.Size(574, 311)
         Me.TabPage4.TabIndex = 0
         Me.TabPage4.Text = "Page 1"
         '
@@ -771,10 +771,10 @@ Partial Class Form1
         Me.TabPage5.Controls.Add(Me.ReactorCheckBox18)
         Me.TabPage5.Controls.Add(Me.ReactorCheckBox19)
         Me.TabPage5.Controls.Add(Me.ReactorCheckBox20)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 25)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(574, 314)
+        Me.TabPage5.Size = New System.Drawing.Size(574, 311)
         Me.TabPage5.TabIndex = 1
         Me.TabPage5.Text = "Page 2"
         '
@@ -1550,7 +1550,7 @@ Partial Class Form1
         '
         Me.TrackBar1.Location = New System.Drawing.Point(16, 52)
         Me.TrackBar1.Name = "TrackBar1"
-        Me.TrackBar1.Size = New System.Drawing.Size(126, 40)
+        Me.TrackBar1.Size = New System.Drawing.Size(126, 45)
         Me.TrackBar1.TabIndex = 55
         Me.TrackBar1.TickFrequency = 5
         Me.TrackBar1.Value = 5
