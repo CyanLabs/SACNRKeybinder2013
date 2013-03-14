@@ -92,6 +92,7 @@ Public Class Form1
         chkWheelDown.Checked = inisettings.GetString("Mouse", "WheelDownActivated", False)
         chkSB1.Checked = inisettings.GetString("Mouse", "SB1ClickActivated", False)
         chkSB2.Checked = inisettings.GetString("Mouse", "SB2ClickActivated", False)
+        chkAutoupdates.Checked = inisettings.GetString("Settings", "AutoUpdate", False)
         ReactorProgressBar1.Visible = False
     End Sub
     Private Sub mHook_Mouse_Left() Handles mHook.Mouse_Left
