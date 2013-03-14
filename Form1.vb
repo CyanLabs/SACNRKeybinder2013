@@ -15,6 +15,7 @@ Imports System.Net
 Imports System.Text.RegularExpressions
 
 Public Class Form1
+    Dim running As Integer = 1
     Dim wClient As WebClient
     Dim varchar As Char = "*"
     Dim currentpage As Integer = 0
@@ -124,12 +125,6 @@ Public Class Form1
             End If
         End If
     End Sub
-    Private Sub Snooze(ByVal seconds As Integer)
-        For i As Integer = 0 To seconds * 100
-            System.Threading.Thread.Sleep(10)
-            Application.DoEvents()
-        Next
-    End Sub
     Sub macro(ByVal TextBox As ReactorTextBox)
         Dim substr As String = TextBox.Text
         Do
@@ -139,7 +134,7 @@ Public Class Form1
                 subsubstr = subsubstr.Remove(subsubstr.IndexOf(varchar))
                 substr = substr.Replace(subsubstr & varchar, "")
                 SendKeys.SendWait("t" + subsubstr + "{Enter}")
-                Thread.Sleep(inisettings.GetInteger("Settings", "MacroDelay", 1000))
+                Thread.Sleep(TrackBar1.Value * 1000)
             End If
         Loop While substr.Contains(varchar) = True
         SendKeys.SendWait("t" + substr + "{Enter}")
@@ -432,6 +427,11 @@ Public Class Form1
         chkSB1.Checked = inisettings.GetString("Mouse", "SB1ClickActivated", False)
         chkSB2.Checked = inisettings.GetString("Mouse", "SB2ClickActivated", False)
         chkAutoupdates.Checked = inisettings.GetString("Settings", "AutoUpdate", False)
+        TrackBar1.Value = inisettings.GetInteger("Settings", "MacroDelay", 0)
+        chkEnableLogs.Checked = inisettings.GetString("Settings", "EnableLogManager", False)
+        If chkEnableLogs.Checked = True Then
+            Timer1.Start()
+        End If
         If inisettings.GetString("Settings", "AutoUpdate", False) = True Then
 
             Dim NewVersion As String = ""
@@ -481,5 +481,49 @@ Public Class Form1
 
     Private Sub chkAutoupdates_CheckedChanged(sender As Object) Handles chkAutoupdates.CheckedChanged
         inisettings.WriteString("Settings", "AutoUpdate", sender.checked.ToString)
+    End Sub
+
+    Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
+        inisettings.WriteInteger("Settings", "MacroDelay", sender.value)
+    End Sub
+    Public Function IsProcessRunning(name As String) As Boolean
+        'here we're going to get a list of all running processes on
+        'the computer
+        For Each clsProcess As Process In Process.GetProcesses()
+            If clsProcess.ProcessName.StartsWith(name) Then
+                'process found so it's running so return true
+                Return True
+            End If
+        Next
+        'process not found, return false
+        Return False
+    End Function
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Dim loglocation As String = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\GTA San Andreas User Files\SAMP"
+        If IsProcessRunning("gta_sa") = False AndAlso running = 2 Then
+            Me.running = 0
+        End If
+        If (IsProcessRunning("gta_sa") = True) Then
+            Me.running = 2
+        End If
+        If Me.running = 0 Then
+            Dim str As String = (DateTime.Now.ToString("dd-MM-yy") & "_" & DateTime.Now.ToString("HH-mm"))
+            If My.Computer.FileSystem.FileExists(loglocation & "\chatlog.txt") Then
+                If Not IO.Directory.Exists(loglocation & "\Logs") Then IO.Directory.CreateDirectory(loglocation & "\Logs")
+                My.Computer.FileSystem.CopyFile(loglocation & "\chatlog.txt", loglocation & "\Logs\chatlog_" & str & ".txt", True)
+                Me.NotifyIcon1.ShowBalloonTip(5000, "SACNR Keybinder 2013 Edition", "Log Saved (" & str & ")", ToolTipIcon.Info)
+                Me.running = 1
+            End If
+        End If
+
+    End Sub
+
+    Private Sub chkEnableLogs_CheckedChanged(sender As Object) Handles chkEnableLogs.CheckedChanged
+        inisettings.WriteString("Settings", "EnableLogManager", sender.checked.ToString)
+        If sender.Checked = True Then
+            Timer1.Start()
+        Else
+            Timer1.Stop()
+        End If
     End Sub
 End Class

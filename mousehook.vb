@@ -38,7 +38,7 @@ Public Enum Wheel_Direction
     End Sub
 
     Private Function MouseProc(ByVal nCode As Integer, ByVal wParam As Integer, ByRef lParam As MSLLHOOKSTRUCT) As Integer
-        If (nCode = HC_ACTION) Then
+    If (nCode = HC_ACTION) Then
             Select Case wParam
                 Case WM_LBUTTONDOWN
                     RaiseEvent Mouse_Left()
@@ -54,14 +54,13 @@ Public Enum Wheel_Direction
                         wDirection = Wheel_Direction.WheelUp
                     End If
                     RaiseEvent Mouse_Wheel(wDirection)
-                Case (WM_MOUSEWHEEL)
-                    Dim wDirection As Wheel_Direction
-                    If lParam.mouseData < 0 Then
-                        wDirection = Wheel_Direction.WheelDown
-                    Else
-                        wDirection = Wheel_Direction.WheelUp
+                Case WM_XBUTTONDOWN
+                    Dim button As MouseButtons = MouseButtons.None
+                    If lParam.mouseData = 131072 Then
+                        RaiseEvent Mouse_XButton1()
+                    ElseIf lParam.mouseData = 65536 Then
+                        RaiseEvent Mouse_XButton2()
                     End If
-                    RaiseEvent Mouse_Wheel(wDirection)
             End Select
         End If
         Return CallNextHookEx(MouseHook, nCode, wParam, lParam)
