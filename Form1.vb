@@ -19,7 +19,6 @@ Public Class Form1
     Dim varchar As Char = "*"
     Dim currentpage As Integer = 0
     Dim CapTxt As String = ""
-    Private trd0 As Thread
     Private trd2 As Thread
     Private updatethread As Thread
     Dim skipsavesettings As Boolean = False
@@ -30,8 +29,6 @@ Public Class Form1
     Private Declare Auto Function GetWindowText Lib "user32" (ByVal hWnd As System.IntPtr, ByVal lpString As System.Text.StringBuilder, ByVal cch As Integer) As Integer
     Dim CurrentVersion As String = "v" & System.Reflection.Assembly.GetEntryAssembly.GetName().Version.ToString
     Dim ProgramName As String = System.Reflection.Assembly.GetEntryAssembly().GetName().Name.Replace(" ", "_")
-    Dim VersionCHK, GetVer, GetVerLink As String
-    Dim GetUpd As Integer
     Dim inisettings As New ini(Application.StartupPath & "\Keybinds.sav")
     Dim GTALocation As String = ""
     Dim keybinderdisabled As Boolean = False
@@ -41,62 +38,6 @@ Public Class Form1
         GetWindowText(hWnd, Caption, Caption.Capacity)
         Return Caption.ToString()
     End Function
-    Sub Thread1()
-        If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "gta_sa_exe", Nothing) Is Nothing Then
-            MsgBox("GTA_SA.exe Not Detected (SACNR can not be directly launched)", vbCritical, "ERROR")
-        Else
-            GTALocation = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "gta_sa_exe", Nothing)
-        End If
-        GTALocation = GTALocation.Replace("gta_sa.exe", "samp.exe")
-        GTALocation = Chr(34) + GTALocation + Chr(34) + " server.sacnr.com:7777"
-        For Each ctrl In Me.ReactorTabControl2.TabPages(0).Controls
-            If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
-                ctrl.text = inisettings.GetString("SendKey", optionname, ctrl.text)
-            ElseIf TypeOf ctrl Is TextBox Then
-                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
-                ctrl.text = inisettings.GetString("HotKey", optionname, "")
-                ReactorProgressBar1.Value = ReactorProgressBar1.Value + 1
-            ElseIf TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
-                ctrl.checked = inisettings.GetString("Activate", activation, False)
-            End If
-        Next
-        For Each ctrl In Me.ReactorTabControl2.TabPages(1).Controls
-            If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
-                ctrl.text = inisettings.GetString("SendKey", optionname, ctrl.text)
-            ElseIf TypeOf ctrl Is TextBox Then
-                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
-                ctrl.text = inisettings.GetString("HotKey", optionname, "")
-                ReactorProgressBar1.Value = ReactorProgressBar1.Value + 1
-            ElseIf TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
-                ctrl.checked = inisettings.GetString("Activate", activation, False)
-            End If
-        Next
-        chkSettingToggle.Checked = inisettings.GetString("Settings", "EnableToggle", False)
-        If chkSettingToggle.Checked = True Then
-            currentpage = 1
-        End If
-        TextBox21.Text = inisettings.GetString("Settings", "ToggleKey", "")
-        txtlmb.Text = inisettings.GetString("Mouse", "LeftClick", Nothing)
-        txtRMB.Text = inisettings.GetString("Mouse", "RightClick", Nothing)
-        txtMMB.Text = inisettings.GetString("Mouse", "MiddleClick", Nothing)
-        txtWheelUp.Text = inisettings.GetString("Mouse", "WheelUp", Nothing)
-        txtWheelDown.Text = inisettings.GetString("Mouse", "WheelDown", Nothing)
-        txtSB1.Text = inisettings.GetString("Mouse", "SB1Click", Nothing)
-        txtSB2.Text = inisettings.GetString("Mouse", "SB2Click", Nothing)
-        chkLMB.Checked = inisettings.GetString("Mouse", "LeftClickActivated", False)
-        chkRMB.Checked = inisettings.GetString("Mouse", "RightClickActivated", False)
-        chkMMB.Checked = inisettings.GetString("Mouse", "MiddleClickActivated", False)
-        chkWheelUp.Checked = inisettings.GetString("Mouse", "WheelUpActivated", False)
-        chkWheelDown.Checked = inisettings.GetString("Mouse", "WheelDownActivated", False)
-        chkSB1.Checked = inisettings.GetString("Mouse", "SB1ClickActivated", False)
-        chkSB2.Checked = inisettings.GetString("Mouse", "SB2ClickActivated", False)
-        chkAutoupdates.Checked = inisettings.GetString("Settings", "AutoUpdate", False)
-        ReactorProgressBar1.Visible = False
-    End Sub
     Private Sub mHook_Mouse_Left() Handles mHook.Mouse_Left
         CapTxt = GetCaption()
         If DebugChkSkipWindowCheck.Checked = True Then
@@ -226,105 +167,104 @@ Public Class Form1
                 If currentpage <> 2 Then
                     If ReactorCheckBox1.Checked = True Then
                         If Key.ToString.ToUpper = TextBox1.Text.ToUpper Then
-                            
                             trd2.Start(ReactorTextBox1)
                         End If
                     End If
                     If ReactorCheckBox2.Checked = True Then
                         If Key.ToString.ToUpper = TextBox2.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox2.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox2)
                         End If
                     End If
                     If ReactorCheckBox3.Checked = True Then
                         If Key.ToString.ToUpper = TextBox3.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox3.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox3)
                         End If
                     End If
                     If ReactorCheckBox4.Checked = True Then
                         If Key.ToString.ToUpper = TextBox4.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox4.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox4)
                         End If
                     End If
                     If ReactorCheckBox5.Checked = True Then
                         If Key.ToString.ToUpper = TextBox5.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox5.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox5)
                         End If
                     End If
                     If ReactorCheckBox6.Checked = True Then
                         If Key.ToString.ToUpper = TextBox6.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox6.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox6)
                         End If
                     End If
                     If ReactorCheckBox7.Checked = True Then
                         If Key.ToString.ToUpper = TextBox7.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox7.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox7)
                         End If
                     End If
                     If ReactorCheckBox8.Checked = True Then
                         If Key.ToString.ToUpper = TextBox8.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox8.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox8)
                         End If
                     End If
                     If ReactorCheckBox9.Checked = True Then
                         If Key.ToString.ToUpper = TextBox9.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox9.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox9)
                         End If
                     End If
                     If ReactorCheckBox10.Checked = True Then
                         If Key.ToString.ToUpper = TextBox10.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox10.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox10)
                         End If
                     End If
                 End If
                 If currentpage <> 1 Then
                     If ReactorCheckBox11.Checked = True Then
                         If Key.ToString.ToUpper = TextBox11.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox11.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox11)
                         End If
                     End If
                     If ReactorCheckBox12.Checked = True Then
                         If Key.ToString.ToUpper = TextBox12.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox12.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox12)
                         End If
                     End If
                     If ReactorCheckBox13.Checked = True Then
                         If Key.ToString.ToUpper = TextBox13.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox13.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox13)
                         End If
                     End If
                     If ReactorCheckBox14.Checked = True Then
                         If Key.ToString.ToUpper = TextBox14.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox14.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox14)
                         End If
                     End If
                     If ReactorCheckBox15.Checked = True Then
                         If Key.ToString.ToUpper = TextBox15.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox15.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox15)
                         End If
                     End If
                     If ReactorCheckBox16.Checked = True Then
                         If Key.ToString.ToUpper = TextBox16.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox16.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox16)
                         End If
                     End If
                     If ReactorCheckBox17.Checked = True Then
                         If Key.ToString.ToUpper = TextBox17.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox17.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox17)
                         End If
                     End If
                     If ReactorCheckBox18.Checked = True Then
                         If Key.ToString.ToUpper = TextBox18.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox18.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox18)
                         End If
                     End If
                     If ReactorCheckBox19.Checked = True Then
                         If Key.ToString.ToUpper = TextBox19.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox19.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox19)
                         End If
                     End If
                     If ReactorCheckBox20.Checked = True Then
                         If Key.ToString.ToUpper = TextBox20.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox20.Text + "{Enter}")
+                            trd2.Start(ReactorTextBox20)
                         End If
                     End If
                 End If
@@ -346,7 +286,7 @@ Public Class Form1
             keybinderdisabled = True
         End If
     End Sub
-    Private Sub imgLogo2_Click(sender As Object, e As EventArgs) Handles imgLogo2.Click
+    Private Sub imgLogo2_Click(sender As Object, e As EventArgs) Handles imgLogo2.DoubleClick
         Process.Start("http://sacnr.com")
     End Sub
 
@@ -440,9 +380,58 @@ Public Class Form1
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CheckForIllegalCrossThreadCalls = False
-        trd0 = New Thread(AddressOf Thread1)
-        trd0.IsBackground = True
-        trd0.Start()
+        lblVersion.Text = CurrentVersion.ToString
+        If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "gta_sa_exe", Nothing) Is Nothing Then
+            MsgBox("GTA_SA.exe Not Detected (SACNR can not be directly launched)", vbCritical, "ERROR")
+        Else
+            GTALocation = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "gta_sa_exe", Nothing)
+        End If
+        GTALocation = GTALocation.Replace("gta_sa.exe", "samp.exe")
+        GTALocation = Chr(34) + GTALocation + Chr(34) + " server.sacnr.com:7777"
+        For Each ctrl In Me.ReactorTabControl2.TabPages(0).Controls
+            If TypeOf ctrl Is ReactorTextBox Then
+                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
+                ctrl.text = inisettings.GetString("SendKey", optionname, ctrl.text)
+            ElseIf TypeOf ctrl Is TextBox Then
+                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
+                ctrl.text = inisettings.GetString("HotKey", optionname, "")
+            ElseIf TypeOf ctrl Is ReactorCheckBox Then
+                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
+                ctrl.checked = inisettings.GetString("Activate", activation, False)
+            End If
+        Next
+        For Each ctrl In Me.ReactorTabControl2.TabPages(1).Controls
+            If TypeOf ctrl Is ReactorTextBox Then
+                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
+                ctrl.text = inisettings.GetString("SendKey", optionname, ctrl.text)
+            ElseIf TypeOf ctrl Is TextBox Then
+                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
+                ctrl.text = inisettings.GetString("HotKey", optionname, "")
+            ElseIf TypeOf ctrl Is ReactorCheckBox Then
+                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
+                ctrl.checked = inisettings.GetString("Activate", activation, False)
+            End If
+        Next
+        chkSettingToggle.Checked = inisettings.GetString("Settings", "EnableToggle", False)
+        If chkSettingToggle.Checked = True Then
+            currentpage = 1
+        End If
+        TextBox21.Text = inisettings.GetString("Settings", "ToggleKey", "")
+        txtlmb.Text = inisettings.GetString("Mouse", "LeftClick", Nothing)
+        txtRMB.Text = inisettings.GetString("Mouse", "RightClick", Nothing)
+        txtMMB.Text = inisettings.GetString("Mouse", "MiddleClick", Nothing)
+        txtWheelUp.Text = inisettings.GetString("Mouse", "WheelUp", Nothing)
+        txtWheelDown.Text = inisettings.GetString("Mouse", "WheelDown", Nothing)
+        txtSB1.Text = inisettings.GetString("Mouse", "SB1Click", Nothing)
+        txtSB2.Text = inisettings.GetString("Mouse", "SB2Click", Nothing)
+        chkLMB.Checked = inisettings.GetString("Mouse", "LeftClickActivated", False)
+        chkRMB.Checked = inisettings.GetString("Mouse", "RightClickActivated", False)
+        chkMMB.Checked = inisettings.GetString("Mouse", "MiddleClickActivated", False)
+        chkWheelUp.Checked = inisettings.GetString("Mouse", "WheelUpActivated", False)
+        chkWheelDown.Checked = inisettings.GetString("Mouse", "WheelDownActivated", False)
+        chkSB1.Checked = inisettings.GetString("Mouse", "SB1ClickActivated", False)
+        chkSB2.Checked = inisettings.GetString("Mouse", "SB2ClickActivated", False)
+        chkAutoupdates.Checked = inisettings.GetString("Settings", "AutoUpdate", False)
         If inisettings.GetString("Settings", "AutoUpdate", False) = True Then
 
             Dim NewVersion As String = ""

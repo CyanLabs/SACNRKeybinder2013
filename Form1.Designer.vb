@@ -26,7 +26,6 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ReactorTheme1 = New SACNR_Keybinder_2013_Edition.ReactorTheme()
-        Me.ReactorProgressBar1 = New SACNR_Keybinder_2013_Edition.ReactorProgressBar()
         Me.btnReset = New SACNR_Keybinder_2013_Edition.ReactorButton()
         Me.btnLaunch = New SACNR_Keybinder_2013_Edition.ReactorButton()
         Me.imgLogo2 = New System.Windows.Forms.PictureBox()
@@ -132,7 +131,6 @@ Partial Class Form1
         Me.txtSB2 = New SACNR_Keybinder_2013_Edition.ReactorTextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.ReactorGroupBox2 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
-        Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.chkAutoupdates = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.ReactorGroupBox3 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
         Me.chkSettingToggle = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
@@ -141,6 +139,7 @@ Partial Class Form1
         Me.ReactorGroupBox1 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
         Me.DebugChkSkipWindowCheck = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.lblVersion = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -154,7 +153,6 @@ Partial Class Form1
         Me.TabPage6.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.ReactorGroupBox2.SuspendLayout()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ReactorGroupBox3.SuspendLayout()
         Me.ReactorGroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -171,7 +169,6 @@ Partial Class Form1
         '
         'ReactorTheme1
         '
-        Me.ReactorTheme1.Controls.Add(Me.ReactorProgressBar1)
         Me.ReactorTheme1.Controls.Add(Me.btnReset)
         Me.ReactorTheme1.Controls.Add(Me.btnLaunch)
         Me.ReactorTheme1.Controls.Add(Me.imgLogo2)
@@ -184,33 +181,23 @@ Partial Class Form1
         Me.ReactorTheme1.TabIndex = 0
         Me.ReactorTheme1.Text = "SACNR Keybinder 2013 Edition"
         '
-        'ReactorProgressBar1
-        '
-        Me.ReactorProgressBar1.Location = New System.Drawing.Point(5, 474)
-        Me.ReactorProgressBar1.Maximum = 20
-        Me.ReactorProgressBar1.Name = "ReactorProgressBar1"
-        Me.ReactorProgressBar1.Size = New System.Drawing.Size(590, 46)
-        Me.ReactorProgressBar1.TabIndex = 45
-        Me.ReactorProgressBar1.Text = "ReactorProgressBar1"
-        Me.ReactorProgressBar1.Value = 1
-        '
         'btnReset
         '
         Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
         Me.btnReset.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReset.Location = New System.Drawing.Point(5, 477)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(133, 43)
+        Me.btnReset.Size = New System.Drawing.Size(225, 43)
         Me.btnReset.TabIndex = 50
         Me.btnReset.Text = "Reset Keybinds"
         '
         'btnLaunch
         '
         Me.btnLaunch.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.btnLaunch.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLaunch.Location = New System.Drawing.Point(379, 477)
+        Me.btnLaunch.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLaunch.Location = New System.Drawing.Point(236, 477)
         Me.btnLaunch.Name = "btnLaunch"
-        Me.btnLaunch.Size = New System.Drawing.Size(216, 43)
+        Me.btnLaunch.Size = New System.Drawing.Size(359, 43)
         Me.btnLaunch.TabIndex = 50
         Me.btnLaunch.Text = "Launch SACNR  (server.sacnr.com:7777)"
         '
@@ -1538,29 +1525,19 @@ Partial Class Form1
         'ReactorGroupBox2
         '
         Me.ReactorGroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.ReactorGroupBox2.Controls.Add(Me.TrackBar1)
         Me.ReactorGroupBox2.Controls.Add(Me.chkAutoupdates)
         Me.ReactorGroupBox2.Location = New System.Drawing.Point(167, 6)
         Me.ReactorGroupBox2.Name = "ReactorGroupBox2"
-        Me.ReactorGroupBox2.Size = New System.Drawing.Size(155, 96)
+        Me.ReactorGroupBox2.Size = New System.Drawing.Size(155, 82)
         Me.ReactorGroupBox2.TabIndex = 54
         Me.ReactorGroupBox2.Text = "AutoUpdate Options"
-        '
-        'TrackBar1
-        '
-        Me.TrackBar1.Location = New System.Drawing.Point(16, 52)
-        Me.TrackBar1.Name = "TrackBar1"
-        Me.TrackBar1.Size = New System.Drawing.Size(126, 40)
-        Me.TrackBar1.TabIndex = 55
-        Me.TrackBar1.TickFrequency = 5
-        Me.TrackBar1.Value = 5
         '
         'chkAutoupdates
         '
         Me.chkAutoupdates.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkAutoupdates.Checked = False
         Me.chkAutoupdates.ForeColor = System.Drawing.Color.White
-        Me.chkAutoupdates.Location = New System.Drawing.Point(16, 31)
+        Me.chkAutoupdates.Location = New System.Drawing.Point(13, 42)
         Me.chkAutoupdates.Name = "chkAutoupdates"
         Me.chkAutoupdates.Size = New System.Drawing.Size(126, 16)
         Me.chkAutoupdates.TabIndex = 2
@@ -1574,7 +1551,7 @@ Partial Class Form1
         Me.ReactorGroupBox3.Controls.Add(Me.TextBox21)
         Me.ReactorGroupBox3.Location = New System.Drawing.Point(6, 6)
         Me.ReactorGroupBox3.Name = "ReactorGroupBox3"
-        Me.ReactorGroupBox3.Size = New System.Drawing.Size(155, 96)
+        Me.ReactorGroupBox3.Size = New System.Drawing.Size(155, 82)
         Me.ReactorGroupBox3.TabIndex = 53
         Me.ReactorGroupBox3.Text = "Toggle Options"
         '
@@ -1635,6 +1612,7 @@ Partial Class Form1
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.TabPage2.Controls.Add(Me.lblVersion)
         Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.RichTextBox1)
         Me.TabPage2.Controls.Add(Me.Label1)
@@ -1644,17 +1622,30 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "About SACNR Keybinder"
         '
+        'lblVersion
+        '
+        Me.lblVersion.AutoSize = True
+        Me.lblVersion.BackColor = System.Drawing.Color.Transparent
+        Me.lblVersion.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVersion.ForeColor = System.Drawing.Color.White
+        Me.lblVersion.Location = New System.Drawing.Point(502, 317)
+        Me.lblVersion.Name = "lblVersion"
+        Me.lblVersion.Size = New System.Drawing.Size(52, 14)
+        Me.lblVersion.TabIndex = 4
+        Me.lblVersion.Text = "VX.X.X.X"
+        Me.lblVersion.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(105, 318)
+        Me.Label3.Location = New System.Drawing.Point(21, 317)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(317, 14)
+        Me.Label3.Size = New System.Drawing.Size(236, 14)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Copyright 2013 Fma965 (CyanLabs)                           Version 1.2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label3.Text = "Copyright 2013 Fma965 && DHeppell (CyanLabs)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'RichTextBox1
         '
@@ -1664,7 +1655,7 @@ Partial Class Form1
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(530, 283)
         Me.RichTextBox1.TabIndex = 2
-        Me.RichTextBox1.Text = ""
+        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         Me.RichTextBox1.WordWrap = False
         '
         'Label1
@@ -1702,8 +1693,6 @@ Partial Class Form1
         Me.TabPage6.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.ReactorGroupBox2.ResumeLayout(False)
-        Me.ReactorGroupBox2.PerformLayout()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ReactorGroupBox3.ResumeLayout(False)
         Me.ReactorGroupBox3.PerformLayout()
         Me.ReactorGroupBox1.ResumeLayout(False)
@@ -1826,11 +1815,10 @@ Partial Class Form1
     Friend WithEvents imgLogo2 As System.Windows.Forms.PictureBox
     Friend WithEvents btnLaunch As SACNR_Keybinder_2013_Edition.ReactorButton
     Friend WithEvents btnReset As SACNR_Keybinder_2013_Edition.ReactorButton
-    Friend WithEvents ReactorProgressBar1 As SACNR_Keybinder_2013_Edition.ReactorProgressBar
     Friend WithEvents ReactorTheme1 As SACNR_Keybinder_2013_Edition.ReactorTheme
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents ReactorGroupBox2 As SACNR_Keybinder_2013_Edition.ReactorGroupBox
-    Friend WithEvents TrackBar1 As System.Windows.Forms.TrackBar
     Friend WithEvents chkAutoupdates As SACNR_Keybinder_2013_Edition.ReactorCheckBox
+    Friend WithEvents lblVersion As System.Windows.Forms.Label
 
 End Class
