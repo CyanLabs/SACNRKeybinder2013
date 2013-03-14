@@ -20,6 +20,7 @@ Public Class Form1
     Dim currentpage As Integer = 0
     Dim CapTxt As String = ""
     Private trd0 As Thread
+    Private trd2 As Thread
     Private updatethread As Thread
     Dim skipsavesettings As Boolean = False
     Private WithEvents kbHook As New kbhook
@@ -182,6 +183,12 @@ Public Class Form1
             End If
         End If
     End Sub
+    Private Sub Snooze(ByVal seconds As Integer)
+        For i As Integer = 0 To seconds * 100
+            System.Threading.Thread.Sleep(10)
+            Application.DoEvents()
+        Next
+    End Sub
     Sub macro(ByVal TextBox As ReactorTextBox)
         Dim substr As String = TextBox.Text
         Do
@@ -190,11 +197,11 @@ Public Class Form1
                 subsubstr = substr
                 subsubstr = subsubstr.Remove(subsubstr.IndexOf(varchar))
                 substr = substr.Replace(subsubstr & varchar, "")
-                SendKeys.Send("t" + subsubstr + "{Enter}")
+                SendKeys.SendWait("t" + subsubstr + "{Enter}")
                 Thread.Sleep(inisettings.GetInteger("Settings", "MacroDelay", 1000))
             End If
         Loop While substr.Contains(varchar) = True
-        SendKeys.Send("t" + substr + "{Enter}")
+        SendKeys.SendWait("t" + substr + "{Enter}")
     End Sub
 
     Private Sub kbHook_KeyDown(ByVal Key As System.Windows.Forms.Keys) Handles kbHook.KeyDown
@@ -208,7 +215,8 @@ Public Class Form1
                 End If
             End If
         End If
-
+        trd2 = New Thread(AddressOf macro)
+        trd2.IsBackground = True
         CapTxt = GetCaption()
         If DebugChkSkipWindowCheck.Checked = True Then
             CapTxt = "GTA:SA:MP"
@@ -218,7 +226,8 @@ Public Class Form1
                 If currentpage <> 2 Then
                     If ReactorCheckBox1.Checked = True Then
                         If Key.ToString.ToUpper = TextBox1.Text.ToUpper Then
-                            macro(ReactorTextBox1)
+                            
+                            trd2.Start(ReactorTextBox1)
                         End If
                     End If
                     If ReactorCheckBox2.Checked = True Then
