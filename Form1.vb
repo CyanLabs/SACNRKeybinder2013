@@ -11,17 +11,25 @@
 'along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Option Strict Off
 Imports System.Threading
+Imports System.Net
+Imports System.Text.RegularExpressions
+
 Public Class Form1
+    Dim wClient As WebClient
     Dim currentpage As Integer = 0
     Dim CapTxt As String = ""
     Private trd0 As Thread
+    Private updatethread As Thread
     Dim skipsavesettings As Boolean = False
     Private WithEvents kbHook As New kbhook
     Private WithEvents mHook As New MouseHook
     Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Long) As Integer
     Private Declare Function GetForegroundWindow Lib "user32" Alias "GetForegroundWindow" () As IntPtr
     Private Declare Auto Function GetWindowText Lib "user32" (ByVal hWnd As System.IntPtr, ByVal lpString As System.Text.StringBuilder, ByVal cch As Integer) As Integer
-
+    Dim CurrentVersion As String = "v" & System.Reflection.Assembly.GetEntryAssembly.GetName().Version.ToString
+    Dim ProgramName As String = System.Reflection.Assembly.GetEntryAssembly().GetName().Name.Replace(" ", "_")
+    Dim VersionCHK, GetVer, GetVerLink As String
+    Dim GetUpd As Integer
     Dim inisettings As New ini(Application.StartupPath & "\Keybinds.sav")
     Dim GTALocation As String = ""
     Dim keybinderdisabled As Boolean = False
@@ -94,7 +102,7 @@ Public Class Form1
         If CapTxt = "GTA:SA:MP" Then
             If keybinderdisabled = False Then
                 If chkLMB.Checked = True Then
-                    sendkeys.sendwait("t" + txtlmb.Text + "{Enter}")
+                    SendKeys.SendWait("t" + txtlmb.Text + "{Enter}")
                 End If
             End If
         End If
@@ -108,7 +116,7 @@ Public Class Form1
         If CapTxt = "GTA:SA:MP" Then
             If keybinderdisabled = False Then
                 If chkMMB.Checked = True Then
-                    sendkeys.sendwait("t" + txtMMB.Text + "{Enter}")
+                    SendKeys.SendWait("t" + txtMMB.Text + "{Enter}")
                 End If
             End If
         End If
@@ -121,7 +129,7 @@ Public Class Form1
         If CapTxt = "GTA:SA:MP" Then
             If keybinderdisabled = False Then
                 If chkRMB.Checked = True Then
-                    sendkeys.sendwait("t" + txtRMB.Text + "{Enter}")
+                    SendKeys.SendWait("t" + txtRMB.Text + "{Enter}")
                 End If
             End If
         End If
@@ -136,11 +144,11 @@ Public Class Form1
             If keybinderdisabled = False Then
                 If Direction.ToString = "WheelUp" Then
                     If chkWheelUp.Checked = True Then
-                        sendkeys.sendwait("t" + txtWheelUp.Text + "{Enter}")
+                        SendKeys.SendWait("t" + txtWheelUp.Text + "{Enter}")
                     End If
                 Else
                     If chkWheelDown.Checked = True Then
-                        sendkeys.sendwait("t" + txtWheelDown.Text + "{Enter}")
+                        SendKeys.SendWait("t" + txtWheelDown.Text + "{Enter}")
                     End If
                 End If
             End If
@@ -154,7 +162,7 @@ Public Class Form1
         If CapTxt = "GTA:SA:MP" Then
             If keybinderdisabled = False Then
                 If chkSB1.Checked = True Then
-                    sendkeys.sendwait("t" + chkSB1.Text + "{Enter}")
+                    SendKeys.SendWait("t" + txtSB1.Text + "{Enter}")
                 End If
             End If
         End If
@@ -167,7 +175,7 @@ Public Class Form1
         If CapTxt = "GTA:SA:MP" Then
             If keybinderdisabled = False Then
                 If chkSB2.Checked = True Then
-                    sendkeys.sendwait("t" + txtSB2.Text + "{Enter}")
+                    SendKeys.SendWait("t" + txtSB2.Text + "{Enter}")
                 End If
             End If
         End If
@@ -193,7 +201,22 @@ Public Class Form1
                 If currentpage <> 2 Then
                     If ReactorCheckBox1.Checked = True Then
                         If Key.ToString.ToUpper = TextBox1.Text.ToUpper Then
-                            SendKeys.SendWait("t" + ReactorTextBox1.Text + "{Enter}")
+                            Dim blah As Char = "*"
+                            Dim substr As String = ReactorTextBox1.Text
+                            Dim delay As Integer = 2000
+                            Do
+                                If substr.Contains(blah) Then
+                                    Dim subsubstr As String
+                                    subsubstr = substr
+                                    subsubstr = subsubstr.Remove(subsubstr.IndexOf(blah))
+                                    substr = substr.Replace(subsubstr & blah, "")
+                                    SendKeys.SendWait("t" + subsubstr + "{Enter}")
+                                    Debug.WriteLine(subsubstr)
+                                End If
+                                Thread.Sleep(delay)
+                            Loop While substr.Contains(blah) = True
+                            SendKeys.SendWait("t" + substr + "{Enter}")
+                            Debug.WriteLine(substr)
                         End If
                     End If
                     If ReactorCheckBox2.Checked = True Then
@@ -378,7 +401,7 @@ Public Class Form1
         inisettings.WriteString("Mouse", "SB2ClickActivated", chkSB2.Checked.ToString)
     End Sub
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs)
         savesettings()
     End Sub
 
@@ -405,21 +428,44 @@ Public Class Form1
         End If
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        keybinderdisabled = False
         CheckForIllegalCrossThreadCalls = False
         trd0 = New Thread(AddressOf Thread1)
         trd0.IsBackground = True
         trd0.Start()
+        If inisettings.GetString("Settings", "AutoUpdate", False) = True Then
+
+            Dim NewVersion As String = ""
+
+            wClient = New WebClient
+            Try
+                NewVersion = wClient.DownloadString("http://cyanlabs.co.uk/updatechecker/" & ProductName.Replace(" ", "_") & "/version.html")
+
+                If Not NewVersion = Nothing Then
+                    If NewVersion > CurrentVersion = True Then
+                        If IO.File.Exists(Application.StartupPath & "\AutoUpdater.exe") Then IO.File.Delete(Application.StartupPath & "\AutoUpdater.exe")
+                        DownloadUpdater("http://cyanlabs.co.uk/updatechecker/AutoUpdater.exe", Application.StartupPath & "\AutoUpdater.exe")
+                    End If
+                End If
+            Catch webex As WebException
+                MsgBox(webex.Message.ToString)
+            End Try
+            '     ' DownloadFile("http://cyanlabs.co.uk/autoupdates/sacnrkeybinder2013/SACNR Keybinder 2013 Edition.exe", "C:\SACNR Keybinder 2013 Edition.exe")
+        End If
     End Sub
 
-    Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
-        If msg.WParam.ToInt32() = CInt(Keys.Enter) Then
-            sendkeys.sendwait("{Tab}")
-            Return True
-        End If
-        Return MyBase.ProcessCmdKey(msg, keyData)
-    End Function
-
+    ''' <summary>Download file</summary>
+    ''' <param name="input">URI to grab</param>
+    ''' <param name="output">Save Location including Filename.</param>
+    Private Sub DownloadUpdater(ByVal input As String, ByVal output As String)
+        wClient = New WebClient
+        Try
+            wClient.DownloadFile(New Uri(input), output)
+            Process.Start(Application.StartupPath & "\AutoUpdater.exe ", ProgramName)
+            Application.Exit()
+        Catch webex As WebException
+            MsgBox(webex.Message.ToString)
+        End Try
+    End Sub
     Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox9.KeyDown, TextBox8.KeyDown, TextBox7.KeyDown, TextBox6.KeyDown, TextBox5.KeyDown, TextBox4.KeyDown, TextBox3.KeyDown, TextBox2.KeyDown, TextBox10.KeyDown, TextBox1.KeyDown, TextBox20.KeyDown, TextBox19.KeyDown, TextBox18.KeyDown, TextBox17.KeyDown, TextBox16.KeyDown, TextBox15.KeyDown, TextBox14.KeyDown, TextBox13.KeyDown, TextBox12.KeyDown, TextBox11.KeyDown, TextBox21.KeyDown
         sender.text = ""
         sender.tag = e.KeyCode
@@ -431,5 +477,9 @@ Public Class Form1
         If sender.checked = False Then
             currentpage = 0
         End If
+    End Sub
+
+    Private Sub chkAutoupdates_CheckedChanged(sender As Object) Handles chkAutoupdates.CheckedChanged
+        inisettings.WriteString("Settings", "AutoUpdate", sender.checked.ToString)
     End Sub
 End Class

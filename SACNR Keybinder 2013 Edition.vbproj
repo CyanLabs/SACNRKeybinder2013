@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>SACNR_Keybinder_2013_Edition.My.MyApplication</StartupObject>
     <RootNamespace>SACNR_Keybinder_2013_Edition</RootNamespace>
-    <AssemblyName>SACNR Keybinder 2013 Edition</AssemblyName>
+    <AssemblyName>SACNR_Keybinder_2013_Edition</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -36,7 +36,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>SACNR Keybinder 2013 Edition.xml</DocumentationFile>
+    <DocumentationFile>SACNR_Keybinder_2013_Edition.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
@@ -47,7 +47,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>SACNR Keybinder 2013 Edition.xml</DocumentationFile>
+    <DocumentationFile>SACNR_Keybinder_2013_Edition.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
