@@ -16,6 +16,7 @@ Imports System.Text.RegularExpressions
 
 Public Class Form1
     Dim wClient As WebClient
+    Dim varchar As Char = "*"
     Dim currentpage As Integer = 0
     Dim CapTxt As String = ""
     Private trd0 As Thread
@@ -181,6 +182,21 @@ Public Class Form1
             End If
         End If
     End Sub
+    Sub macro(ByVal TextBox As ReactorTextBox)
+        Dim substr As String = TextBox.Text
+        Do
+            If substr.Contains(varchar) Then
+                Dim subsubstr As String
+                subsubstr = substr
+                subsubstr = subsubstr.Remove(subsubstr.IndexOf(varchar))
+                substr = substr.Replace(subsubstr & varchar, "")
+                SendKeys.Send("t" + subsubstr + "{Enter}")
+                Thread.Sleep(inisettings.GetInteger("Settings", "MacroDelay", 1000))
+            End If
+        Loop While substr.Contains(varchar) = True
+        SendKeys.Send("t" + substr + "{Enter}")
+    End Sub
+
     Private Sub kbHook_KeyDown(ByVal Key As System.Windows.Forms.Keys) Handles kbHook.KeyDown
         'Debug.WriteLine("Key = " & Key.ToString.ToUpper & " Textbox = " & TextBox3.Text)
         If chkSettingToggle.Checked = True Then
@@ -202,22 +218,7 @@ Public Class Form1
                 If currentpage <> 2 Then
                     If ReactorCheckBox1.Checked = True Then
                         If Key.ToString.ToUpper = TextBox1.Text.ToUpper Then
-                            Dim blah As Char = "*"
-                            Dim substr As String = ReactorTextBox1.Text
-                            Dim delay As Integer = 2000
-                            Do
-                                If substr.Contains(blah) Then
-                                    Dim subsubstr As String
-                                    subsubstr = substr
-                                    subsubstr = subsubstr.Remove(subsubstr.IndexOf(blah))
-                                    substr = substr.Replace(subsubstr & blah, "")
-                                    SendKeys.SendWait("t" + subsubstr + "{Enter}")
-                                    Debug.WriteLine(subsubstr)
-                                    Thread.Sleep(delay)
-                                End If
-                            Loop While substr.Contains(blah) = True
-                            SendKeys.SendWait("t" + substr + "{Enter}")
-                            Debug.WriteLine(substr)
+                            macro(ReactorTextBox1)
                         End If
                     End If
                     If ReactorCheckBox2.Checked = True Then
