@@ -213,8 +213,8 @@ Public Class Form1
                                     substr = substr.Replace(subsubstr & blah, "")
                                     SendKeys.SendWait("t" + subsubstr + "{Enter}")
                                     Debug.WriteLine(subsubstr)
+                                    Thread.Sleep(delay)
                                 End If
-                                Thread.Sleep(delay)
                             Loop While substr.Contains(blah) = True
                             SendKeys.SendWait("t" + substr + "{Enter}")
                             Debug.WriteLine(substr)
