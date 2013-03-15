@@ -16,6 +16,7 @@ Imports System.Text.RegularExpressions
 
 Public Class Form1
     Dim running As Integer = 1
+    Dim t1, t2, t3, t4, t5, t6, t7, t8, t9, t10 As Boolean
     Dim wClient As WebClient
     Dim varchar As Char = "*"
     Dim currentpage As Integer = 0
@@ -263,6 +264,116 @@ Public Class Form1
                         End If
                     End If
                 End If
+                If ReactorCheckBox21.Checked = True Then
+                    If Key.ToString.ToUpper = TextBox22.Text.ToUpper Then
+                        If t1 = False Then
+                            trd2.Start(ReactorTextBox21)
+                            t1 = True
+                        Else
+                            trd2.Start(ReactorTextBox31)
+                            t1 = False
+                        End If
+                    End If
+                End If
+                If ReactorCheckBox22.Checked = True Then
+                    If Key.ToString.ToUpper = TextBox23.Text.ToUpper Then
+                        If t2 = False Then
+                            trd2.Start(ReactorTextBox22)
+                            t2 = True
+                        Else
+                            trd2.Start(ReactorTextBox32)
+                            t2 = False
+                        End If
+                    End If
+                End If
+                If ReactorCheckBox23.Checked = True Then
+                    If Key.ToString.ToUpper = TextBox24.Text.ToUpper Then
+                        If t3 = False Then
+                            trd2.Start(ReactorTextBox23)
+                            t3 = True
+                        Else
+                            trd2.Start(ReactorTextBox33)
+                            t3 = False
+                        End If
+                    End If
+                End If
+                If ReactorCheckBox24.Checked = True Then
+                    If Key.ToString.ToUpper = TextBox25.Text.ToUpper Then
+                        If t4 = False Then
+                            trd2.Start(ReactorTextBox24)
+                            t4 = True
+                        Else
+                            trd2.Start(ReactorTextBox34)
+                            t4 = False
+                        End If
+                    End If
+                End If
+                If ReactorCheckBox25.Checked = True Then
+                    If Key.ToString.ToUpper = TextBox26.Text.ToUpper Then
+                        If t5 = False Then
+                            trd2.Start(ReactorTextBox25)
+                            t5 = True
+                        Else
+                            trd2.Start(ReactorTextBox35)
+                            t5 = False
+                        End If
+                    End If
+                End If
+                If ReactorCheckBox26.Checked = True Then
+                    If Key.ToString.ToUpper = TextBox27.Text.ToUpper Then
+                        If t6 = False Then
+                            trd2.Start(ReactorTextBox26)
+                            t6 = True
+                        Else
+                            trd2.Start(ReactorTextBox36)
+                            t6 = False
+                        End If
+                    End If
+                End If
+                If ReactorCheckBox27.Checked = True Then
+                    If Key.ToString.ToUpper = TextBox28.Text.ToUpper Then
+                        If t7 = False Then
+                            trd2.Start(ReactorTextBox27)
+                            t7 = True
+                        Else
+                            trd2.Start(ReactorTextBox37)
+                            t7 = False
+                        End If
+                    End If
+                End If
+                If ReactorCheckBox28.Checked = True Then
+                    If Key.ToString.ToUpper = TextBox29.Text.ToUpper Then
+                        If t8 = False Then
+                            trd2.Start(ReactorTextBox28)
+                            t8 = True
+                        Else
+                            trd2.Start(ReactorTextBox38)
+                            t8 = False
+                        End If
+                    End If
+                End If
+                If ReactorCheckBox29.Checked = True Then
+                    If Key.ToString.ToUpper = TextBox30.Text.ToUpper Then
+                        If t9 = False Then
+                            trd2.Start(ReactorTextBox29)
+                            t9 = True
+                        Else
+                            trd2.Start(ReactorTextBox39)
+                            t9 = False
+                        End If
+                    End If
+                End If
+                If ReactorCheckBox30.Checked = True Then
+                    If Key.ToString.ToUpper = TextBox31.Text.ToUpper Then
+                        If t10 = False Then
+                            trd2.Start(ReactorTextBox30)
+                            t10 = True
+                        Else
+                            trd2.Start(ReactorTextBox40)
+                            t10 = False
+                        End If
+                    End If
+                End If
             End If
         End If
         If Key.ToString = "F6" Then
@@ -313,6 +424,23 @@ Public Class Form1
             End If
         Next
         For Each ctrl In Me.ReactorTabControl2.TabPages(1).Controls
+            If TypeOf ctrl Is ReactorTextBox Then
+                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
+                inisettings.WriteString("SendKey", optionname, ctrl.Text)
+            End If
+            If TypeOf ctrl Is TextBox Then
+                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
+                If ctrl.text = Nothing Then
+                Else
+                    inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
+                End If
+            End If
+            If TypeOf ctrl Is ReactorCheckBox Then
+                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
+                inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
+            End If
+        Next
+        For Each ctrl In Me.ReactorTabControl2.TabPages(2).Controls
             If TypeOf ctrl Is ReactorTextBox Then
                 Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
                 inisettings.WriteString("SendKey", optionname, ctrl.Text)
@@ -407,6 +535,18 @@ Public Class Form1
                 ctrl.checked = inisettings.GetString("Activate", activation, False)
             End If
         Next
+        For Each ctrl In Me.ReactorTabControl2.TabPages(2).Controls
+            If TypeOf ctrl Is ReactorTextBox Then
+                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
+                ctrl.text = inisettings.GetString("SendKey", optionname, ctrl.text)
+            ElseIf TypeOf ctrl Is TextBox Then
+                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
+                ctrl.text = inisettings.GetString("HotKey", optionname, "")
+            ElseIf TypeOf ctrl Is ReactorCheckBox Then
+                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
+                ctrl.checked = inisettings.GetString("Activate", activation, False)
+            End If
+        Next
         chkSettingToggle.Checked = inisettings.GetString("Settings", "EnableToggle", False)
         If chkSettingToggle.Checked = True Then
             currentpage = 1
@@ -449,8 +589,7 @@ Public Class Form1
             Catch webex As WebException
                 MsgBox(webex.Message.ToString)
             End Try
-            '     ' DownloadFile("http://cyanlabs.co.uk/autoupdates/sacnrkeybinder2013/SACNR Keybinder 2013 Edition.exe", "C:\SACNR Keybinder 2013 Edition.exe")
-        End If
+            End If
     End Sub
 
     ''' <summary>Download file</summary>
@@ -466,7 +605,7 @@ Public Class Form1
             MsgBox(webex.Message.ToString)
         End Try
     End Sub
-    Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox9.KeyDown, TextBox8.KeyDown, TextBox7.KeyDown, TextBox6.KeyDown, TextBox5.KeyDown, TextBox4.KeyDown, TextBox3.KeyDown, TextBox2.KeyDown, TextBox10.KeyDown, TextBox1.KeyDown, TextBox20.KeyDown, TextBox19.KeyDown, TextBox18.KeyDown, TextBox17.KeyDown, TextBox16.KeyDown, TextBox15.KeyDown, TextBox14.KeyDown, TextBox13.KeyDown, TextBox12.KeyDown, TextBox11.KeyDown, TextBox21.KeyDown
+    Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox9.KeyDown, TextBox8.KeyDown, TextBox7.KeyDown, TextBox6.KeyDown, TextBox5.KeyDown, TextBox4.KeyDown, TextBox3.KeyDown, TextBox2.KeyDown, TextBox10.KeyDown, TextBox1.KeyDown, TextBox20.KeyDown, TextBox19.KeyDown, TextBox18.KeyDown, TextBox17.KeyDown, TextBox16.KeyDown, TextBox15.KeyDown, TextBox14.KeyDown, TextBox13.KeyDown, TextBox12.KeyDown, TextBox11.KeyDown, TextBox21.KeyDown, TextBox31.KeyDown, TextBox30.KeyDown, TextBox29.KeyDown, TextBox28.KeyDown, TextBox27.KeyDown, TextBox26.KeyDown, TextBox25.KeyDown, TextBox24.KeyDown, TextBox23.KeyDown, TextBox22.KeyDown
         sender.text = ""
         sender.tag = e.KeyCode
         sender.text = e.KeyCode.ToString.ToUpper
@@ -487,15 +626,11 @@ Public Class Form1
         inisettings.WriteInteger("Settings", "MacroDelay", sender.value)
     End Sub
     Public Function IsProcessRunning(name As String) As Boolean
-        'here we're going to get a list of all running processes on
-        'the computer
         For Each clsProcess As Process In Process.GetProcesses()
             If clsProcess.ProcessName.StartsWith(name) Then
-                'process found so it's running so return true
                 Return True
             End If
         Next
-        'process not found, return false
         Return False
     End Function
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

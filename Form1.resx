@@ -6058,7 +6058,7 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDQAACw0B7QfALAAA9UFJREFUeF7snQd4FVXe
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDAAACwwBP0AiyAAA9UFJREFUeF7snQd4FVXe
         xr91QVpCQkIKIQkJKMWAVKUjUqSEQAIJIYQWIKGF0IIQehEQAUEQXNfe1r7qqquuZe1t1bV31wpWRLE3
         /t/7nplzc+7k3BRIEPDO8/yemTv1zMyZM+c3/zNz/y+ja0shI089EbB/kJxyaIw6tVX1cEoV6BLkkOh8
         kHDZU1pLVs+T0T/p0NcXJMiRhM7PxyK2/Q0iozoFqTFsx/uYpfUfgy6VwLbc0UKn3xlbmmz4jjfyXmWw
@@ -9894,6 +9894,27 @@
         p+YWKo1xbG6hn5bol23le+n98BHQz9PPW/H9NH1Ljgm4/wOcAGPlnzFO9BBxke42NUYQ76fhiPEbdo8e
         eab7L6WhHQ/BLr0qAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="RichTextBox2.Text" xml:space="preserve">
+    <value>Keyboard Binds
+1. Enter your desired command in the "Command" TextBox. E.g "/ej" without quotes
+2. Click the "Binded Key" TextBox and Press desired key
+4. Check the enable checkbox (the one in line with the previous textboxes)
+
+Mouse Binds
+1. Click the Textbox for the mouse button you want to bind
+2. Enter your desired command in the selected TextBox. E.g "/ej" without quotes
+3. Check the enable checkbox (the one in line with the previous textbox)a
+
+Macro's (Keyboard only currently)
+Set "Command" TextBox to multiple commands with a * between each ("/ej*/tz*/ar") this will do each command
+with a delay between each command (delay can be changed in "Settings Tab")
+
+Toggle Tab on Keyboard Binds
+This will toggle between 2 commands each time you press the "Binded Key"
+
+Additional Information
+You can change many settings from the "Settings Tab". Check it out for yourself.</value>
   </data>
   <data name="RichTextBox1.Text" xml:space="preserve">
     <value>                    GNU GENERAL PUBLIC LICENSE
