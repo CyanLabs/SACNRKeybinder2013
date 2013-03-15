@@ -9913,6 +9913,12 @@ with a delay between each command (delay can be changed in "Settings Tab")
 Toggle Tab on Keyboard Binds
 This will toggle between 2 commands each time you press the "Binded Key"
 
+SAMP Username
+This allows you to have different keybinds based on SAMP Username, This is good for people who share a PC.
+
+AutoUpdate
+This will check automatically on startup for a new version and if found download it without needing user interaction
+
 Additional Information
 You can change many settings from the "Settings Tab". Check it out for yourself.</value>
   </data>

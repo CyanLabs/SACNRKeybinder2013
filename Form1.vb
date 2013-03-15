@@ -31,7 +31,7 @@ Public Class Form1
     Private Declare Auto Function GetWindowText Lib "user32" (ByVal hWnd As System.IntPtr, ByVal lpString As System.Text.StringBuilder, ByVal cch As Integer) As Integer
     Dim CurrentVersion As String = "v" & System.Reflection.Assembly.GetEntryAssembly.GetName().Version.ToString
     Dim ProgramName As String = System.Reflection.Assembly.GetEntryAssembly().GetName().Name.Replace(" ", "_")
-    Dim inisettings As New ini(Application.StartupPath & "\Keybinds.sav")
+    Dim inisettings As ini
     Dim GTALocation As String = ""
     Dim keybinderdisabled As Boolean = False
     Private Function GetCaption() As String
@@ -400,7 +400,7 @@ Public Class Form1
         Dim result = MsgBox("Are you sure you wish to reset all settings and keybinds?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
         If result = vbYes Then
             skipsavesettings = True
-            If IO.File.Exists(Application.StartupPath & "\Keybinds.sav") Then IO.File.Delete(Application.StartupPath & "\Keybinds.sav")
+            If IO.File.Exists(Application.StartupPath & "\keybinds\" & txtSAMPUsername.Text & "_keybinds.sav") Then IO.File.Delete(Application.StartupPath & "\keybinds\" & txtSAMPUsername.Text & "_keybinds.sav")
             MsgBox("Default settings restored! Application will now restart", vbInformation, "Success!")
             Application.Restart()
         End If
@@ -502,6 +502,13 @@ Public Class Form1
         End If
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtSAMPUsername.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "PlayerName", "Keybinds")
+        If Not IO.Directory.Exists(Application.StartupPath & "\keybinds") Then IO.Directory.CreateDirectory(Application.StartupPath & "\keybinds")
+        If IO.File.Exists(Application.StartupPath & "\keybinds.sav") Then
+            IO.File.Copy(Application.StartupPath & "\keybinds.sav", Application.StartupPath & "\keybinds\" & txtSAMPUsername.Text & "_keybinds.sav", True)
+            IO.File.Delete(Application.StartupPath & "\keybinds.sav")
+        End If
+        inisettings = New ini(Application.StartupPath & "\keybinds\" & txtSAMPUsername.Text & "_keybinds.sav")
         CheckForIllegalCrossThreadCalls = False
         lblVersion.Text = CurrentVersion.ToString
         If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "gta_sa_exe", Nothing) Is Nothing Then
@@ -589,7 +596,7 @@ Public Class Form1
             Catch webex As WebException
                 MsgBox(webex.Message.ToString)
             End Try
-            End If
+        End If
     End Sub
 
     ''' <summary>Download file</summary>
@@ -660,5 +667,14 @@ Public Class Form1
         Else
             Timer1.Stop()
         End If
+    End Sub
+
+    Private Sub btnSaveRestart_Click(sender As Object, e As EventArgs) Handles btnSaveRestart.Click
+        Dim result = MsgBox("This will change the SAMP username." & vbNewLine & "All settings and keybinds will be saved as 'OLDNAME_Keybinds.sav' and a new file called '" & txtSAMPUsername.Text & "_keybinds.sav' will be used. You can switch back to your old username at any time by changing this textbox back." & vbNewLine & vbNewLine & "Are you sure you want to change SAMP Username?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
+        If result = vbYes Then
+           My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\SAMP", "PlayerName", txtSAMPUsername.Text)
+            Application.Restart()
+        End If
+
     End Sub
 End Class

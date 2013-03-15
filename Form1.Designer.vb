@@ -175,6 +175,11 @@ Partial Class Form1
         Me.txtSB1 = New SACNR_Keybinder_2013_Edition.ReactorTextBox()
         Me.txtSB2 = New SACNR_Keybinder_2013_Edition.ReactorTextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.ReactorGroupBox7 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
+        Me.btnSaveRestart = New SACNR_Keybinder_2013_Edition.ReactorButton()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.txtSAMPUsername = New SACNR_Keybinder_2013_Edition.ReactorTextBox()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.ReactorGroupBox6 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
         Me.chkEnableLogs = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.ReactorGroupBox5 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
@@ -212,6 +217,7 @@ Partial Class Form1
         Me.TabPage7.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.ReactorGroupBox7.SuspendLayout()
         Me.ReactorGroupBox6.SuspendLayout()
         Me.ReactorGroupBox5.SuspendLayout()
         Me.ReactorGroupBox4.SuspendLayout()
@@ -2178,6 +2184,7 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.TabPage3.Controls.Add(Me.ReactorGroupBox7)
         Me.TabPage3.Controls.Add(Me.ReactorGroupBox6)
         Me.TabPage3.Controls.Add(Me.ReactorGroupBox5)
         Me.TabPage3.Controls.Add(Me.ReactorGroupBox4)
@@ -2190,6 +2197,61 @@ Partial Class Form1
         Me.TabPage3.Size = New System.Drawing.Size(582, 334)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Settings"
+        '
+        'ReactorGroupBox7
+        '
+        Me.ReactorGroupBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.ReactorGroupBox7.Controls.Add(Me.btnSaveRestart)
+        Me.ReactorGroupBox7.Controls.Add(Me.Label33)
+        Me.ReactorGroupBox7.Controls.Add(Me.txtSAMPUsername)
+        Me.ReactorGroupBox7.Controls.Add(Me.Label32)
+        Me.ReactorGroupBox7.Location = New System.Drawing.Point(167, 94)
+        Me.ReactorGroupBox7.Name = "ReactorGroupBox7"
+        Me.ReactorGroupBox7.Size = New System.Drawing.Size(409, 79)
+        Me.ReactorGroupBox7.TabIndex = 60
+        Me.ReactorGroupBox7.Text = "Username Settings"
+        '
+        'btnSaveRestart
+        '
+        Me.btnSaveRestart.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
+        Me.btnSaveRestart.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveRestart.Location = New System.Drawing.Point(310, 31)
+        Me.btnSaveRestart.Name = "btnSaveRestart"
+        Me.btnSaveRestart.Size = New System.Drawing.Size(96, 41)
+        Me.btnSaveRestart.TabIndex = 56
+        Me.btnSaveRestart.Text = "Save And Restart"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.ForeColor = System.Drawing.Color.White
+        Me.Label33.Location = New System.Drawing.Point(13, 31)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(287, 12)
+        Me.Label33.TabIndex = 6
+        Me.Label33.Text = "Changes SAMP Username and name of keybinds.sav file"
+        '
+        'txtSAMPUsername
+        '
+        Me.txtSAMPUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.txtSAMPUsername.ForeColor = System.Drawing.Color.White
+        Me.txtSAMPUsername.Location = New System.Drawing.Point(105, 50)
+        Me.txtSAMPUsername.MaxCharacters = 32767
+        Me.txtSAMPUsername.Name = "txtSAMPUsername"
+        Me.txtSAMPUsername.Size = New System.Drawing.Size(199, 22)
+        Me.txtSAMPUsername.TabIndex = 5
+        Me.txtSAMPUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtSAMPUsername.UsePasswordMask = False
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.ForeColor = System.Drawing.Color.White
+        Me.Label32.Location = New System.Drawing.Point(11, 54)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(97, 12)
+        Me.Label32.TabIndex = 4
+        Me.Label32.Text = "SAMP Username: "
         '
         'ReactorGroupBox6
         '
@@ -2420,7 +2482,6 @@ Partial Class Form1
         Me.RichTextBox2.Size = New System.Drawing.Size(574, 283)
         Me.RichTextBox2.TabIndex = 3
         Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
-        Me.RichTextBox2.WordWrap = False
         '
         'TabPage9
         '
@@ -2513,6 +2574,8 @@ Partial Class Form1
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
+        Me.ReactorGroupBox7.ResumeLayout(False)
+        Me.ReactorGroupBox7.PerformLayout()
         Me.ReactorGroupBox6.ResumeLayout(False)
         Me.ReactorGroupBox5.ResumeLayout(False)
         Me.ReactorGroupBox4.ResumeLayout(False)
@@ -2709,5 +2772,10 @@ Partial Class Form1
     Friend WithEvents TabPage9 As System.Windows.Forms.TabPage
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
+    Friend WithEvents ReactorGroupBox7 As SACNR_Keybinder_2013_Edition.ReactorGroupBox
+    Friend WithEvents txtSAMPUsername As SACNR_Keybinder_2013_Edition.ReactorTextBox
+    Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents btnSaveRestart As SACNR_Keybinder_2013_Edition.ReactorButton
 
 End Class
