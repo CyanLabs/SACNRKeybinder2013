@@ -2416,6 +2416,7 @@ Partial Class Form1
         Me.RichTextBox2.ForeColor = System.Drawing.Color.PowderBlue
         Me.RichTextBox2.Location = New System.Drawing.Point(0, 26)
         Me.RichTextBox2.Name = "RichTextBox2"
+        Me.RichTextBox2.ReadOnly = True
         Me.RichTextBox2.Size = New System.Drawing.Size(574, 283)
         Me.RichTextBox2.TabIndex = 3
         Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
