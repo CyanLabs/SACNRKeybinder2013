@@ -13,7 +13,8 @@ Option Strict Off
 Imports System.Threading
 Imports System.Net
 Imports System.Text.RegularExpressions
-
+Imports Microsoft.Xna.Framework
+Imports Microsoft.Xna.Framework.Input
 Public Class Form1
     Dim running As Integer = 1
     Dim t1, t2, t3, t4, t5, t6, t7, t8, t9, t10 As Boolean
@@ -457,6 +458,15 @@ Public Class Form1
                 inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
             End If
         Next
+        For Each ctrl In Me.ReactorTabControl1.TabPages(2).Controls
+            If TypeOf ctrl Is ReactorTextBox Then
+                Dim optionname As String = ctrl.name.replace("txt", "360")
+                inisettings.WriteString("360", optionname, ctrl.text)
+            ElseIf TypeOf ctrl Is ReactorCheckBox Then
+                Dim activation As String = ctrl.name.replace("chk", "360act")
+                inisettings.WriteString("360", activation, ctrl.checked.ToString)
+            End If
+        Next
         inisettings.WriteString("Settings", "EnableToggle", chkSettingToggle.Checked.ToString)
         inisettings.WriteString("Settings", "ToggleKey", TextBox21.Text)
         inisettings.WriteString("Mouse", "LeftClick", txtlmb.Text)
@@ -554,6 +564,15 @@ Public Class Form1
                 ctrl.checked = inisettings.GetString("Activate", activation, False)
             End If
         Next
+        For Each ctrl In Me.ReactorTabControl1.TabPages(2).Controls
+            If TypeOf ctrl Is ReactorTextBox Then
+                Dim optionname As String = ctrl.name.replace("txt", "360")
+                ctrl.text = inisettings.GetString("360", optionname, ctrl.text)
+            ElseIf TypeOf ctrl Is ReactorCheckBox Then
+                Dim activation As String = ctrl.name.replace("chk", "360act")
+                ctrl.checked = inisettings.GetString("360", activation, False)
+            End If
+        Next
         chkSettingToggle.Checked = inisettings.GetString("Settings", "EnableToggle", False)
         If chkSettingToggle.Checked = True Then
             currentpage = 1
@@ -575,6 +594,8 @@ Public Class Form1
         chkSB2.Checked = inisettings.GetString("Mouse", "SB2ClickActivated", False)
         chkAutoupdates.Checked = inisettings.GetString("Settings", "AutoUpdate", False)
         TrackBar1.Value = inisettings.GetInteger("Settings", "MacroDelay", 0)
+        TrackBar2.Value = inisettings.GetInteger("360", "Interval", 1)
+        Timer2.Interval = TrackBar2.Value * 100
         chkEnableLogs.Checked = inisettings.GetString("Settings", "EnableLogManager", False)
         If chkEnableLogs.Checked = True Then
             Timer1.Start()
@@ -676,5 +697,93 @@ Public Class Form1
             Application.Restart()
         End If
 
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        CapTxt = GetCaption()
+        If DebugChkSkipWindowCheck.Checked = True Then
+            CapTxt = "GTA:SA:MP"
+        End If
+        If CapTxt = "GTA:SA:MP" Then
+            Dim currentState As GamePadState = GamePad.GetState(PlayerIndex.One)
+            If currentState.IsConnected Then
+                If chkButtonA.Checked = True Then
+                    If currentState.Buttons.A = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtButtonA)
+                    End If
+                End If
+                If chkButtonX.Checked = True Then
+                    If currentState.Buttons.X = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtButtonX)
+                    End If
+                End If
+                If chkButtonY.Checked = True Then
+                    If currentState.Buttons.Y = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtButtonY)
+                    End If
+                End If
+                If chkButtonB.Checked = True Then
+                    If currentState.Buttons.B = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtButtonB)
+                    End If
+                End If
+                If chkRB.Checked = True Then
+                    If currentState.Buttons.RightShoulder = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtRB)
+                    End If
+                End If
+                If chkLB.Checked = True Then
+                    If currentState.Buttons.LeftShoulder = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtLb)
+                    End If
+                End If
+                If chkDpadDown.Checked = True Then
+                    If currentState.DPad.Down = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtDpadDown)
+                    End If
+                End If
+                If chkDpadLeft.Checked = True Then
+                    If currentState.DPad.Left = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtDpadLeft)
+                    End If
+                End If
+                If chkDpadRight.Checked = True Then
+                    If currentState.DPad.Right = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtDpadRight)
+                    End If
+                End If
+                If chkDpadUp.Checked = True Then
+                    If currentState.DPad.Up = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtDpadUp)
+                    End If
+                End If
+                If chkRightStick.Checked = True Then
+                    If currentState.Buttons.RightStick = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtRightStickPress)
+                    End If
+                End If
+                If chkLeftStick.Checked = True Then
+                    If currentState.Buttons.LeftStick = ButtonState.Pressed Then
+                        trd2 = New Thread(AddressOf macro)
+                        trd2.Start(txtLeftStickPress)
+                    End If
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub TrackBar2_Scroll(sender As Object, e As EventArgs) Handles TrackBar2.Scroll
+        inisettings.WriteInteger("360", "Interval", sender.value)
     End Sub
 End Class
