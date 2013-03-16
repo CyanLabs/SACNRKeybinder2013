@@ -136,7 +136,7 @@ Public Class Form1
                 subsubstr = subsubstr.Remove(subsubstr.IndexOf(varchar))
                 substr = substr.Replace(subsubstr & varchar, "")
                 SendKeys.SendWait("t" + subsubstr + "{Enter}")
-                Thread.Sleep(TrackBar1.Value * 1000)
+                Thread.Sleep(Convert.ToInt32(txtMacroDelay.Text))
             End If
         Loop While substr.Contains(varchar) = True
         SendKeys.SendWait("t" + substr + "{Enter}")
@@ -593,12 +593,21 @@ Public Class Form1
         chkSB1.Checked = inisettings.GetString("Mouse", "SB1ClickActivated", False)
         chkSB2.Checked = inisettings.GetString("Mouse", "SB2ClickActivated", False)
         chkAutoupdates.Checked = inisettings.GetString("Settings", "AutoUpdate", False)
-        TrackBar1.Value = inisettings.GetInteger("Settings", "MacroDelay", 0)
+        TrackBar1.Value = inisettings.GetInteger("Settings", "MacroDelay", 0) / 1000
+        txtMacroDelay.Text = Convert.ToInt32(inisettings.GetInteger("Settings", "MacroDelay", 0))
         TrackBar2.Value = inisettings.GetInteger("360", "Interval", 1)
         Timer2.Interval = TrackBar2.Value * 100
         chkEnableLogs.Checked = inisettings.GetString("Settings", "EnableLogManager", False)
+        chkEnable360.Checked = inisettings.GetString("360", "MasterToggle", False)
+        If chkEnable360.Checked = True Then
+            Timer2.Start()
+        Else
+            Timer2.Stop()
+        End If
         If chkEnableLogs.Checked = True Then
             Timer1.Start()
+        Else
+            Timer1.Stop()
         End If
         If inisettings.GetString("Settings", "AutoUpdate", False) = True Then
 
@@ -651,7 +660,14 @@ Public Class Form1
     End Sub
 
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
-        inisettings.WriteInteger("Settings", "MacroDelay", sender.value)
+        If sender.value = 9 Then
+                txtMacroDelay.Visible = True
+                MsgBox("Enter your custom value in miliseconds in the textbox below", MsgBoxStyle.Information, "Information")
+        Else
+            txtMacroDelay.Visible = False
+            inisettings.WriteInteger("Settings", "MacroDelay", sender.value * 1000)
+            txtMacroDelay.Text = Convert.ToInt32(sender.value * 1000)
+        End If
     End Sub
     Public Function IsProcessRunning(name As String) As Boolean
         For Each clsProcess As Process In Process.GetProcesses()
@@ -785,5 +801,23 @@ Public Class Form1
 
     Private Sub TrackBar2_Scroll(sender As Object, e As EventArgs) Handles TrackBar2.Scroll
         inisettings.WriteInteger("360", "Interval", sender.value)
+    End Sub
+
+    Private Sub chkEnable360_CheckedChanged(sender As Object) Handles chkEnable360.CheckedChanged
+        inisettings.WriteInteger("360", "MasterToggle", sender.value)
+        If sender.Checked = True Then
+            Timer2.Start()
+        Else
+            Timer2.Stop()
+        End If
+    End Sub
+
+    Private Sub txtMacroDelay_TextChanged(sender As Object, e As EventArgs) Handles txtMacroDelay.TextChanged
+        If IsNumeric(sender.text) Then
+            Debug.WriteLine(Convert.ToInt32(sender.text))
+            inisettings.WriteInteger("Settings", "MacroDelay", Convert.ToInt32(sender.text))
+        Else
+            MsgBox("You did not enter a numerical value, please enter only numbers and decimals", MsgBoxStyle.Critical, "Error")
+        End If
     End Sub
 End Class
