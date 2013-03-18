@@ -19,6 +19,7 @@ Public Class Form1
     Dim running As Integer = 1
     Dim t1, t2, t3, t4, t5, t6, t7, t8, t9, t10 As Boolean
     Dim wClient As WebClient
+    Dim finishedload As Boolean = False
     Dim varchar As Char = "*"
     Dim currentpage As Integer = 0
     Dim CapTxt As String = ""
@@ -407,82 +408,85 @@ Public Class Form1
         End If
     End Sub
     Sub savesettings()
-        For Each ctrl In Me.ReactorTabControl2.TabPages(0).Controls
-            If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
-                inisettings.WriteString("SendKey", optionname, ctrl.Text)
-            End If
-            If TypeOf ctrl Is TextBox Then
-                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
-                If ctrl.text = Nothing Then
-                Else
-                    inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
+        If finishedload = True Then
+            For Each ctrl In Me.ReactorTabControl2.TabPages(0).Controls
+                If TypeOf ctrl Is ReactorTextBox Then
+                    Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
+                    inisettings.WriteString("SendKey", optionname, ctrl.Text)
                 End If
-            End If
-            If TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
-                inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
-            End If
-        Next
-        For Each ctrl In Me.ReactorTabControl2.TabPages(1).Controls
-            If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
-                inisettings.WriteString("SendKey", optionname, ctrl.Text)
-            End If
-            If TypeOf ctrl Is TextBox Then
-                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
-                If ctrl.text = Nothing Then
-                Else
-                    inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
+                If TypeOf ctrl Is TextBox Then
+                    Dim optionname As String = ctrl.name.replace("TextBox", "Key")
+                    If ctrl.text = Nothing Then
+                    Else
+                        inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
+                    End If
                 End If
-            End If
-            If TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
-                inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
-            End If
-        Next
-        For Each ctrl In Me.ReactorTabControl2.TabPages(2).Controls
-            If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
-                inisettings.WriteString("SendKey", optionname, ctrl.Text)
-            End If
-            If TypeOf ctrl Is TextBox Then
-                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
-                If ctrl.text = Nothing Then
-                Else
-                    inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
+                If TypeOf ctrl Is ReactorCheckBox Then
+                    Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
+                    inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
                 End If
-            End If
-            If TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
-                inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
-            End If
-        Next
-        For Each ctrl In Me.ReactorTabControl1.TabPages(2).Controls
-            If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("txt", "360")
-                inisettings.WriteString("360", optionname, ctrl.text)
-            ElseIf TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("chk", "360act")
-                inisettings.WriteString("360", activation, ctrl.checked.ToString)
-            End If
-        Next
-        inisettings.WriteString("Settings", "EnableToggle", chkSettingToggle.Checked.ToString)
-        inisettings.WriteString("Settings", "ToggleKey", TextBox21.Text)
-        inisettings.WriteString("Mouse", "LeftClick", txtlmb.Text)
-        inisettings.WriteString("Mouse", "RightClick", txtRMB.Text)
-        inisettings.WriteString("Mouse", "MiddleClick", txtMMB.Text)
-        inisettings.WriteString("Mouse", "WheelUp", txtWheelUp.Text)
-        inisettings.WriteString("Mouse", "WheelDown", txtWheelDown.Text)
-        inisettings.WriteString("Mouse", "SB1Click", txtSB1.Text)
-        inisettings.WriteString("Mouse", "SB2Click", txtSB2.Text)
-        inisettings.WriteString("Mouse", "LeftClickActivated", chkLMB.Checked.ToString)
-        inisettings.WriteString("Mouse", "RightClickActivated", chkRMB.Checked.ToString)
-        inisettings.WriteString("Mouse", "MiddleClickActivated", chkMMB.Checked.ToString)
-        inisettings.WriteString("Mouse", "WheelUpActivated", chkWheelUp.Checked.ToString)
-        inisettings.WriteString("Mouse", "WheelDownActivated", chkWheelDown.Checked.ToString)
-        inisettings.WriteString("Mouse", "SB1ClickActivated", chkSB1.Checked.ToString)
-        inisettings.WriteString("Mouse", "SB2ClickActivated", chkSB2.Checked.ToString)
+            Next
+            For Each ctrl In Me.ReactorTabControl2.TabPages(1).Controls
+                If TypeOf ctrl Is ReactorTextBox Then
+                    Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
+                    inisettings.WriteString("SendKey", optionname, ctrl.Text)
+                End If
+                If TypeOf ctrl Is TextBox Then
+                    Dim optionname As String = ctrl.name.replace("TextBox", "Key")
+                    If ctrl.text = Nothing Then
+                    Else
+                        inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
+                    End If
+                End If
+                If TypeOf ctrl Is ReactorCheckBox Then
+                    Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
+                    inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
+                End If
+            Next
+            For Each ctrl In Me.ReactorTabControl2.TabPages(2).Controls
+                If TypeOf ctrl Is ReactorTextBox Then
+                    Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
+                    inisettings.WriteString("SendKey", optionname, ctrl.Text)
+                End If
+                If TypeOf ctrl Is TextBox Then
+                    Dim optionname As String = ctrl.name.replace("TextBox", "Key")
+                    If ctrl.text = Nothing Then
+                    Else
+                        inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
+                    End If
+                End If
+                If TypeOf ctrl Is ReactorCheckBox Then
+                    Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
+                    inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
+                End If
+            Next
+            For Each ctrl In Me.ReactorTabControl1.TabPages(2).Controls
+                If TypeOf ctrl Is ReactorTextBox Then
+                    Dim optionname As String = ctrl.name.replace("txt", "360")
+                    inisettings.WriteString("360", optionname, ctrl.text)
+                ElseIf TypeOf ctrl Is ReactorCheckBox Then
+                    Dim activation As String = ctrl.name.replace("chk", "360act")
+                    inisettings.WriteString("360", activation, ctrl.checked.ToString)
+                End If
+            Next
+            inisettings.WriteString("Settings", "EnableToggle", chkSettingToggle.Checked.ToString)
+            inisettings.WriteString("Settings", "ToggleKey", TextBox21.Text)
+            inisettings.WriteString("Mouse", "LeftClick", txtlmb.Text)
+            inisettings.WriteString("Mouse", "RightClick", txtRMB.Text)
+            inisettings.WriteString("Mouse", "MiddleClick", txtMMB.Text)
+            inisettings.WriteString("Mouse", "WheelUp", txtWheelUp.Text)
+            inisettings.WriteString("Mouse", "WheelDown", txtWheelDown.Text)
+            inisettings.WriteString("Mouse", "SB1Click", txtSB1.Text)
+            inisettings.WriteString("Mouse", "SB2Click", txtSB2.Text)
+            inisettings.WriteString("Mouse", "LeftClickActivated", chkLMB.Checked.ToString)
+            inisettings.WriteString("Mouse", "RightClickActivated", chkRMB.Checked.ToString)
+            inisettings.WriteString("Mouse", "MiddleClickActivated", chkMMB.Checked.ToString)
+            inisettings.WriteString("Mouse", "WheelUpActivated", chkWheelUp.Checked.ToString)
+            inisettings.WriteString("Mouse", "WheelDownActivated", chkWheelDown.Checked.ToString)
+            inisettings.WriteString("Mouse", "SB1ClickActivated", chkSB1.Checked.ToString)
+            inisettings.WriteString("Mouse", "SB2ClickActivated", chkSB2.Checked.ToString)
+            inisettings.WriteString("Settings", "ShowChangelog", chkSkipChangelog.Checked.ToString)
+        End If
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs)
@@ -511,7 +515,22 @@ Public Class Form1
             Me.ShowInTaskbar = False
         End If
     End Sub
+    Public Function GetChangelog(ByVal PageURL As String) As String
+        Dim S As String = ""
+        Try
+            Dim Request As HttpWebRequest = WebRequest.Create(PageURL)
+            Dim Response As HttpWebResponse = Request.GetResponse()
+            Using Reader As IO.StreamReader = New IO.StreamReader(Response.GetResponseStream())
+                S = Reader.ReadToEnd
+            End Using
+        Catch ex As Exception
+            MsgBox("Failed to retrieve changelog", MsgBoxStyle.Exclamation, "Error")
+        End Try
+
+        Return S
+    End Function
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CheckForIllegalCrossThreadCalls = False
         txtSAMPUsername.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "PlayerName", "Keybinds")
         If Not IO.Directory.Exists(Application.StartupPath & "\keybinds") Then IO.Directory.CreateDirectory(Application.StartupPath & "\keybinds")
         If IO.File.Exists(Application.StartupPath & "\keybinds.sav") Then
@@ -519,7 +538,30 @@ Public Class Form1
             IO.File.Delete(Application.StartupPath & "\keybinds.sav")
         End If
         inisettings = New ini(Application.StartupPath & "\keybinds\" & txtSAMPUsername.Text & "_keybinds.sav")
-        CheckForIllegalCrossThreadCalls = False
+        If Not My.Application.CommandLineArgs.Count = 0 Then
+            If My.Application.CommandLineArgs(0) = "updated" Then
+                If inisettings.GetString("Settings", "ShowChangelog", True) = True Then
+                    changelog.ShowDialog()
+                End If
+            End If
+        End If
+        
+        If inisettings.GetString("Settings", "AutoUpdate", False) = True Then
+            Dim NewVersion As String = ""
+            wClient = New WebClient
+            Try
+                NewVersion = wClient.DownloadString("http://cyanlabs.co.uk/updatechecker/" & ProductName.Replace(" ", "_") & "/version.html")
+                If Not NewVersion = Nothing Then
+                    If NewVersion > CurrentVersion = True Then
+                        If IO.File.Exists(Application.StartupPath & "\AutoUpdater.exe") Then IO.File.Delete(Application.StartupPath & "\AutoUpdater.exe")
+                        DownloadUpdater("http://cyanlabs.co.uk/updatechecker/AutoUpdater.exe", Application.StartupPath & "\AutoUpdater.exe")
+                    End If
+                End If
+            Catch webex As WebException
+                MsgBox(webex.Message.ToString)
+            End Try
+        End If
+
         lblVersion.Text = CurrentVersion.ToString
         If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "gta_sa_exe", Nothing) Is Nothing Then
             MsgBox("GTA_SA.exe Not Detected (SACNR can not be directly launched)", vbCritical, "ERROR")
@@ -599,6 +641,7 @@ Public Class Form1
         Timer2.Interval = TrackBar2.Value * 100
         chkEnableLogs.Checked = inisettings.GetString("Settings", "EnableLogManager", False)
         chkEnable360.Checked = inisettings.GetString("360", "MasterToggle", False)
+        chkSkipChangelog.Checked = inisettings.GetString("Settings", "ShowChangelog", True)
         If chkEnable360.Checked = True Then
             Timer2.Start()
         Else
@@ -609,24 +652,7 @@ Public Class Form1
         Else
             Timer1.Stop()
         End If
-        If inisettings.GetString("Settings", "AutoUpdate", False) = True Then
-
-            Dim NewVersion As String = ""
-
-            wClient = New WebClient
-            Try
-                NewVersion = wClient.DownloadString("http://cyanlabs.co.uk/updatechecker/" & ProductName.Replace(" ", "_") & "/version.html")
-
-                If Not NewVersion = Nothing Then
-                    If NewVersion > CurrentVersion = True Then
-                        If IO.File.Exists(Application.StartupPath & "\AutoUpdater.exe") Then IO.File.Delete(Application.StartupPath & "\AutoUpdater.exe")
-                        DownloadUpdater("http://cyanlabs.co.uk/updatechecker/AutoUpdater.exe", Application.StartupPath & "\AutoUpdater.exe")
-                    End If
-                End If
-            Catch webex As WebException
-                MsgBox(webex.Message.ToString)
-            End Try
-        End If
+        finishedload = True
     End Sub
 
     ''' <summary>Download file</summary>
@@ -697,7 +723,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub chkEnableLogs_CheckedChanged(sender As Object) Handles chkEnableLogs.CheckedChanged
+    Private Sub chkEnableLogs_CheckedChanged(sender As Object) Handles chkEnableLogs.CheckedChanged, chkSkipChangelog.CheckedChanged
         inisettings.WriteString("Settings", "EnableLogManager", sender.checked.ToString)
         If sender.Checked = True Then
             Timer1.Start()

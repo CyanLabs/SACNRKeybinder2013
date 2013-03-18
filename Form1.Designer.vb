@@ -248,6 +248,7 @@ Partial Class Form1
         Me.Label49 = New System.Windows.Forms.Label()
         Me.Label61 = New System.Windows.Forms.Label()
         Me.ReactorGroupBox2 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
+        Me.chkSkipChangelog = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.chkEnableLogs = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.chkAutoupdates = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.ReactorGroupBox3 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
@@ -2879,7 +2880,7 @@ Partial Class Form1
         Me.ReactorGroupBox7.Controls.Add(Me.Label32)
         Me.ReactorGroupBox7.Location = New System.Drawing.Point(6, 108)
         Me.ReactorGroupBox7.Name = "ReactorGroupBox7"
-        Me.ReactorGroupBox7.Size = New System.Drawing.Size(409, 79)
+        Me.ReactorGroupBox7.Size = New System.Drawing.Size(409, 86)
         Me.ReactorGroupBox7.TabIndex = 60
         Me.ReactorGroupBox7.Text = "Username Settings"
         '
@@ -2887,9 +2888,9 @@ Partial Class Form1
         '
         Me.btnSaveRestart.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
         Me.btnSaveRestart.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveRestart.Location = New System.Drawing.Point(310, 31)
+        Me.btnSaveRestart.Location = New System.Drawing.Point(308, 27)
         Me.btnSaveRestart.Name = "btnSaveRestart"
-        Me.btnSaveRestart.Size = New System.Drawing.Size(96, 41)
+        Me.btnSaveRestart.Size = New System.Drawing.Size(96, 56)
         Me.btnSaveRestart.TabIndex = 56
         Me.btnSaveRestart.Text = "Save And Restart"
         '
@@ -2907,7 +2908,7 @@ Partial Class Form1
         '
         Me.txtSAMPUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtSAMPUsername.ForeColor = System.Drawing.Color.White
-        Me.txtSAMPUsername.Location = New System.Drawing.Point(105, 50)
+        Me.txtSAMPUsername.Location = New System.Drawing.Point(105, 54)
         Me.txtSAMPUsername.MaxCharacters = 32767
         Me.txtSAMPUsername.Name = "txtSAMPUsername"
         Me.txtSAMPUsername.Size = New System.Drawing.Size(199, 22)
@@ -2919,7 +2920,7 @@ Partial Class Form1
         '
         Me.Label32.AutoSize = True
         Me.Label32.ForeColor = System.Drawing.Color.White
-        Me.Label32.Location = New System.Drawing.Point(11, 54)
+        Me.Label32.Location = New System.Drawing.Point(11, 59)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(97, 12)
         Me.Label32.TabIndex = 4
@@ -3114,20 +3115,32 @@ Partial Class Form1
         'ReactorGroupBox2
         '
         Me.ReactorGroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.ReactorGroupBox2.Controls.Add(Me.chkSkipChangelog)
         Me.ReactorGroupBox2.Controls.Add(Me.chkEnableLogs)
         Me.ReactorGroupBox2.Controls.Add(Me.chkAutoupdates)
         Me.ReactorGroupBox2.Location = New System.Drawing.Point(418, 108)
         Me.ReactorGroupBox2.Name = "ReactorGroupBox2"
-        Me.ReactorGroupBox2.Size = New System.Drawing.Size(158, 79)
+        Me.ReactorGroupBox2.Size = New System.Drawing.Size(158, 86)
         Me.ReactorGroupBox2.TabIndex = 54
         Me.ReactorGroupBox2.Text = "                           Miscellaneous Settings"
+        '
+        'chkSkipChangelog
+        '
+        Me.chkSkipChangelog.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.chkSkipChangelog.Checked = True
+        Me.chkSkipChangelog.ForeColor = System.Drawing.Color.White
+        Me.chkSkipChangelog.Location = New System.Drawing.Point(13, 45)
+        Me.chkSkipChangelog.Name = "chkSkipChangelog"
+        Me.chkSkipChangelog.Size = New System.Drawing.Size(126, 16)
+        Me.chkSkipChangelog.TabIndex = 3
+        Me.chkSkipChangelog.Text = "Show Changelog"
         '
         'chkEnableLogs
         '
         Me.chkEnableLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkEnableLogs.Checked = False
         Me.chkEnableLogs.ForeColor = System.Drawing.Color.White
-        Me.chkEnableLogs.Location = New System.Drawing.Point(13, 55)
+        Me.chkEnableLogs.Location = New System.Drawing.Point(13, 65)
         Me.chkEnableLogs.Name = "chkEnableLogs"
         Me.chkEnableLogs.Size = New System.Drawing.Size(126, 16)
         Me.chkEnableLogs.TabIndex = 3
@@ -3138,7 +3151,7 @@ Partial Class Form1
         Me.chkAutoupdates.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkAutoupdates.Checked = False
         Me.chkAutoupdates.ForeColor = System.Drawing.Color.White
-        Me.chkAutoupdates.Location = New System.Drawing.Point(13, 31)
+        Me.chkAutoupdates.Location = New System.Drawing.Point(13, 26)
         Me.chkAutoupdates.Name = "chkAutoupdates"
         Me.chkAutoupdates.Size = New System.Drawing.Size(126, 16)
         Me.chkAutoupdates.TabIndex = 2
@@ -3340,6 +3353,7 @@ Partial Class Form1
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SACNR Keybinder 2013 Edition"
         Me.ReactorTheme1.ResumeLayout(False)
         CType(Me.imgLogo2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3621,5 +3635,6 @@ Partial Class Form1
     Friend WithEvents txtMacroDelay As SACNR_Keybinder_2013_Edition.ReactorTextBox
     Friend WithEvents Label49 As System.Windows.Forms.Label
     Friend WithEvents Label61 As System.Windows.Forms.Label
+    Friend WithEvents chkSkipChangelog As SACNR_Keybinder_2013_Edition.ReactorCheckBox
 
 End Class
