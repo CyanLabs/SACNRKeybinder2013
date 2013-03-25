@@ -217,6 +217,12 @@ Partial Class Form1
         Me.txtButtonA = New SACNR_Keybinder_2013_Edition.ReactorTextBox()
         Me.txtButtonB = New SACNR_Keybinder_2013_Edition.ReactorTextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.ReactorGroupBox9 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
+        Me.txtFeedback = New SACNR_Keybinder_2013_Edition.ReactorMultiLineTextBox()
+        Me.btnSendRequest = New SACNR_Keybinder_2013_Edition.ReactorButton()
+        Me.ReactorGroupBox6 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
+        Me.btnLogs = New SACNR_Keybinder_2013_Edition.ReactorButton()
+        Me.chkEnableLogs = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.ReactorGroupBox8 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
         Me.Label59 = New System.Windows.Forms.Label()
         Me.Label58 = New System.Windows.Forms.Label()
@@ -249,7 +255,6 @@ Partial Class Form1
         Me.Label61 = New System.Windows.Forms.Label()
         Me.ReactorGroupBox2 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
         Me.chkSkipChangelog = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
-        Me.chkEnableLogs = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.chkAutoupdates = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
         Me.ReactorGroupBox3 = New SACNR_Keybinder_2013_Edition.ReactorGroupBox()
         Me.chkSettingToggle = New SACNR_Keybinder_2013_Edition.ReactorCheckBox()
@@ -262,11 +267,14 @@ Partial Class Form1
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
+        Me.TabPage11 = New System.Windows.Forms.TabPage()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.lblVersion = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label62 = New System.Windows.Forms.Label()
         Me.ReactorTheme1.SuspendLayout()
         CType(Me.imgLogo2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ReactorTabControl1.SuspendLayout()
@@ -278,6 +286,8 @@ Partial Class Form1
         Me.TabPage6.SuspendLayout()
         Me.TabPage10.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.ReactorGroupBox9.SuspendLayout()
+        Me.ReactorGroupBox6.SuspendLayout()
         Me.ReactorGroupBox8.SuspendLayout()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ReactorGroupBox7.SuspendLayout()
@@ -290,6 +300,7 @@ Partial Class Form1
         Me.TabPage2.SuspendLayout()
         Me.ReactorTabControl3.SuspendLayout()
         Me.TabPage8.SuspendLayout()
+        Me.TabPage11.SuspendLayout()
         Me.TabPage9.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -2771,6 +2782,8 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.TabPage3.Controls.Add(Me.ReactorGroupBox9)
+        Me.TabPage3.Controls.Add(Me.ReactorGroupBox6)
         Me.TabPage3.Controls.Add(Me.ReactorGroupBox8)
         Me.TabPage3.Controls.Add(Me.ReactorGroupBox7)
         Me.TabPage3.Controls.Add(Me.ReactorGroupBox5)
@@ -2785,6 +2798,71 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Settings"
         '
+        'ReactorGroupBox9
+        '
+        Me.ReactorGroupBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.ReactorGroupBox9.Controls.Add(Me.txtFeedback)
+        Me.ReactorGroupBox9.Controls.Add(Me.btnSendRequest)
+        Me.ReactorGroupBox9.Location = New System.Drawing.Point(167, 189)
+        Me.ReactorGroupBox9.Name = "ReactorGroupBox9"
+        Me.ReactorGroupBox9.Size = New System.Drawing.Size(409, 85)
+        Me.ReactorGroupBox9.TabIndex = 64
+        Me.ReactorGroupBox9.Text = "Feedback and Suggestions"
+        '
+        'txtFeedback
+        '
+        Me.txtFeedback.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.txtFeedback.ForeColor = System.Drawing.Color.White
+        Me.txtFeedback.Location = New System.Drawing.Point(5, 26)
+        Me.txtFeedback.MaxCharacters = 32767
+        Me.txtFeedback.Name = "txtFeedback"
+        Me.txtFeedback.Size = New System.Drawing.Size(318, 55)
+        Me.txtFeedback.TabIndex = 58
+        Me.txtFeedback.Text = "Leave feedback or suggest a new feature or change here."
+        Me.txtFeedback.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'btnSendRequest
+        '
+        Me.btnSendRequest.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
+        Me.btnSendRequest.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSendRequest.Location = New System.Drawing.Point(323, 26)
+        Me.btnSendRequest.Name = "btnSendRequest"
+        Me.btnSendRequest.Size = New System.Drawing.Size(83, 57)
+        Me.btnSendRequest.TabIndex = 57
+        Me.btnSendRequest.Text = "Submit Feedback"
+        '
+        'ReactorGroupBox6
+        '
+        Me.ReactorGroupBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.ReactorGroupBox6.Controls.Add(Me.btnLogs)
+        Me.ReactorGroupBox6.Controls.Add(Me.chkEnableLogs)
+        Me.ReactorGroupBox6.Location = New System.Drawing.Point(6, 189)
+        Me.ReactorGroupBox6.Name = "ReactorGroupBox6"
+        Me.ReactorGroupBox6.Size = New System.Drawing.Size(155, 85)
+        Me.ReactorGroupBox6.TabIndex = 63
+        Me.ReactorGroupBox6.Text = "Log Management"
+        '
+        'btnLogs
+        '
+        Me.btnLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
+        Me.btnLogs.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogs.Location = New System.Drawing.Point(15, 51)
+        Me.btnLogs.Name = "btnLogs"
+        Me.btnLogs.Size = New System.Drawing.Size(125, 30)
+        Me.btnLogs.TabIndex = 57
+        Me.btnLogs.Text = "Open Log Folder"
+        '
+        'chkEnableLogs
+        '
+        Me.chkEnableLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.chkEnableLogs.Checked = False
+        Me.chkEnableLogs.ForeColor = System.Drawing.Color.White
+        Me.chkEnableLogs.Location = New System.Drawing.Point(14, 30)
+        Me.chkEnableLogs.Name = "chkEnableLogs"
+        Me.chkEnableLogs.Size = New System.Drawing.Size(126, 16)
+        Me.chkEnableLogs.TabIndex = 3
+        Me.chkEnableLogs.Text = "Copy logs to ""\Logs"""
+        '
         'ReactorGroupBox8
         '
         Me.ReactorGroupBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
@@ -2797,7 +2875,7 @@ Partial Class Form1
         Me.ReactorGroupBox8.Controls.Add(Me.TrackBar2)
         Me.ReactorGroupBox8.Location = New System.Drawing.Point(166, 6)
         Me.ReactorGroupBox8.Name = "ReactorGroupBox8"
-        Me.ReactorGroupBox8.Size = New System.Drawing.Size(156, 96)
+        Me.ReactorGroupBox8.Size = New System.Drawing.Size(156, 93)
         Me.ReactorGroupBox8.TabIndex = 62
         Me.ReactorGroupBox8.Text = "                                    360 Controller Settings"
         '
@@ -2878,9 +2956,9 @@ Partial Class Form1
         Me.ReactorGroupBox7.Controls.Add(Me.Label33)
         Me.ReactorGroupBox7.Controls.Add(Me.txtSAMPUsername)
         Me.ReactorGroupBox7.Controls.Add(Me.Label32)
-        Me.ReactorGroupBox7.Location = New System.Drawing.Point(6, 108)
+        Me.ReactorGroupBox7.Location = New System.Drawing.Point(6, 102)
         Me.ReactorGroupBox7.Name = "ReactorGroupBox7"
-        Me.ReactorGroupBox7.Size = New System.Drawing.Size(409, 86)
+        Me.ReactorGroupBox7.Size = New System.Drawing.Size(409, 81)
         Me.ReactorGroupBox7.TabIndex = 60
         Me.ReactorGroupBox7.Text = "Username Settings"
         '
@@ -2890,7 +2968,7 @@ Partial Class Form1
         Me.btnSaveRestart.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSaveRestart.Location = New System.Drawing.Point(308, 27)
         Me.btnSaveRestart.Name = "btnSaveRestart"
-        Me.btnSaveRestart.Size = New System.Drawing.Size(96, 56)
+        Me.btnSaveRestart.Size = New System.Drawing.Size(96, 49)
         Me.btnSaveRestart.TabIndex = 56
         Me.btnSaveRestart.Text = "Save And Restart"
         '
@@ -2932,7 +3010,7 @@ Partial Class Form1
         Me.ReactorGroupBox5.Controls.Add(Me.btnReset)
         Me.ReactorGroupBox5.Location = New System.Drawing.Point(490, 6)
         Me.ReactorGroupBox5.Name = "ReactorGroupBox5"
-        Me.ReactorGroupBox5.Size = New System.Drawing.Size(86, 96)
+        Me.ReactorGroupBox5.Size = New System.Drawing.Size(86, 93)
         Me.ReactorGroupBox5.TabIndex = 57
         Me.ReactorGroupBox5.Text = "Reset"
         '
@@ -2940,7 +3018,7 @@ Partial Class Form1
         '
         Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
         Me.btnReset.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReset.Location = New System.Drawing.Point(3, 26)
+        Me.btnReset.Location = New System.Drawing.Point(3, 25)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(80, 67)
         Me.btnReset.TabIndex = 56
@@ -2965,7 +3043,7 @@ Partial Class Form1
         Me.ReactorGroupBox4.Controls.Add(Me.Label61)
         Me.ReactorGroupBox4.Location = New System.Drawing.Point(328, 6)
         Me.ReactorGroupBox4.Name = "ReactorGroupBox4"
-        Me.ReactorGroupBox4.Size = New System.Drawing.Size(156, 96)
+        Me.ReactorGroupBox4.Size = New System.Drawing.Size(156, 93)
         Me.ReactorGroupBox4.TabIndex = 55
         Me.ReactorGroupBox4.Text = "Macro Settings"
         '
@@ -2973,7 +3051,7 @@ Partial Class Form1
         '
         Me.txtMacroDelay.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtMacroDelay.ForeColor = System.Drawing.Color.White
-        Me.txtMacroDelay.Location = New System.Drawing.Point(21, 69)
+        Me.txtMacroDelay.Location = New System.Drawing.Point(21, 67)
         Me.txtMacroDelay.MaxCharacters = 4
         Me.txtMacroDelay.Name = "txtMacroDelay"
         Me.txtMacroDelay.Size = New System.Drawing.Size(117, 22)
@@ -2986,7 +3064,7 @@ Partial Class Form1
         '
         Me.Label24.AutoSize = True
         Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(19, 26)
+        Me.Label24.Location = New System.Drawing.Point(19, 25)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(121, 12)
         Me.Label24.TabIndex = 53
@@ -2996,7 +3074,7 @@ Partial Class Form1
         '
         Me.TrackBar1.AutoSize = False
         Me.TrackBar1.LargeChange = 1
-        Me.TrackBar1.Location = New System.Drawing.Point(8, 36)
+        Me.TrackBar1.Location = New System.Drawing.Point(8, 35)
         Me.TrackBar1.Maximum = 9
         Me.TrackBar1.Name = "TrackBar1"
         Me.TrackBar1.Size = New System.Drawing.Size(140, 22)
@@ -3006,7 +3084,7 @@ Partial Class Form1
         '
         Me.Label41.AutoSize = True
         Me.Label41.ForeColor = System.Drawing.Color.White
-        Me.Label41.Location = New System.Drawing.Point(119, 56)
+        Me.Label41.Location = New System.Drawing.Point(119, 55)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(12, 12)
         Me.Label41.TabIndex = 61
@@ -3016,7 +3094,7 @@ Partial Class Form1
         '
         Me.Label40.AutoSize = True
         Me.Label40.ForeColor = System.Drawing.Color.White
-        Me.Label40.Location = New System.Drawing.Point(107, 56)
+        Me.Label40.Location = New System.Drawing.Point(107, 55)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(12, 12)
         Me.Label40.TabIndex = 60
@@ -3026,7 +3104,7 @@ Partial Class Form1
         '
         Me.Label39.AutoSize = True
         Me.Label39.ForeColor = System.Drawing.Color.White
-        Me.Label39.Location = New System.Drawing.Point(92, 56)
+        Me.Label39.Location = New System.Drawing.Point(92, 55)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(12, 12)
         Me.Label39.TabIndex = 59
@@ -3036,7 +3114,7 @@ Partial Class Form1
         '
         Me.Label38.AutoSize = True
         Me.Label38.ForeColor = System.Drawing.Color.White
-        Me.Label38.Location = New System.Drawing.Point(80, 56)
+        Me.Label38.Location = New System.Drawing.Point(80, 55)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(12, 12)
         Me.Label38.TabIndex = 58
@@ -3046,7 +3124,7 @@ Partial Class Form1
         '
         Me.Label35.AutoSize = True
         Me.Label35.ForeColor = System.Drawing.Color.White
-        Me.Label35.Location = New System.Drawing.Point(40, 56)
+        Me.Label35.Location = New System.Drawing.Point(40, 55)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(12, 12)
         Me.Label35.TabIndex = 58
@@ -3056,7 +3134,7 @@ Partial Class Form1
         '
         Me.Label37.AutoSize = True
         Me.Label37.ForeColor = System.Drawing.Color.White
-        Me.Label37.Location = New System.Drawing.Point(66, 56)
+        Me.Label37.Location = New System.Drawing.Point(66, 55)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(12, 12)
         Me.Label37.TabIndex = 57
@@ -3066,7 +3144,7 @@ Partial Class Form1
         '
         Me.Label34.AutoSize = True
         Me.Label34.ForeColor = System.Drawing.Color.White
-        Me.Label34.Location = New System.Drawing.Point(26, 56)
+        Me.Label34.Location = New System.Drawing.Point(26, 55)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(12, 12)
         Me.Label34.TabIndex = 57
@@ -3076,7 +3154,7 @@ Partial Class Form1
         '
         Me.Label36.AutoSize = True
         Me.Label36.ForeColor = System.Drawing.Color.White
-        Me.Label36.Location = New System.Drawing.Point(54, 56)
+        Me.Label36.Location = New System.Drawing.Point(54, 55)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(12, 12)
         Me.Label36.TabIndex = 57
@@ -3086,7 +3164,7 @@ Partial Class Form1
         '
         Me.Label25.AutoSize = True
         Me.Label25.ForeColor = System.Drawing.Color.White
-        Me.Label25.Location = New System.Drawing.Point(13, 56)
+        Me.Label25.Location = New System.Drawing.Point(13, 55)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(12, 12)
         Me.Label25.TabIndex = 57
@@ -3096,7 +3174,7 @@ Partial Class Form1
         '
         Me.Label49.AutoSize = True
         Me.Label49.ForeColor = System.Drawing.Color.White
-        Me.Label49.Location = New System.Drawing.Point(132, 56)
+        Me.Label49.Location = New System.Drawing.Point(132, 55)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(13, 12)
         Me.Label49.TabIndex = 63
@@ -3116,11 +3194,10 @@ Partial Class Form1
         '
         Me.ReactorGroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.ReactorGroupBox2.Controls.Add(Me.chkSkipChangelog)
-        Me.ReactorGroupBox2.Controls.Add(Me.chkEnableLogs)
         Me.ReactorGroupBox2.Controls.Add(Me.chkAutoupdates)
-        Me.ReactorGroupBox2.Location = New System.Drawing.Point(418, 108)
+        Me.ReactorGroupBox2.Location = New System.Drawing.Point(418, 103)
         Me.ReactorGroupBox2.Name = "ReactorGroupBox2"
-        Me.ReactorGroupBox2.Size = New System.Drawing.Size(158, 86)
+        Me.ReactorGroupBox2.Size = New System.Drawing.Size(158, 81)
         Me.ReactorGroupBox2.TabIndex = 54
         Me.ReactorGroupBox2.Text = "                           Miscellaneous Settings"
         '
@@ -3129,29 +3206,18 @@ Partial Class Form1
         Me.chkSkipChangelog.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkSkipChangelog.Checked = True
         Me.chkSkipChangelog.ForeColor = System.Drawing.Color.White
-        Me.chkSkipChangelog.Location = New System.Drawing.Point(13, 45)
+        Me.chkSkipChangelog.Location = New System.Drawing.Point(13, 54)
         Me.chkSkipChangelog.Name = "chkSkipChangelog"
         Me.chkSkipChangelog.Size = New System.Drawing.Size(126, 16)
         Me.chkSkipChangelog.TabIndex = 3
         Me.chkSkipChangelog.Text = "Show Changelog"
-        '
-        'chkEnableLogs
-        '
-        Me.chkEnableLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkEnableLogs.Checked = False
-        Me.chkEnableLogs.ForeColor = System.Drawing.Color.White
-        Me.chkEnableLogs.Location = New System.Drawing.Point(13, 65)
-        Me.chkEnableLogs.Name = "chkEnableLogs"
-        Me.chkEnableLogs.Size = New System.Drawing.Size(126, 16)
-        Me.chkEnableLogs.TabIndex = 3
-        Me.chkEnableLogs.Text = "Copy logs to ""\Logs"""
         '
         'chkAutoupdates
         '
         Me.chkAutoupdates.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkAutoupdates.Checked = False
         Me.chkAutoupdates.ForeColor = System.Drawing.Color.White
-        Me.chkAutoupdates.Location = New System.Drawing.Point(13, 26)
+        Me.chkAutoupdates.Location = New System.Drawing.Point(13, 31)
         Me.chkAutoupdates.Name = "chkAutoupdates"
         Me.chkAutoupdates.Size = New System.Drawing.Size(126, 16)
         Me.chkAutoupdates.TabIndex = 2
@@ -3165,7 +3231,7 @@ Partial Class Form1
         Me.ReactorGroupBox3.Controls.Add(Me.TextBox21)
         Me.ReactorGroupBox3.Location = New System.Drawing.Point(6, 6)
         Me.ReactorGroupBox3.Name = "ReactorGroupBox3"
-        Me.ReactorGroupBox3.Size = New System.Drawing.Size(155, 96)
+        Me.ReactorGroupBox3.Size = New System.Drawing.Size(155, 93)
         Me.ReactorGroupBox3.TabIndex = 53
         Me.ReactorGroupBox3.Text = "Toggle Settings"
         '
@@ -3206,9 +3272,9 @@ Partial Class Form1
         '
         Me.ReactorGroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.ReactorGroupBox1.Controls.Add(Me.DebugChkSkipWindowCheck)
-        Me.ReactorGroupBox1.Location = New System.Drawing.Point(6, 267)
+        Me.ReactorGroupBox1.Location = New System.Drawing.Point(6, 280)
         Me.ReactorGroupBox1.Name = "ReactorGroupBox1"
-        Me.ReactorGroupBox1.Size = New System.Drawing.Size(570, 61)
+        Me.ReactorGroupBox1.Size = New System.Drawing.Size(570, 48)
         Me.ReactorGroupBox1.TabIndex = 1
         Me.ReactorGroupBox1.Text = "Debug Options (ADVANCED USERS)"
         '
@@ -3217,7 +3283,7 @@ Partial Class Form1
         Me.DebugChkSkipWindowCheck.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.DebugChkSkipWindowCheck.Checked = False
         Me.DebugChkSkipWindowCheck.ForeColor = System.Drawing.Color.White
-        Me.DebugChkSkipWindowCheck.Location = New System.Drawing.Point(12, 34)
+        Me.DebugChkSkipWindowCheck.Location = New System.Drawing.Point(13, 28)
         Me.DebugChkSkipWindowCheck.Name = "DebugChkSkipWindowCheck"
         Me.DebugChkSkipWindowCheck.Size = New System.Drawing.Size(207, 16)
         Me.DebugChkSkipWindowCheck.TabIndex = 0
@@ -3236,6 +3302,7 @@ Partial Class Form1
         'ReactorTabControl3
         '
         Me.ReactorTabControl3.Controls.Add(Me.TabPage8)
+        Me.ReactorTabControl3.Controls.Add(Me.TabPage11)
         Me.ReactorTabControl3.Controls.Add(Me.TabPage9)
         Me.ReactorTabControl3.ItemSize = New System.Drawing.Size(100, 21)
         Me.ReactorTabControl3.Location = New System.Drawing.Point(0, -6)
@@ -3262,11 +3329,11 @@ Partial Class Form1
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.Font = New System.Drawing.Font("Impact", 15.75!)
         Me.Label31.ForeColor = System.Drawing.Color.White
-        Me.Label31.Location = New System.Drawing.Point(165, 5)
+        Me.Label31.Location = New System.Drawing.Point(109, 5)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(242, 17)
+        Me.Label31.Size = New System.Drawing.Size(383, 26)
         Me.Label31.TabIndex = 90
         Me.Label31.Text = "How To Use ""SACNR Keybinder 2013 Edition"""
         '
@@ -3275,12 +3342,33 @@ Partial Class Form1
         Me.RichTextBox2.BackColor = System.Drawing.Color.Black
         Me.RichTextBox2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox2.ForeColor = System.Drawing.Color.PowderBlue
-        Me.RichTextBox2.Location = New System.Drawing.Point(0, 26)
+        Me.RichTextBox2.Location = New System.Drawing.Point(0, 32)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.ReadOnly = True
-        Me.RichTextBox2.Size = New System.Drawing.Size(574, 283)
+        Me.RichTextBox2.Size = New System.Drawing.Size(574, 277)
         Me.RichTextBox2.TabIndex = 3
         Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
+        '
+        'TabPage11
+        '
+        Me.TabPage11.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.TabPage11.Controls.Add(Me.WebBrowser1)
+        Me.TabPage11.Controls.Add(Me.Label62)
+        Me.TabPage11.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage11.Name = "TabPage11"
+        Me.TabPage11.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage11.Size = New System.Drawing.Size(574, 311)
+        Me.TabPage11.TabIndex = 2
+        Me.TabPage11.Text = "Change Log"
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Location = New System.Drawing.Point(5, 29)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(562, 280)
+        Me.WebBrowser1.TabIndex = 3
+        Me.WebBrowser1.Url = New System.Uri("http://cyanlabs.co.uk/keybinder/changelog.html", System.UriKind.Absolute)
         '
         'TabPage9
         '
@@ -3302,7 +3390,7 @@ Partial Class Form1
         Me.RichTextBox1.ForeColor = System.Drawing.Color.PowderBlue
         Me.RichTextBox1.Location = New System.Drawing.Point(19, 29)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(521, 257)
+        Me.RichTextBox1.Size = New System.Drawing.Size(531, 257)
         Me.RichTextBox1.TabIndex = 2
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         Me.RichTextBox1.WordWrap = False
@@ -3337,11 +3425,22 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Impact", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(23, 3)
+        Me.Label1.Location = New System.Drawing.Point(26, 2)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(517, 26)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "SACNR Keybinder 2013 Edition is licensed under GNU GPL V3"
+        '
+        'Label62
+        '
+        Me.Label62.AutoSize = True
+        Me.Label62.Font = New System.Drawing.Font("Impact", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label62.ForeColor = System.Drawing.Color.White
+        Me.Label62.Location = New System.Drawing.Point(223, 3)
+        Me.Label62.Name = "Label62"
+        Me.Label62.Size = New System.Drawing.Size(113, 26)
+        Me.Label62.TabIndex = 4
+        Me.Label62.Text = "Change Log" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Form1
         '
@@ -3371,6 +3470,8 @@ Partial Class Form1
         Me.TabPage10.ResumeLayout(False)
         Me.TabPage10.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
+        Me.ReactorGroupBox9.ResumeLayout(False)
+        Me.ReactorGroupBox6.ResumeLayout(False)
         Me.ReactorGroupBox8.ResumeLayout(False)
         Me.ReactorGroupBox8.PerformLayout()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3388,6 +3489,8 @@ Partial Class Form1
         Me.ReactorTabControl3.ResumeLayout(False)
         Me.TabPage8.ResumeLayout(False)
         Me.TabPage8.PerformLayout()
+        Me.TabPage11.ResumeLayout(False)
+        Me.TabPage11.PerformLayout()
         Me.TabPage9.ResumeLayout(False)
         Me.TabPage9.PerformLayout()
         Me.ResumeLayout(False)
@@ -3636,5 +3739,13 @@ Partial Class Form1
     Friend WithEvents Label49 As System.Windows.Forms.Label
     Friend WithEvents Label61 As System.Windows.Forms.Label
     Friend WithEvents chkSkipChangelog As SACNR_Keybinder_2013_Edition.ReactorCheckBox
+    Friend WithEvents TabPage11 As System.Windows.Forms.TabPage
+    Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
+    Friend WithEvents ReactorGroupBox6 As SACNR_Keybinder_2013_Edition.ReactorGroupBox
+    Friend WithEvents btnLogs As SACNR_Keybinder_2013_Edition.ReactorButton
+    Friend WithEvents ReactorGroupBox9 As SACNR_Keybinder_2013_Edition.ReactorGroupBox
+    Friend WithEvents btnSendRequest As SACNR_Keybinder_2013_Edition.ReactorButton
+    Friend WithEvents txtFeedback As SACNR_Keybinder_2013_Edition.ReactorMultiLineTextBox
+    Friend WithEvents Label62 As System.Windows.Forms.Label
 
 End Class

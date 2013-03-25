@@ -15,8 +15,11 @@ Imports System.Net
 Imports System.Text.RegularExpressions
 Imports Microsoft.Xna.Framework
 Imports Microsoft.Xna.Framework.Input
+Imports System.Net.Mail
+
 Public Class Form1
     Dim running As Integer = 1
+    Dim loglocation As String = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\GTA San Andreas User Files\SAMP"
     Dim t1, t2, t3, t4, t5, t6, t7, t8, t9, t10 As Boolean
     Dim wClient As WebClient
     Dim finishedload As Boolean = False
@@ -143,7 +146,7 @@ Public Class Form1
         SendKeys.SendWait("t" + substr + "{Enter}")
     End Sub
 
-    Private Sub kbHook_KeyDown(ByVal Key As System.Windows.Forms.Keys) Handles kbHook.KeyDown
+    Private Sub kbHook_KeyDown(ByVal Key As System.Windows.Forms.Keys) Handles kbhook.KeyDown
         'Debug.WriteLine("Key = " & Key.ToString.ToUpper & " Textbox = " & TextBox3.Text)
         If chkSettingToggle.Checked = True Then
             If Key.ToString.ToUpper = TextBox21.Text.ToUpper Then
@@ -541,11 +544,12 @@ Public Class Form1
         If Not My.Application.CommandLineArgs.Count = 0 Then
             If My.Application.CommandLineArgs(0) = "updated" Then
                 If inisettings.GetString("Settings", "ShowChangelog", True) = True Then
-                    changelog.ShowDialog()
+                    ReactorTabControl3.SelectTab(1)
+                    ReactorTabControl1.SelectTab(4)
                 End If
             End If
         End If
-        
+
         If inisettings.GetString("Settings", "AutoUpdate", False) = True Then
             Dim NewVersion As String = ""
             wClient = New WebClient
@@ -687,8 +691,8 @@ Public Class Form1
 
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
         If sender.value = 9 Then
-                txtMacroDelay.Visible = True
-                MsgBox("Enter your custom value in miliseconds in the textbox below", MsgBoxStyle.Information, "Information")
+            txtMacroDelay.Visible = True
+            MsgBox("Enter your custom value in miliseconds in the textbox below", MsgBoxStyle.Information, "Information")
         Else
             txtMacroDelay.Visible = False
             inisettings.WriteInteger("Settings", "MacroDelay", sender.value * 1000)
@@ -704,7 +708,6 @@ Public Class Form1
         Return False
     End Function
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim loglocation As String = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\GTA San Andreas User Files\SAMP"
         If IsProcessRunning("gta_sa") = False AndAlso running = 2 Then
             Me.running = 0
         End If
@@ -735,7 +738,7 @@ Public Class Form1
     Private Sub btnSaveRestart_Click(sender As Object, e As EventArgs) Handles btnSaveRestart.Click
         Dim result = MsgBox("This will change the SAMP username." & vbNewLine & "All settings and keybinds will be saved as 'OLDNAME_Keybinds.sav' and a new file called '" & txtSAMPUsername.Text & "_keybinds.sav' will be used. You can switch back to your old username at any time by changing this textbox back." & vbNewLine & vbNewLine & "Are you sure you want to change SAMP Username?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
         If result = vbYes Then
-           My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\SAMP", "PlayerName", txtSAMPUsername.Text)
+            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\SAMP", "PlayerName", txtSAMPUsername.Text)
             Application.Restart()
         End If
 
@@ -844,6 +847,48 @@ Public Class Form1
             inisettings.WriteInteger("Settings", "MacroDelay", Convert.ToInt32(sender.text))
         Else
             MsgBox("You did not enter a numerical value, please enter only numbers and decimals", MsgBoxStyle.Critical, "Error")
+        End If
+    End Sub
+
+    Private Sub btnLogs_Click(sender As Object, e As EventArgs) Handles btnLogs.Click
+        Try
+            Process.Start("explorer.exe", loglocation & "\Logs")
+        Catch ex As Exception
+            MsgBox("Log directory could not be opened as the directory does not seem to exist.", MsgBoxStyle.Critical, "Error")
+        End Try
+
+    End Sub
+
+    Private Sub btnSendRequest_Click(sender As Object, e As EventArgs) Handles btnSendRequest.Click
+        Dim emailcontents As String = txtFeedback.Text
+        Dim result = MsgBox("This will send the feedback below to CyanLabs." & vbNewLine & vbNewLine & """" & emailcontents & """" & vbNewLine & vbNewLine & "Are you sure?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
+        If result = vbYes Then
+            result = MsgBox("Do you want to include your SA-MP username with the email?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
+
+            If result = vbYes Then
+                emailcontents &= vbNewLine & vbNewLine & "Feedback/Suggestion was posted by """ & txtSAMPUsername.Text & """"
+            End If
+            Try
+                Dim SmtpServer As New SmtpClient()
+                Dim mail As New MailMessage()
+                SmtpServer.Port = 2525
+                SmtpServer.Host = "smtpcorp.com"
+                mail = New MailMessage()
+                mail.From = New MailAddress("sacnrkeybinder2013@cyanlabs.co.uk")
+                mail.To.Add("fma96580@gmail.com")
+                mail.Subject = "SACNR Keybinder 2013 Edition - Feedback and Suggestions"
+                mail.Body = "New feedback or suggestion for 'SACNR Keybinder 2013 Edition' has been recieved!" & vbNewLine & vbNewLine & emailcontents
+                SmtpServer.Send(mail)
+                MsgBox("Your feedback has been sent successfully, Thank you for helping make SACNR Keybinder 2013 Edition better!")
+            Catch ex As Exception
+                MsgBox("The following error occured:" & vbNewLine & vbNewLine & ex.ToString, MsgBoxStyle.Critical, "Error")
+            End Try
+        End If
+    End Sub
+
+    Private Sub txtFeedback_Enter(sender As Object, e As EventArgs) Handles txtFeedback.Enter
+        If sender.text = "Leave feedback or suggest a new feature or change here." Then
+            sender.text = ""
         End If
     End Sub
 End Class
