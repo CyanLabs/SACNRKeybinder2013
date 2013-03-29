@@ -147,7 +147,6 @@ Public Class Form1
     End Sub
 
     Private Sub kbHook_KeyDown(ByVal Key As System.Windows.Forms.Keys) Handles kbhook.KeyDown
-        'Debug.WriteLine("Key = " & Key.ToString.ToUpper & " Textbox = " & TextBox3.Text)
         If chkSettingToggle.Checked = True Then
             If Key.ToString.ToUpper = TextBox21.Text.ToUpper Then
                 If currentpage <> 1 Then
@@ -541,14 +540,7 @@ Public Class Form1
             IO.File.Delete(Application.StartupPath & "\keybinds.sav")
         End If
         inisettings = New ini(Application.StartupPath & "\keybinds\" & txtSAMPUsername.Text & "_keybinds.sav")
-        If Not My.Application.CommandLineArgs.Count = 0 Then
-            If My.Application.CommandLineArgs(0) = "updated" Then
-                If inisettings.GetString("Settings", "ShowChangelog", True) = True Then
-                    ReactorTabControl3.SelectTab(1)
-                    ReactorTabControl1.SelectTab(4)
-                End If
-            End If
-        End If
+        
 
         If inisettings.GetString("Settings", "AutoUpdate", False) = True Then
             Dim NewVersion As String = ""
@@ -843,7 +835,6 @@ Public Class Form1
 
     Private Sub txtMacroDelay_TextChanged(sender As Object, e As EventArgs) Handles txtMacroDelay.TextChanged
         If IsNumeric(sender.text) Then
-            Debug.WriteLine(Convert.ToInt32(sender.text))
             inisettings.WriteInteger("Settings", "MacroDelay", Convert.ToInt32(sender.text))
         Else
             MsgBox("You did not enter a numerical value, please enter only numbers and decimals", MsgBoxStyle.Critical, "Error")
@@ -889,6 +880,20 @@ Public Class Form1
     Private Sub txtFeedback_Enter(sender As Object, e As EventArgs) Handles txtFeedback.Enter
         If sender.text = "Leave feedback or suggest a new feature or change here." Then
             sender.text = ""
+        End If
+    End Sub
+
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        If Not My.Application.CommandLineArgs.Count = 0 Then
+            If My.Application.CommandLineArgs(0) = "updated" Then
+                If inisettings.GetString("Settings", "ShowChangelog", True) = True Then
+                    ReactorTabControl3.SelectTab(1)
+                    ReactorTabControl1.SelectTab(4)
+                End If
+                If MsgBox("Hey Guys" & vbNewLine & vbNewLine & "Cyanlabs would like to inform you of a new application that is currently in the BETA phase." & vbNewLine & "It's called 'SACNR Macro Recorder' and is a ingame macro recorder" & vbNewLine & vbNewLine & "Would you like to hear more about this new application?", MsgBoxStyle.Information + vbYesNo, "Notice: New Application Avaliable!") = vbYes Then
+                    Process.Start("http://forum.sacnr.com/threads/29809-SACNR-Keybinder-2013-Edition-With-Source?p=264632&viewfull=1#post264632")
+                End If
+            End If
         End If
     End Sub
 End Class
