@@ -1,0 +1,40 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SACNRKeybinder2013Edition
+</name>
+</assembly>
+<members>
+<member name="P:SACNR_Keybinder_2013_Edition.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SACNR_Keybinder_2013_Edition.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:SACNR_Keybinder_2013_Edition.My.Resources.Resources.buttonbg">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SACNR_Keybinder_2013_Edition.My.Resources.Resources.buttonbg_hover">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:SACNR_Keybinder_2013_Edition.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:SACNR_Keybinder_2013_Edition.Main.LoadBinds(System.String,System.Windows.Forms.DataGridView)">
+	<summary>Load Bind file to datagridview</summary>
+	<param name="file">File to load into datagridview</param>
+	<param name="DataGridView">datagridview to use</param>
+</member><member name="M:SACNR_Keybinder_2013_Edition.Main.SaveBinds(System.Windows.Forms.DataGridView,System.String,System.Int32)">
+	<summary>Load Bind file to datagridview</summary>
+	<param name="DataGridView">datagridview to use</param>
+	<param name="file">File to save datagridview contents to</param>
+</member>
+</members>
+</doc>

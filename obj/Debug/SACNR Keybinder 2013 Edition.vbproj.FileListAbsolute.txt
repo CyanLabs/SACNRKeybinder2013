@@ -1,0 +1,18 @@
+C:\Users\Scott\AppData\Local\Temporary Projects\SACNR Keybinder 2013 Edition\bin\Debug\SACNR Keybinder 2013 Edition.exe
+C:\Users\Scott\AppData\Local\Temporary Projects\SACNR Keybinder 2013 Edition\bin\Debug\SACNR Keybinder 2013 Edition.pdb
+C:\Users\Scott\AppData\Local\Temporary Projects\SACNR Keybinder 2013 Edition\bin\Debug\SACNR Keybinder 2013 Edition.xml
+C:\Users\Scott\AppData\Local\Temporary Projects\SACNR Keybinder 2013 Edition\obj\Debug\SACNR_Keybinder_2013_Edition.Main.resources
+C:\Users\Scott\AppData\Local\Temporary Projects\SACNR Keybinder 2013 Edition\obj\Debug\SACNR_Keybinder_2013_Edition.Resources.resources
+C:\Users\Scott\AppData\Local\Temporary Projects\SACNR Keybinder 2013 Edition\obj\Debug\SACNR Keybinder 2013 Edition.vbproj.GenerateResource.Cache
+C:\Users\Scott\AppData\Local\Temporary Projects\SACNR Keybinder 2013 Edition\obj\Debug\SACNR Keybinder 2013 Edition.exe
+C:\Users\Scott\AppData\Local\Temporary Projects\SACNR Keybinder 2013 Edition\obj\Debug\SACNR Keybinder 2013 Edition.xml
+C:\Users\Scott\AppData\Local\Temporary Projects\SACNR Keybinder 2013 Edition\obj\Debug\SACNR Keybinder 2013 Edition.pdb
+C:\Users\Scott\Documents\Visual Studio 2012\Projects\SACNR Keybinder 2013 Edition\SACNR Keybinder 2013 Edition\obj\Debug\SACNR Keybinder 2013 Edition.exe
+C:\Users\Scott\Documents\Visual Studio 2012\Projects\SACNR Keybinder 2013 Edition\SACNR Keybinder 2013 Edition\obj\Debug\SACNR Keybinder 2013 Edition.xml
+C:\Users\Scott\Documents\Visual Studio 2012\Projects\SACNR Keybinder 2013 Edition\SACNR Keybinder 2013 Edition\obj\Debug\SACNR Keybinder 2013 Edition.pdb
+C:\Users\Scott\Documents\Visual Studio 2012\Projects\SACNR Keybinder 2013 Edition\SACNR Keybinder 2013 Edition\bin\Debug\SACNR Keybinder 2013 Edition.exe
+C:\Users\Scott\Documents\Visual Studio 2012\Projects\SACNR Keybinder 2013 Edition\SACNR Keybinder 2013 Edition\bin\Debug\SACNR Keybinder 2013 Edition.pdb
+C:\Users\Scott\Documents\Visual Studio 2012\Projects\SACNR Keybinder 2013 Edition\SACNR Keybinder 2013 Edition\bin\Debug\SACNR Keybinder 2013 Edition.xml
+C:\Users\Scott\Documents\Visual Studio 2012\Projects\SACNR Keybinder 2013 Edition\SACNR Keybinder 2013 Edition\obj\Debug\SACNR_Keybinder_2013_Edition.Main.resources
+C:\Users\Scott\Documents\Visual Studio 2012\Projects\SACNR Keybinder 2013 Edition\SACNR Keybinder 2013 Edition\obj\Debug\SACNR_Keybinder_2013_Edition.Resources.resources
+C:\Users\Scott\Documents\Visual Studio 2012\Projects\SACNR Keybinder 2013 Edition\SACNR Keybinder 2013 Edition\obj\Debug\SACNR Keybinder 2013 Edition.vbproj.GenerateResource.Cache

@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("SACNR Keybinder 2013 Edition")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("CyanLabs")> 
+<Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("SACNR Keybinder 2013 Edition")> 
 <Assembly: AssemblyCopyright("Copyright ©  2013")> 
 <Assembly: AssemblyTrademark("")> 
@@ -18,7 +18,7 @@ Imports System.Runtime.InteropServices
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("c0ea542d-05fd-4cb6-9035-c4c08e153973")> 
+<Assembly: Guid("c6e934ba-c419-4937-bcbb-b3db4b328e04")> 
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.9.1.0")> 
-<Assembly: AssemblyFileVersion("1.9.1.0")> 
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> 
