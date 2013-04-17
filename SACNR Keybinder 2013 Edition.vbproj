@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8BD9CE75-FA04-4DD7-B851-FA4B2C625835}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SACNR_Keybinder_2013_Edition.My.MyApplication</StartupObject>
-    <RootNamespace>SACNR_Keybinder_2013_Edition</RootNamespace>
-    <AssemblyName>SACNR_Keybinder_2013_Edition</AssemblyName>
+    <StartupObject>SACNR_Keybinder_Evolution.My.MyApplication</StartupObject>
+    <RootNamespace>SACNR_Keybinder_Evolution</RootNamespace>
+    <AssemblyName>SACNR Keybinder Evolution</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -36,7 +36,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>SACNR_Keybinder_2013_Edition.xml</DocumentationFile>
+    <DocumentationFile>SACNR Keybinder Evolution.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
@@ -47,7 +47,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>SACNR_Keybinder_2013_Edition.xml</DocumentationFile>
+    <DocumentationFile>SACNR Keybinder Evolution.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
@@ -89,6 +89,12 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutPanel.Designer.vb">
+      <DependentUpon>AboutPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -96,9 +102,20 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="hooks.vb" />
     <Compile Include="ini.vb" />
-    <Compile Include="kbhook.vb" />
-    <Compile Include="mousehook.vb" />
+    <Compile Include="KBpanel.Designer.vb">
+      <DependentUpon>KBpanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KBpanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MousePanel.Designer.vb">
+      <DependentUpon>MousePanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MousePanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -114,19 +131,46 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SettingsPanel.Designer.vb">
+      <DependentUpon>SettingsPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="skin.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="X360Panel.Designer.vb">
+      <DependentUpon>X360Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="X360Panel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AboutPanel.resx">
+      <DependentUpon>AboutPanel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KBpanel.resx">
+      <DependentUpon>KBpanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MousePanel.resx">
+      <DependentUpon>MousePanel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsPanel.resx">
+      <DependentUpon>SettingsPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="X360Panel.resx">
+      <DependentUpon>X360Panel.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\backgroundwithoutheader.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

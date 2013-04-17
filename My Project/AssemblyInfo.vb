@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("SACNR Keybinder 2013 Edition")> 
+<Assembly: AssemblyTitle("SACNR Keybinder Evolution")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("CyanLabs")> 
-<Assembly: AssemblyProduct("SACNR Keybinder 2013 Edition")> 
+<Assembly: AssemblyProduct("SACNR Keybinder Evolution")> 
 <Assembly: AssemblyCopyright("Copyright ©  2013")> 
 <Assembly: AssemblyTrademark("")> 
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.9.1.0")> 
-<Assembly: AssemblyFileVersion("1.9.1.0")> 
+<Assembly: AssemblyVersion("2.0.0.0")> 
+<Assembly: AssemblyFileVersion("2.0.0.0")> 
