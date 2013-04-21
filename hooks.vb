@@ -12,6 +12,11 @@ Public Class MouseHook
         Public time As Integer
         Public dwExtraInfo As Integer
     End Structure
+    Public Enum Wheel_Direction
+        WheelUp
+        WheelDown
+    End Enum
+
     Private Const HC_ACTION As Integer = 0
     Private Const WH_MOUSE_LL As Integer = 14
     Private Const WM_LBUTTONDOWN As Integer = &H201
@@ -21,7 +26,12 @@ Public Class MouseHook
     Private Const WM_XBUTTONDOWN As Integer = &H20B
     Private MouseHook As Integer
     Private MouseHookDelegate As MouseProcDelegate
-    Public Event Mouse_Down(ByVal Button As String)
+    Public Event Mouse_Left()
+    Public Event Mouse_Right()
+    Public Event Mouse_Middle()
+    Public Event Mouse_Wheel(ByVal Direction As Wheel_Direction)
+    Public Event Mouse_XButton1()
+    Public Event Mouse_XButton2()
 
     Public Sub New()
         MouseHookDelegate = New MouseProcDelegate(AddressOf MouseProc)
@@ -32,23 +42,25 @@ Public Class MouseHook
         If (nCode = HC_ACTION) Then
             Select Case wParam
                 Case WM_LBUTTONDOWN
-                    RaiseEvent Mouse_Down("LMB")
+                    RaiseEvent Mouse_Left()
                 Case WM_RBUTTONDOWN
-                    RaiseEvent Mouse_Down("RMB")
+                    RaiseEvent Mouse_Right()
                 Case WM_MBUTTONDOWN
-                    RaiseEvent Mouse_Down("MMB")
+                    RaiseEvent Mouse_Middle()
                 Case WM_MOUSEWHEEL
+                    Dim wDirection As Wheel_Direction
                     If lParam.mouseData < 0 Then
-                        RaiseEvent Mouse_Down("WheelUp")
+                        wDirection = Wheel_Direction.WheelDown
                     Else
-                        RaiseEvent Mouse_Down("WheelDown")
+                        wDirection = Wheel_Direction.WheelUp
                     End If
+                    RaiseEvent Mouse_Wheel(wDirection)
                 Case WM_XBUTTONDOWN
                     Dim button As MouseButtons = MouseButtons.None
                     If lParam.mouseData = 131072 Then
-                        RaiseEvent Mouse_Down("SB1")
+                        RaiseEvent Mouse_XButton1()
                     ElseIf lParam.mouseData = 65536 Then
-                        RaiseEvent Mouse_Down("SB2")
+                        RaiseEvent Mouse_XButton2()
                     End If
             End Select
         End If

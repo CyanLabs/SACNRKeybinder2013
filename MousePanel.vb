@@ -1,27 +1,112 @@
 ﻿Imports System.Threading
 
 Public Class MousePanel
-    Public WithEvents mHook As MouseHook
+    Public WithEvents mHook As New MouseHook
+    Dim keybinderdisabled As Boolean = keybinderdisabled
     Private trd2 As Thread
-    Dim captxt As String = ""
-    Private Sub mHook_Mouse_Down(ByVal button As String) Handles mHook.Mouse_Down
+    '    Private Sub mHook_Mouse_Down(ByVal button As String) Handles mHook.Mouse_Down
+    '        trd2 = New Thread(AddressOf Form1.macro)
+    '        trd2.IsBackground = True
+    'If Form1.DebugCheck() = "GTA:SA:MP" Then
+    '            For Each ctrl In Me.Controls
+    '                If TypeOf ctrl Is ReactorTextBox Then
+    '                    If ctrl.Name.Replace("txt", "") = button Then
+    '                        Dim param_obj(2) As Object
+    '                        param_obj(0) = button.ToString
+    '                        param_obj(1) = ctrl.text
+    '                        trd2.Start(param_obj)
+    '                    End If
+    '                End If
+    '            Next
+    '        End If
+    '    End Sub
+
+    Public Sub Mouse_Left()
         trd2 = New Thread(AddressOf Form1.macro)
         trd2.IsBackground = True
-If Form1.DebugCheck() = "GTA:SA:MP" Then
-            For Each ctrl In Me.Controls
-                If TypeOf ctrl Is ReactorTextBox Then
-                    If ctrl.Name.Replace("txt", "") = button Then
-                        Dim param_obj(2) As Object
-                        param_obj(0) = button.ToString
-                        param_obj(1) = ctrl.text
-                        trd2.Start(param_obj)
-                    End If
-                End If
-            Next
+        If keybinderdisabled = False Then
+            If chkLMB.Checked = True Then
+                Dim param_obj(2) As Object
+                param_obj(0) = "lmb"
+                param_obj(1) = txtlmb.Text
+                trd2.Start(param_obj)
+            End If
         End If
     End Sub
+
+    Public Sub Mouse_Middle()
+        trd2 = New Thread(AddressOf Form1.macro)
+        trd2.IsBackground = True
+        If keybinderdisabled = False Then
+            If chkMMB.Checked = True Then
+                Dim param_obj(2) As Object
+                param_obj(0) = "mmb"
+                param_obj(1) = txtMMB.Text
+                trd2.Start(param_obj)
+            End If
+        End If
+    End Sub
+    Public Sub Mouse_Right()
+        trd2 = New Thread(AddressOf Form1.macro)
+        trd2.IsBackground = True
+        If keybinderdisabled = False Then
+            If chkRMB.Checked = True Then
+                Dim param_obj(2) As Object
+                param_obj(0) = "rmb"
+                param_obj(1) = txtRMB.Text
+                trd2.Start(param_obj)
+            End If
+        End If
+    End Sub
+
+    Public Sub Mouse_Wheel(ByVal Direction As MouseHook.Wheel_Direction)
+        trd2 = New Thread(AddressOf Form1.macro)
+        trd2.IsBackground = True
+        If keybinderdisabled = False Then
+            If Direction.ToString = "WheelUp" Then
+                If chkWheelUp.Checked = True Then
+                    Dim param_obj(2) As Object
+                    param_obj(0) = "wheelup"
+                    param_obj(1) = txtWheelUp.Text
+                    trd2.Start(param_obj)
+                End If
+            Else
+                If chkWheelDown.Checked = True Then
+                    Dim param_obj(2) As Object
+                    param_obj(0) = "wheeldown"
+                    param_obj(1) = txtWheelDown.Text
+                    trd2.Start(param_obj)
+                End If
+            End If
+        End If
+    End Sub
+    Public Sub Mouse_XButton1()
+        trd2 = New Thread(AddressOf Form1.macro)
+        trd2.IsBackground = True
+        If keybinderdisabled = False Then
+            If chkSB1.Checked = True Then
+                Dim param_obj(2) As Object
+                param_obj(0) = "sb1"
+                param_obj(1) = txtSB1.Text
+                trd2.Start(param_obj)
+            End If
+        End If
+
+    End Sub
+    Public Sub Mouse_XButton2()
+        trd2 = New Thread(AddressOf Form1.macro)
+        trd2.IsBackground = True
+        If keybinderdisabled = False Then
+            If chkSB2.Checked = True Then
+                Dim param_obj(2) As Object
+                param_obj(0) = "sb2"
+                param_obj(1) = txtSB2.Text
+                trd2.Start(param_obj)
+            End If
+        End If
+    End Sub
+
     Sub loadsettings()
-        mHook = New MouseHook
         txtlmb.Text = Form1.inisettings.GetString("Mouse", "LeftClick", Nothing)
         txtRMB.Text = Form1.inisettings.GetString("Mouse", "RightClick", Nothing)
         txtMMB.Text = Form1.inisettings.GetString("Mouse", "MiddleClick", Nothing)

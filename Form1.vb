@@ -18,6 +18,7 @@ Imports System.Net.Mail
 Public Class Form1
     Dim youtubeurl As String = "http://www.youtube.com/embed/T23exzRYxmM"
     Public WithEvents kbhook As KBhook
+    Public WithEvents mHook As MouseHook
     Public Shared SAMPUsername As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "PlayerName", "Keybinds")
     Dim ProgramName As String = System.Reflection.Assembly.GetEntryAssembly().GetName().Name.Replace(" ", "_")
     Dim loglocation As String = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\GTA San Andreas User Files\SAMP"
@@ -34,6 +35,40 @@ Public Class Form1
     Public Shared inisettings As ini
     Public Shared keybinderdisabled As Boolean = False
 
+    Private Sub mHook_Mouse_Left() Handles mHook.Mouse_Left
+        If DebugCheck() = "GTA:SA:MP" Then
+            MousePanel1.Mouse_Left()
+        End If
+
+    End Sub
+
+    Private Sub mHook_Mouse_Middle() Handles mHook.Mouse_Middle
+        If DebugCheck() = "GTA:SA:MP" Then
+            MousePanel1.Mouse_Middle()
+        End If
+
+    End Sub
+    Private Sub mHook_Mouse_Right() Handles mHook.Mouse_Right
+        If DebugCheck() = "GTA:SA:MP" Then
+            MousePanel1.Mouse_Right()
+        End If
+    End Sub
+
+    Private Sub mHook_Mouse_Wheel(ByVal Direction As MouseHook.Wheel_Direction) Handles mHook.Mouse_Wheel
+        If DebugCheck() = "GTA:SA:MP" Then
+            MousePanel1.Mouse_Wheel(Direction)
+        End If
+    End Sub
+    Private Sub mHook_Mouse_XButton1() Handles mHook.Mouse_XButton1
+        If DebugCheck() = "GTA:SA:MP" Then
+            MousePanel1.Mouse_XButton1()
+        End If
+    End Sub
+    Private Sub mHook_Mouse_XButton2() Handles mHook.Mouse_XButton2
+        If DebugCheck() = "GTA:SA:MP" Then
+            MousePanel1.Mouse_XButton2()
+        End If
+    End Sub
 
     Public Sub kbHook_KeyDown(ByVal Key As System.Windows.Forms.Keys) Handles kbhook.KeyDown
         For Each ctrl In Me.Controls
@@ -268,6 +303,7 @@ Public Class Form1
         SettingsPanel1.LoadSettings()
         KbPanelPage2.Controls("lblPage").Text = KbPanelPage2.Name.Replace("KbPanelPage", "Page ")
         kbhook = New KBhook
+        mHook = New MouseHook
         finishedload = True
     End Sub
 
@@ -397,5 +433,11 @@ Public Class Form1
         MousePanel1.Visible = False
         SettingsPanel1.Visible = True
         X360Panel1.Visible = False
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        If DebugCheck() = "GTA:SA:MP" Then
+            X360Panel1.Timer2()
+        End If
     End Sub
 End Class

@@ -22,7 +22,6 @@ Partial Class X360Panel
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label56 = New System.Windows.Forms.Label()
         Me.Label52 = New System.Windows.Forms.Label()
@@ -39,7 +38,6 @@ Partial Class X360Panel
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.chkEnable360 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
         Me.chkLeftStick = New SACNR_Keybinder_Evolution.ReactorCheckBox()
         Me.chkDpadLeft = New SACNR_Keybinder_Evolution.ReactorCheckBox()
@@ -255,10 +253,6 @@ Partial Class X360Panel
         Me.Label2.Size = New System.Drawing.Size(164, 13)
         Me.Label2.TabIndex = 167
         Me.Label2.Text = "Enable Xbox 360 Controller Binds"
-        '
-        'Timer2
-        '
-        Me.Timer2.Enabled = True
         '
         'chkEnable360
         '
@@ -640,6 +634,5 @@ Partial Class X360Panel
     Friend WithEvents txtButtonA As SACNR_Keybinder_Evolution.ReactorTextBox
     Friend WithEvents txtButtonB As SACNR_Keybinder_Evolution.ReactorTextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Timer2 As System.Windows.Forms.Timer
 
 End Class

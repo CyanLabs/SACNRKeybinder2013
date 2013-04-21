@@ -1,14 +1,14 @@
 ﻿Imports System.Threading
-Imports Microsoft.Xna.Framework
 Imports Microsoft.Xna.Framework.Input
+
 Public Class X360Panel
     Private trd2 As Thread
     Private Sub chkEnable360_CheckedChanged(sender As Object) Handles chkEnable360.CheckedChanged
         Form1.inisettings.WriteInteger("360", "MasterToggle", sender.value)
         If sender.Checked = True Then
-            Timer2.Start()
+            Form1.Timer2.Start()
         Else
-            Timer2.Stop()
+            Form1.Timer2.Stop()
         End If
     End Sub
     Sub savesettings()
@@ -23,17 +23,16 @@ Public Class X360Panel
         Next
     End Sub
     Sub LoadSettings()
-        Timer2.Interval = Form1.inisettings.GetInteger("360", "Interval", 1000)
+        Form1.Timer2.Interval = Form1.inisettings.GetInteger("360", "Interval", 1000)
         chkEnable360.Checked = Form1.inisettings.GetString("360", "MasterToggle", False)
         If chkEnable360.Checked = True Then
-            Timer2.Start()
+            Form1.Timer2.Start()
         Else
-            Timer2.Stop()
+            Form1.Timer2.Stop()
         End If
     End Sub
-    Dim currentState As GamePadState = GamePad.GetState(PlayerIndex.One)
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        ' If Form1.DebugCheck() = "GTA:SA:MP" Then
+    Dim currentState As GamePadState = GamePad.GetState(Microsoft.Xna.Framework.PlayerIndex.One)
+    Public Sub Timer2()
         If currentState.IsConnected Then
             If chkButtonA.Checked = True Then
                 If currentState.Buttons.A = ButtonState.Pressed Then
@@ -108,6 +107,5 @@ Public Class X360Panel
                 End If
             End If
         End If
-        '  End If
     End Sub
 End Class

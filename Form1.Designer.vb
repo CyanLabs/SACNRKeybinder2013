@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim MouseHook1 As SACNR_Keybinder_Evolution.MouseHook = New SACNR_Keybinder_Evolution.MouseHook()
+        Dim MouseHook2 As SACNR_Keybinder_Evolution.MouseHook = New SACNR_Keybinder_Evolution.MouseHook()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.imgLogo2 = New System.Windows.Forms.PictureBox()
@@ -48,6 +48,7 @@ Partial Class Form1
         Me.MousePanel1 = New SACNR_Keybinder_Evolution.MousePanel()
         Me.SettingsPanel1 = New SACNR_Keybinder_Evolution.SettingsPanel()
         Me.KbPanelPage2 = New SACNR_Keybinder_Evolution.KBPanel()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.imgLogo2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -290,7 +291,7 @@ Partial Class Form1
         '
         Me.MousePanel1.BackColor = System.Drawing.Color.Transparent
         Me.MousePanel1.Location = New System.Drawing.Point(186, 9)
-        Me.MousePanel1.mHook = MouseHook1
+        Me.MousePanel1.mHook = MouseHook2
         Me.MousePanel1.Name = "MousePanel1"
         Me.MousePanel1.Size = New System.Drawing.Size(550, 430)
         Me.MousePanel1.TabIndex = 53
@@ -314,6 +315,10 @@ Partial Class Form1
         Me.KbPanelPage2.Size = New System.Drawing.Size(550, 430)
         Me.KbPanelPage2.TabIndex = 68
         Me.KbPanelPage2.Visible = False
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
         '
         'Form1
         '
@@ -379,4 +384,5 @@ Partial Class Form1
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents KbPanelPage2 As SACNR_Keybinder_Evolution.KBPanel
+    Friend WithEvents Timer2 As System.Windows.Forms.Timer
 End Class
