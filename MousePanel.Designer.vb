@@ -54,7 +54,7 @@ Partial Class MousePanel
         '
         Me.Label19.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.Location = New System.Drawing.Point(12, 271)
+        Me.Label19.Location = New System.Drawing.Point(12, 263)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(101, 30)
         Me.Label19.TabIndex = 88
@@ -65,7 +65,7 @@ Partial Class MousePanel
         '
         Me.Label18.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(12, 229)
+        Me.Label18.Location = New System.Drawing.Point(12, 221)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(101, 30)
         Me.Label18.TabIndex = 87
@@ -76,7 +76,7 @@ Partial Class MousePanel
         '
         Me.Label17.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(12, 187)
+        Me.Label17.Location = New System.Drawing.Point(12, 179)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(101, 30)
         Me.Label17.TabIndex = 86
@@ -87,7 +87,7 @@ Partial Class MousePanel
         '
         Me.Label21.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Location = New System.Drawing.Point(12, 352)
+        Me.Label21.Location = New System.Drawing.Point(12, 344)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(101, 30)
         Me.Label21.TabIndex = 85
@@ -98,7 +98,7 @@ Partial Class MousePanel
         '
         Me.Label20.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(12, 311)
+        Me.Label20.Location = New System.Drawing.Point(12, 303)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(101, 30)
         Me.Label20.TabIndex = 84
@@ -109,7 +109,7 @@ Partial Class MousePanel
         '
         Me.Label16.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(12, 145)
+        Me.Label16.Location = New System.Drawing.Point(12, 137)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(101, 30)
         Me.Label16.TabIndex = 83
@@ -120,7 +120,7 @@ Partial Class MousePanel
         '
         Me.Label15.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(12, 103)
+        Me.Label15.Location = New System.Drawing.Point(12, 95)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(101, 30)
         Me.Label15.TabIndex = 82
@@ -132,7 +132,7 @@ Partial Class MousePanel
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(364, 80)
+        Me.Label13.Location = New System.Drawing.Point(364, 72)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(128, 17)
         Me.Label13.TabIndex = 80
@@ -143,7 +143,7 @@ Partial Class MousePanel
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(123, 80)
+        Me.Label14.Location = New System.Drawing.Point(123, 72)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(93, 17)
         Me.Label14.TabIndex = 81
@@ -154,7 +154,7 @@ Partial Class MousePanel
         Me.chkWheelDown.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkWheelDown.Checked = False
         Me.chkWheelDown.ForeColor = System.Drawing.Color.White
-        Me.chkWheelDown.Location = New System.Drawing.Point(514, 358)
+        Me.chkWheelDown.Location = New System.Drawing.Point(514, 350)
         Me.chkWheelDown.Name = "chkWheelDown"
         Me.chkWheelDown.Size = New System.Drawing.Size(15, 16)
         Me.chkWheelDown.TabIndex = 75
@@ -164,7 +164,7 @@ Partial Class MousePanel
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(502, 80)
+        Me.Label12.Location = New System.Drawing.Point(502, 72)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(45, 17)
         Me.Label12.TabIndex = 79
@@ -175,7 +175,7 @@ Partial Class MousePanel
         Me.chkWheelUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkWheelUp.Checked = False
         Me.chkWheelUp.ForeColor = System.Drawing.Color.White
-        Me.chkWheelUp.Location = New System.Drawing.Point(514, 317)
+        Me.chkWheelUp.Location = New System.Drawing.Point(514, 309)
         Me.chkWheelUp.Name = "chkWheelUp"
         Me.chkWheelUp.Size = New System.Drawing.Size(15, 16)
         Me.chkWheelUp.TabIndex = 74
@@ -185,7 +185,7 @@ Partial Class MousePanel
         Me.chkLMB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkLMB.Checked = False
         Me.chkLMB.ForeColor = System.Drawing.Color.White
-        Me.chkLMB.Location = New System.Drawing.Point(514, 110)
+        Me.chkLMB.Location = New System.Drawing.Point(514, 102)
         Me.chkLMB.Name = "chkLMB"
         Me.chkLMB.Size = New System.Drawing.Size(15, 16)
         Me.chkLMB.TabIndex = 72
@@ -195,7 +195,7 @@ Partial Class MousePanel
         Me.chkMMB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkMMB.Checked = False
         Me.chkMMB.ForeColor = System.Drawing.Color.White
-        Me.chkMMB.Location = New System.Drawing.Point(514, 152)
+        Me.chkMMB.Location = New System.Drawing.Point(514, 144)
         Me.chkMMB.Name = "chkMMB"
         Me.chkMMB.Size = New System.Drawing.Size(15, 16)
         Me.chkMMB.TabIndex = 73
@@ -205,7 +205,7 @@ Partial Class MousePanel
         Me.chkRMB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkRMB.Checked = False
         Me.chkRMB.ForeColor = System.Drawing.Color.White
-        Me.chkRMB.Location = New System.Drawing.Point(514, 194)
+        Me.chkRMB.Location = New System.Drawing.Point(514, 186)
         Me.chkRMB.Name = "chkRMB"
         Me.chkRMB.Size = New System.Drawing.Size(15, 16)
         Me.chkRMB.TabIndex = 76
@@ -215,7 +215,7 @@ Partial Class MousePanel
         Me.chkSB1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkSB1.Checked = False
         Me.chkSB1.ForeColor = System.Drawing.Color.White
-        Me.chkSB1.Location = New System.Drawing.Point(514, 236)
+        Me.chkSB1.Location = New System.Drawing.Point(514, 228)
         Me.chkSB1.Name = "chkSB1"
         Me.chkSB1.Size = New System.Drawing.Size(15, 16)
         Me.chkSB1.TabIndex = 77
@@ -225,7 +225,7 @@ Partial Class MousePanel
         Me.txtWheelDown.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtWheelDown.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtWheelDown.ForeColor = System.Drawing.Color.White
-        Me.txtWheelDown.Location = New System.Drawing.Point(119, 352)
+        Me.txtWheelDown.Location = New System.Drawing.Point(119, 344)
         Me.txtWheelDown.MaxCharacters = 32767
         Me.txtWheelDown.Name = "txtWheelDown"
         Me.txtWheelDown.Size = New System.Drawing.Size(373, 29)
@@ -238,7 +238,7 @@ Partial Class MousePanel
         Me.chkSB2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkSB2.Checked = False
         Me.chkSB2.ForeColor = System.Drawing.Color.White
-        Me.chkSB2.Location = New System.Drawing.Point(514, 278)
+        Me.chkSB2.Location = New System.Drawing.Point(514, 270)
         Me.chkSB2.Name = "chkSB2"
         Me.chkSB2.Size = New System.Drawing.Size(15, 16)
         Me.chkSB2.TabIndex = 78
@@ -248,7 +248,7 @@ Partial Class MousePanel
         Me.txtWheelUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtWheelUp.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtWheelUp.ForeColor = System.Drawing.Color.White
-        Me.txtWheelUp.Location = New System.Drawing.Point(119, 311)
+        Me.txtWheelUp.Location = New System.Drawing.Point(119, 303)
         Me.txtWheelUp.MaxCharacters = 32767
         Me.txtWheelUp.Name = "txtWheelUp"
         Me.txtWheelUp.Size = New System.Drawing.Size(373, 29)
@@ -261,7 +261,7 @@ Partial Class MousePanel
         Me.txtlmb.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtlmb.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtlmb.ForeColor = System.Drawing.Color.White
-        Me.txtlmb.Location = New System.Drawing.Point(119, 103)
+        Me.txtlmb.Location = New System.Drawing.Point(119, 95)
         Me.txtlmb.MaxCharacters = 32767
         Me.txtlmb.Name = "txtlmb"
         Me.txtlmb.Size = New System.Drawing.Size(373, 29)
@@ -274,7 +274,7 @@ Partial Class MousePanel
         Me.txtMMB.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtMMB.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMMB.ForeColor = System.Drawing.Color.White
-        Me.txtMMB.Location = New System.Drawing.Point(119, 145)
+        Me.txtMMB.Location = New System.Drawing.Point(119, 137)
         Me.txtMMB.MaxCharacters = 32767
         Me.txtMMB.Name = "txtMMB"
         Me.txtMMB.Size = New System.Drawing.Size(373, 29)
@@ -287,7 +287,7 @@ Partial Class MousePanel
         Me.txtRMB.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtRMB.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRMB.ForeColor = System.Drawing.Color.White
-        Me.txtRMB.Location = New System.Drawing.Point(119, 187)
+        Me.txtRMB.Location = New System.Drawing.Point(119, 179)
         Me.txtRMB.MaxCharacters = 32767
         Me.txtRMB.Name = "txtRMB"
         Me.txtRMB.Size = New System.Drawing.Size(373, 29)
@@ -300,7 +300,7 @@ Partial Class MousePanel
         Me.txtSB1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtSB1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSB1.ForeColor = System.Drawing.Color.White
-        Me.txtSB1.Location = New System.Drawing.Point(119, 229)
+        Me.txtSB1.Location = New System.Drawing.Point(119, 221)
         Me.txtSB1.MaxCharacters = 32767
         Me.txtSB1.Name = "txtSB1"
         Me.txtSB1.Size = New System.Drawing.Size(373, 29)
@@ -313,7 +313,7 @@ Partial Class MousePanel
         Me.txtSB2.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtSB2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSB2.ForeColor = System.Drawing.Color.White
-        Me.txtSB2.Location = New System.Drawing.Point(119, 271)
+        Me.txtSB2.Location = New System.Drawing.Point(119, 263)
         Me.txtSB2.MaxCharacters = 32767
         Me.txtSB2.Name = "txtSB2"
         Me.txtSB2.Size = New System.Drawing.Size(373, 29)
@@ -326,7 +326,7 @@ Partial Class MousePanel
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Impact", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(0, 10)
+        Me.Label1.Location = New System.Drawing.Point(0, 2)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(550, 26)
         Me.Label1.TabIndex = 127
@@ -338,7 +338,7 @@ Partial Class MousePanel
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(-2, 50)
+        Me.Label3.Location = New System.Drawing.Point(-2, 42)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(532, 14)
         Me.Label3.TabIndex = 165

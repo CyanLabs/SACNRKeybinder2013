@@ -66,7 +66,7 @@ Partial Class KBPanel
         Me.lblPage.AutoSize = True
         Me.lblPage.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPage.ForeColor = System.Drawing.Color.White
-        Me.lblPage.Location = New System.Drawing.Point(174, 83)
+        Me.lblPage.Location = New System.Drawing.Point(174, 77)
         Me.lblPage.Name = "lblPage"
         Me.lblPage.Size = New System.Drawing.Size(43, 17)
         Me.lblPage.TabIndex = 125
@@ -77,7 +77,7 @@ Partial Class KBPanel
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(287, 84)
+        Me.Label4.Location = New System.Drawing.Point(287, 78)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(128, 17)
         Me.Label4.TabIndex = 122
@@ -88,7 +88,7 @@ Partial Class KBPanel
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(17, 84)
+        Me.Label2.Location = New System.Drawing.Point(17, 78)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(93, 17)
         Me.Label2.TabIndex = 121
@@ -99,7 +99,7 @@ Partial Class KBPanel
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(502, 83)
+        Me.Label7.Location = New System.Drawing.Point(502, 77)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(45, 17)
         Me.Label7.TabIndex = 124
@@ -110,7 +110,7 @@ Partial Class KBPanel
         Me.ReactorTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ReactorTextBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReactorTextBox1.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox1.Location = New System.Drawing.Point(14, 101)
+        Me.ReactorTextBox1.Location = New System.Drawing.Point(14, 95)
         Me.ReactorTextBox1.MaxCharacters = 32767
         Me.ReactorTextBox1.Name = "ReactorTextBox1"
         Me.ReactorTextBox1.Size = New System.Drawing.Size(399, 26)
@@ -123,7 +123,7 @@ Partial Class KBPanel
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(424, 83)
+        Me.Label5.Location = New System.Drawing.Point(424, 77)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(69, 17)
         Me.Label5.TabIndex = 123
@@ -134,7 +134,7 @@ Partial Class KBPanel
         Me.ReactorTextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ReactorTextBox2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReactorTextBox2.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox2.Location = New System.Drawing.Point(14, 129)
+        Me.ReactorTextBox2.Location = New System.Drawing.Point(14, 123)
         Me.ReactorTextBox2.MaxCharacters = 32767
         Me.ReactorTextBox2.Name = "ReactorTextBox2"
         Me.ReactorTextBox2.Size = New System.Drawing.Size(399, 26)
@@ -147,7 +147,7 @@ Partial Class KBPanel
         Me.ReactorTextBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ReactorTextBox4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReactorTextBox4.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox4.Location = New System.Drawing.Point(14, 185)
+        Me.ReactorTextBox4.Location = New System.Drawing.Point(14, 179)
         Me.ReactorTextBox4.MaxCharacters = 32767
         Me.ReactorTextBox4.Name = "ReactorTextBox4"
         Me.ReactorTextBox4.Size = New System.Drawing.Size(399, 26)
@@ -160,7 +160,7 @@ Partial Class KBPanel
         Me.ReactorTextBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ReactorTextBox5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReactorTextBox5.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox5.Location = New System.Drawing.Point(14, 213)
+        Me.ReactorTextBox5.Location = New System.Drawing.Point(14, 207)
         Me.ReactorTextBox5.MaxCharacters = 32767
         Me.ReactorTextBox5.Name = "ReactorTextBox5"
         Me.ReactorTextBox5.Size = New System.Drawing.Size(399, 26)
@@ -173,7 +173,7 @@ Partial Class KBPanel
         Me.ReactorTextBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ReactorTextBox6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReactorTextBox6.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox6.Location = New System.Drawing.Point(14, 241)
+        Me.ReactorTextBox6.Location = New System.Drawing.Point(14, 235)
         Me.ReactorTextBox6.MaxCharacters = 32767
         Me.ReactorTextBox6.Name = "ReactorTextBox6"
         Me.ReactorTextBox6.Size = New System.Drawing.Size(399, 26)
@@ -186,7 +186,7 @@ Partial Class KBPanel
         Me.ReactorTextBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ReactorTextBox7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReactorTextBox7.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox7.Location = New System.Drawing.Point(14, 269)
+        Me.ReactorTextBox7.Location = New System.Drawing.Point(14, 263)
         Me.ReactorTextBox7.MaxCharacters = 32767
         Me.ReactorTextBox7.Name = "ReactorTextBox7"
         Me.ReactorTextBox7.Size = New System.Drawing.Size(399, 26)
@@ -199,7 +199,7 @@ Partial Class KBPanel
         Me.ReactorTextBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ReactorTextBox8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReactorTextBox8.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox8.Location = New System.Drawing.Point(14, 297)
+        Me.ReactorTextBox8.Location = New System.Drawing.Point(14, 291)
         Me.ReactorTextBox8.MaxCharacters = 32767
         Me.ReactorTextBox8.Name = "ReactorTextBox8"
         Me.ReactorTextBox8.Size = New System.Drawing.Size(399, 26)
@@ -212,7 +212,7 @@ Partial Class KBPanel
         Me.ReactorTextBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ReactorTextBox9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReactorTextBox9.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox9.Location = New System.Drawing.Point(14, 325)
+        Me.ReactorTextBox9.Location = New System.Drawing.Point(14, 319)
         Me.ReactorTextBox9.MaxCharacters = 32767
         Me.ReactorTextBox9.Name = "ReactorTextBox9"
         Me.ReactorTextBox9.Size = New System.Drawing.Size(399, 26)
@@ -225,7 +225,7 @@ Partial Class KBPanel
         Me.ReactorTextBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ReactorTextBox10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReactorTextBox10.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox10.Location = New System.Drawing.Point(14, 353)
+        Me.ReactorTextBox10.Location = New System.Drawing.Point(14, 347)
         Me.ReactorTextBox10.MaxCharacters = 32767
         Me.ReactorTextBox10.Name = "ReactorTextBox10"
         Me.ReactorTextBox10.Size = New System.Drawing.Size(399, 26)
@@ -238,7 +238,7 @@ Partial Class KBPanel
         Me.ReactorCheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ReactorCheckBox1.Checked = False
         Me.ReactorCheckBox1.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox1.Location = New System.Drawing.Point(516, 104)
+        Me.ReactorCheckBox1.Location = New System.Drawing.Point(516, 98)
         Me.ReactorCheckBox1.Name = "ReactorCheckBox1"
         Me.ReactorCheckBox1.Size = New System.Drawing.Size(15, 16)
         Me.ReactorCheckBox1.TabIndex = 93
@@ -249,7 +249,7 @@ Partial Class KBPanel
         Me.ReactorCheckBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ReactorCheckBox2.Checked = False
         Me.ReactorCheckBox2.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox2.Location = New System.Drawing.Point(516, 132)
+        Me.ReactorCheckBox2.Location = New System.Drawing.Point(516, 126)
         Me.ReactorCheckBox2.Name = "ReactorCheckBox2"
         Me.ReactorCheckBox2.Size = New System.Drawing.Size(15, 16)
         Me.ReactorCheckBox2.TabIndex = 96
@@ -260,7 +260,7 @@ Partial Class KBPanel
         Me.ReactorCheckBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ReactorCheckBox3.Checked = False
         Me.ReactorCheckBox3.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox3.Location = New System.Drawing.Point(516, 160)
+        Me.ReactorCheckBox3.Location = New System.Drawing.Point(516, 154)
         Me.ReactorCheckBox3.Name = "ReactorCheckBox3"
         Me.ReactorCheckBox3.Size = New System.Drawing.Size(15, 16)
         Me.ReactorCheckBox3.TabIndex = 99
@@ -271,7 +271,7 @@ Partial Class KBPanel
         Me.ReactorCheckBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ReactorCheckBox4.Checked = False
         Me.ReactorCheckBox4.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox4.Location = New System.Drawing.Point(516, 188)
+        Me.ReactorCheckBox4.Location = New System.Drawing.Point(516, 182)
         Me.ReactorCheckBox4.Name = "ReactorCheckBox4"
         Me.ReactorCheckBox4.Size = New System.Drawing.Size(15, 16)
         Me.ReactorCheckBox4.TabIndex = 102
@@ -282,7 +282,7 @@ Partial Class KBPanel
         Me.ReactorCheckBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ReactorCheckBox5.Checked = False
         Me.ReactorCheckBox5.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox5.Location = New System.Drawing.Point(516, 216)
+        Me.ReactorCheckBox5.Location = New System.Drawing.Point(516, 210)
         Me.ReactorCheckBox5.Name = "ReactorCheckBox5"
         Me.ReactorCheckBox5.Size = New System.Drawing.Size(15, 16)
         Me.ReactorCheckBox5.TabIndex = 105
@@ -293,7 +293,7 @@ Partial Class KBPanel
         Me.ReactorCheckBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ReactorCheckBox6.Checked = False
         Me.ReactorCheckBox6.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox6.Location = New System.Drawing.Point(516, 244)
+        Me.ReactorCheckBox6.Location = New System.Drawing.Point(516, 238)
         Me.ReactorCheckBox6.Name = "ReactorCheckBox6"
         Me.ReactorCheckBox6.Size = New System.Drawing.Size(15, 16)
         Me.ReactorCheckBox6.TabIndex = 108
@@ -304,7 +304,7 @@ Partial Class KBPanel
         Me.ReactorCheckBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ReactorCheckBox10.Checked = False
         Me.ReactorCheckBox10.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox10.Location = New System.Drawing.Point(516, 356)
+        Me.ReactorCheckBox10.Location = New System.Drawing.Point(516, 350)
         Me.ReactorCheckBox10.Name = "ReactorCheckBox10"
         Me.ReactorCheckBox10.Size = New System.Drawing.Size(15, 16)
         Me.ReactorCheckBox10.TabIndex = 120
@@ -315,7 +315,7 @@ Partial Class KBPanel
         Me.ReactorCheckBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ReactorCheckBox7.Checked = False
         Me.ReactorCheckBox7.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox7.Location = New System.Drawing.Point(516, 272)
+        Me.ReactorCheckBox7.Location = New System.Drawing.Point(516, 266)
         Me.ReactorCheckBox7.Name = "ReactorCheckBox7"
         Me.ReactorCheckBox7.Size = New System.Drawing.Size(15, 16)
         Me.ReactorCheckBox7.TabIndex = 111
@@ -326,7 +326,7 @@ Partial Class KBPanel
         Me.ReactorCheckBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ReactorCheckBox9.Checked = False
         Me.ReactorCheckBox9.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox9.Location = New System.Drawing.Point(516, 328)
+        Me.ReactorCheckBox9.Location = New System.Drawing.Point(516, 322)
         Me.ReactorCheckBox9.Name = "ReactorCheckBox9"
         Me.ReactorCheckBox9.Size = New System.Drawing.Size(15, 16)
         Me.ReactorCheckBox9.TabIndex = 117
@@ -337,7 +337,7 @@ Partial Class KBPanel
         Me.ReactorCheckBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.ReactorCheckBox8.Checked = False
         Me.ReactorCheckBox8.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox8.Location = New System.Drawing.Point(516, 300)
+        Me.ReactorCheckBox8.Location = New System.Drawing.Point(516, 294)
         Me.ReactorCheckBox8.Name = "ReactorCheckBox8"
         Me.ReactorCheckBox8.Size = New System.Drawing.Size(15, 16)
         Me.ReactorCheckBox8.TabIndex = 114
@@ -348,7 +348,7 @@ Partial Class KBPanel
         Me.ReactorTextBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ReactorTextBox3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReactorTextBox3.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox3.Location = New System.Drawing.Point(14, 157)
+        Me.ReactorTextBox3.Location = New System.Drawing.Point(14, 151)
         Me.ReactorTextBox3.MaxCharacters = 32767
         Me.ReactorTextBox3.Name = "ReactorTextBox3"
         Me.ReactorTextBox3.Size = New System.Drawing.Size(399, 26)
@@ -361,7 +361,7 @@ Partial Class KBPanel
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Impact", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(0, 10)
+        Me.Label1.Location = New System.Drawing.Point(0, 4)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(550, 23)
         Me.Label1.TabIndex = 126
@@ -373,7 +373,7 @@ Partial Class KBPanel
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(-2, 50)
+        Me.Label3.Location = New System.Drawing.Point(-2, 44)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(532, 14)
         Me.Label3.TabIndex = 164
@@ -387,7 +387,7 @@ Partial Class KBPanel
         Me.TextBox10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox10.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox10.ForeColor = System.Drawing.Color.White
-        Me.TextBox10.Location = New System.Drawing.Point(430, 353)
+        Me.TextBox10.Location = New System.Drawing.Point(430, 347)
         Me.TextBox10.MaxLength = 2
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(56, 25)
@@ -400,7 +400,7 @@ Partial Class KBPanel
         Me.TextBox9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox9.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox9.ForeColor = System.Drawing.Color.White
-        Me.TextBox9.Location = New System.Drawing.Point(430, 325)
+        Me.TextBox9.Location = New System.Drawing.Point(430, 319)
         Me.TextBox9.MaxLength = 2
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(56, 25)
@@ -413,7 +413,7 @@ Partial Class KBPanel
         Me.TextBox8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox8.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox8.ForeColor = System.Drawing.Color.White
-        Me.TextBox8.Location = New System.Drawing.Point(430, 297)
+        Me.TextBox8.Location = New System.Drawing.Point(430, 291)
         Me.TextBox8.MaxLength = 2
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(56, 25)
@@ -426,7 +426,7 @@ Partial Class KBPanel
         Me.TextBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox7.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox7.ForeColor = System.Drawing.Color.White
-        Me.TextBox7.Location = New System.Drawing.Point(430, 269)
+        Me.TextBox7.Location = New System.Drawing.Point(430, 263)
         Me.TextBox7.MaxLength = 2
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(56, 25)
@@ -439,7 +439,7 @@ Partial Class KBPanel
         Me.TextBox6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox6.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox6.ForeColor = System.Drawing.Color.White
-        Me.TextBox6.Location = New System.Drawing.Point(430, 241)
+        Me.TextBox6.Location = New System.Drawing.Point(430, 235)
         Me.TextBox6.MaxLength = 2
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(56, 25)
@@ -452,7 +452,7 @@ Partial Class KBPanel
         Me.TextBox5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox5.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.ForeColor = System.Drawing.Color.White
-        Me.TextBox5.Location = New System.Drawing.Point(430, 213)
+        Me.TextBox5.Location = New System.Drawing.Point(430, 207)
         Me.TextBox5.MaxLength = 2
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(56, 25)
@@ -465,7 +465,7 @@ Partial Class KBPanel
         Me.TextBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.ForeColor = System.Drawing.Color.White
-        Me.TextBox4.Location = New System.Drawing.Point(430, 185)
+        Me.TextBox4.Location = New System.Drawing.Point(430, 179)
         Me.TextBox4.MaxLength = 2
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(56, 25)
@@ -478,7 +478,7 @@ Partial Class KBPanel
         Me.TextBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox3.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.ForeColor = System.Drawing.Color.White
-        Me.TextBox3.Location = New System.Drawing.Point(430, 157)
+        Me.TextBox3.Location = New System.Drawing.Point(430, 151)
         Me.TextBox3.MaxLength = 2
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(56, 25)
@@ -491,7 +491,7 @@ Partial Class KBPanel
         Me.TextBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(430, 101)
+        Me.TextBox1.Location = New System.Drawing.Point(430, 95)
         Me.TextBox1.MaxLength = 2
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(56, 25)
@@ -504,7 +504,7 @@ Partial Class KBPanel
         Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.ForeColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(430, 129)
+        Me.TextBox2.Location = New System.Drawing.Point(430, 123)
         Me.TextBox2.MaxLength = 55555555
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(56, 25)

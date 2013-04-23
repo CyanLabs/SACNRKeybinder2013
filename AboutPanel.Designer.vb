@@ -33,16 +33,16 @@ Partial Class AboutPanel
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Impact", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(0, 10)
+        Me.Label1.Location = New System.Drawing.Point(0, 2)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(550, 23)
         Me.Label1.TabIndex = 163
-        Me.Label1.Text = "Whats New?"
+        Me.Label1.Text = "What's New?"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Location = New System.Drawing.Point(11, 41)
+        Me.WebBrowser1.Location = New System.Drawing.Point(11, 33)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(502, 332)
@@ -55,7 +55,7 @@ Partial Class AboutPanel
         Me.lblVersion.BackColor = System.Drawing.Color.Transparent
         Me.lblVersion.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVersion.ForeColor = System.Drawing.Color.White
-        Me.lblVersion.Location = New System.Drawing.Point(461, 375)
+        Me.lblVersion.Location = New System.Drawing.Point(461, 367)
         Me.lblVersion.Name = "lblVersion"
         Me.lblVersion.Size = New System.Drawing.Size(52, 14)
         Me.lblVersion.TabIndex = 166
@@ -68,7 +68,7 @@ Partial Class AboutPanel
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(8, 375)
+        Me.Label3.Location = New System.Drawing.Point(8, 367)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(236, 14)
         Me.Label3.TabIndex = 165

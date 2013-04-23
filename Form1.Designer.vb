@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim MouseHook2 As SACNR_Keybinder_Evolution.MouseHook = New SACNR_Keybinder_Evolution.MouseHook()
+        Dim MouseHook1 As SACNR_Keybinder_Evolution.MouseHook = New SACNR_Keybinder_Evolution.MouseHook()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.imgLogo2 = New System.Windows.Forms.PictureBox()
@@ -41,14 +41,14 @@ Partial Class Form1
         Me.Label9 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.btnLaunch = New SACNR_Keybinder_Evolution.ReactorButton()
-        Me.KbPanelPage1 = New SACNR_Keybinder_Evolution.KBPanel()
-        Me.X360Panel1 = New SACNR_Keybinder_Evolution.X360Panel()
-        Me.AboutPanel1 = New SACNR_Keybinder_Evolution.AboutPanel()
         Me.MousePanel1 = New SACNR_Keybinder_Evolution.MousePanel()
         Me.SettingsPanel1 = New SACNR_Keybinder_Evolution.SettingsPanel()
         Me.KbPanelPage2 = New SACNR_Keybinder_Evolution.KBPanel()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.KbPanelPage1 = New SACNR_Keybinder_Evolution.KBPanel()
+        Me.X360Panel1 = New SACNR_Keybinder_Evolution.X360Panel()
+        Me.AboutPanel1 = New SACNR_Keybinder_Evolution.AboutPanel()
         CType(Me.imgLogo2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,8 +71,9 @@ Partial Class Form1
         '
         'imgLogo2
         '
+        Me.imgLogo2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.imgLogo2.Image = CType(resources.GetObject("imgLogo2.Image"), System.Drawing.Image)
-        Me.imgLogo2.Location = New System.Drawing.Point(3, 1)
+        Me.imgLogo2.Location = New System.Drawing.Point(3, 2)
         Me.imgLogo2.Name = "imgLogo2"
         Me.imgLogo2.Size = New System.Drawing.Size(475, 75)
         Me.imgLogo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -98,7 +99,7 @@ Partial Class Form1
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label2.Font = New System.Drawing.Font("Impact", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(12, 92)
+        Me.Label2.Location = New System.Drawing.Point(12, 115)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(168, 34)
         Me.Label2.TabIndex = 58
@@ -111,7 +112,7 @@ Partial Class Form1
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label3.Font = New System.Drawing.Font("Impact", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(12, 154)
+        Me.Label3.Location = New System.Drawing.Point(12, 195)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(168, 34)
         Me.Label3.TabIndex = 58
@@ -124,11 +125,11 @@ Partial Class Form1
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label4.Font = New System.Drawing.Font("Impact", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(12, 314)
+        Me.Label4.Location = New System.Drawing.Point(12, 353)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(168, 34)
         Me.Label4.TabIndex = 58
-        Me.Label4.Text = "Whats New?"
+        Me.Label4.Text = "What's New?"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label5
@@ -207,9 +208,9 @@ Partial Class Form1
         Me.MainPanel.Controls.Add(Me.WebBrowser1)
         Me.MainPanel.Controls.Add(Me.imgLogo2)
         Me.MainPanel.ForeColor = System.Drawing.Color.White
-        Me.MainPanel.Location = New System.Drawing.Point(186, 9)
+        Me.MainPanel.Location = New System.Drawing.Point(186, 19)
         Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(550, 430)
+        Me.MainPanel.Size = New System.Drawing.Size(550, 421)
         Me.MainPanel.TabIndex = 65
         '
         'Label9
@@ -218,7 +219,7 @@ Partial Class Form1
         Me.Label9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label9.Font = New System.Drawing.Font("Impact", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Gray
-        Me.Label9.Location = New System.Drawing.Point(12, 219)
+        Me.Label9.Location = New System.Drawing.Point(12, 300)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(168, 34)
         Me.Label9.TabIndex = 58
@@ -230,9 +231,10 @@ Partial Class Form1
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.Image = Global.SACNR_Keybinder_Evolution.My.Resources.Resources.close
-        Me.PictureBox2.Location = New System.Drawing.Point(132, 388)
+        Me.PictureBox2.Location = New System.Drawing.Point(644, 2)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(46, 50)
+        Me.PictureBox2.Size = New System.Drawing.Size(20, 20)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 66
         Me.PictureBox2.TabStop = False
         '
@@ -241,12 +243,16 @@ Partial Class Form1
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox3.Image = Global.SACNR_Keybinder_Evolution.My.Resources.Resources.minimize
-        Me.PictureBox3.Location = New System.Drawing.Point(74, 382)
+        Me.PictureBox3.Location = New System.Drawing.Point(625, -2)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(59, 50)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.Size = New System.Drawing.Size(20, 20)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 67
         Me.PictureBox3.TabStop = False
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
         '
         'btnLaunch
         '
@@ -258,42 +264,13 @@ Partial Class Form1
         Me.btnLaunch.TabIndex = 50
         Me.btnLaunch.Text = "Launch ""San Andreas Cops N Robbers"""
         '
-        'KbPanelPage1
-        '
-        Me.KbPanelPage1.BackColor = System.Drawing.Color.Transparent
-        Me.KbPanelPage1.Location = New System.Drawing.Point(186, 9)
-        Me.KbPanelPage1.Name = "KbPanelPage1"
-        Me.KbPanelPage1.Size = New System.Drawing.Size(550, 430)
-        Me.KbPanelPage1.TabIndex = 64
-        Me.KbPanelPage1.Visible = False
-        '
-        'X360Panel1
-        '
-        Me.X360Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.X360Panel1.ForeColor = System.Drawing.Color.White
-        Me.X360Panel1.Location = New System.Drawing.Point(186, 9)
-        Me.X360Panel1.Name = "X360Panel1"
-        Me.X360Panel1.Size = New System.Drawing.Size(550, 430)
-        Me.X360Panel1.TabIndex = 54
-        Me.X360Panel1.Visible = False
-        '
-        'AboutPanel1
-        '
-        Me.AboutPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.AboutPanel1.ForeColor = System.Drawing.Color.White
-        Me.AboutPanel1.Location = New System.Drawing.Point(186, 9)
-        Me.AboutPanel1.Name = "AboutPanel1"
-        Me.AboutPanel1.Size = New System.Drawing.Size(550, 430)
-        Me.AboutPanel1.TabIndex = 57
-        Me.AboutPanel1.Visible = False
-        '
         'MousePanel1
         '
         Me.MousePanel1.BackColor = System.Drawing.Color.Transparent
-        Me.MousePanel1.Location = New System.Drawing.Point(186, 9)
-        Me.MousePanel1.mHook = MouseHook2
+        Me.MousePanel1.Location = New System.Drawing.Point(186, 19)
+        Me.MousePanel1.mHook = MouseHook1
         Me.MousePanel1.Name = "MousePanel1"
-        Me.MousePanel1.Size = New System.Drawing.Size(550, 430)
+        Me.MousePanel1.Size = New System.Drawing.Size(550, 420)
         Me.MousePanel1.TabIndex = 53
         Me.MousePanel1.Visible = False
         '
@@ -301,24 +278,49 @@ Partial Class Form1
         '
         Me.SettingsPanel1.BackColor = System.Drawing.Color.Transparent
         Me.SettingsPanel1.ForeColor = System.Drawing.Color.White
-        Me.SettingsPanel1.Location = New System.Drawing.Point(186, 9)
+        Me.SettingsPanel1.Location = New System.Drawing.Point(186, 19)
         Me.SettingsPanel1.Name = "SettingsPanel1"
-        Me.SettingsPanel1.Size = New System.Drawing.Size(550, 430)
+        Me.SettingsPanel1.Size = New System.Drawing.Size(550, 420)
         Me.SettingsPanel1.TabIndex = 55
         Me.SettingsPanel1.Visible = False
         '
         'KbPanelPage2
         '
         Me.KbPanelPage2.BackColor = System.Drawing.Color.Transparent
-        Me.KbPanelPage2.Location = New System.Drawing.Point(186, 9)
+        Me.KbPanelPage2.Location = New System.Drawing.Point(186, 19)
         Me.KbPanelPage2.Name = "KbPanelPage2"
-        Me.KbPanelPage2.Size = New System.Drawing.Size(550, 430)
+        Me.KbPanelPage2.Size = New System.Drawing.Size(550, 420)
         Me.KbPanelPage2.TabIndex = 68
         Me.KbPanelPage2.Visible = False
         '
-        'Timer2
+        'KbPanelPage1
         '
-        Me.Timer2.Enabled = True
+        Me.KbPanelPage1.BackColor = System.Drawing.Color.Transparent
+        Me.KbPanelPage1.Location = New System.Drawing.Point(186, 19)
+        Me.KbPanelPage1.Name = "KbPanelPage1"
+        Me.KbPanelPage1.Size = New System.Drawing.Size(550, 420)
+        Me.KbPanelPage1.TabIndex = 64
+        Me.KbPanelPage1.Visible = False
+        '
+        'X360Panel1
+        '
+        Me.X360Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.X360Panel1.ForeColor = System.Drawing.Color.White
+        Me.X360Panel1.Location = New System.Drawing.Point(186, 19)
+        Me.X360Panel1.Name = "X360Panel1"
+        Me.X360Panel1.Size = New System.Drawing.Size(550, 420)
+        Me.X360Panel1.TabIndex = 54
+        Me.X360Panel1.Visible = False
+        '
+        'AboutPanel1
+        '
+        Me.AboutPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.AboutPanel1.ForeColor = System.Drawing.Color.White
+        Me.AboutPanel1.Location = New System.Drawing.Point(186, 19)
+        Me.AboutPanel1.Name = "AboutPanel1"
+        Me.AboutPanel1.Size = New System.Drawing.Size(550, 420)
+        Me.AboutPanel1.TabIndex = 57
+        Me.AboutPanel1.Visible = False
         '
         'Form1
         '
@@ -328,7 +330,6 @@ Partial Class Form1
         Me.BackgroundImage = Global.SACNR_Keybinder_Evolution.My.Resources.Resources.backgroundwithoutheader
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(757, 450)
-        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.btnLaunch)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -337,14 +338,15 @@ Partial Class Form1
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.MousePanel1)
+        Me.Controls.Add(Me.SettingsPanel1)
+        Me.Controls.Add(Me.KbPanelPage2)
         Me.Controls.Add(Me.KbPanelPage1)
         Me.Controls.Add(Me.X360Panel1)
         Me.Controls.Add(Me.AboutPanel1)
-        Me.Controls.Add(Me.MousePanel1)
-        Me.Controls.Add(Me.SettingsPanel1)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.MainPanel)
-        Me.Controls.Add(Me.KbPanelPage2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True

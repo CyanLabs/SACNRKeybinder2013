@@ -70,7 +70,7 @@ Partial Class X360Panel
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Impact", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(0, 10)
+        Me.Label1.Location = New System.Drawing.Point(0, 2)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(549, 23)
         Me.Label1.TabIndex = 127
@@ -82,7 +82,7 @@ Partial Class X360Panel
         Me.Label56.AutoSize = True
         Me.Label56.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label56.ForeColor = System.Drawing.Color.White
-        Me.Label56.Location = New System.Drawing.Point(26, 361)
+        Me.Label56.Location = New System.Drawing.Point(26, 353)
         Me.Label56.Name = "Label56"
         Me.Label56.Size = New System.Drawing.Size(69, 17)
         Me.Label56.TabIndex = 165
@@ -94,7 +94,7 @@ Partial Class X360Panel
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label52.ForeColor = System.Drawing.Color.White
-        Me.Label52.Location = New System.Drawing.Point(26, 266)
+        Me.Label52.Location = New System.Drawing.Point(26, 258)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(70, 17)
         Me.Label52.TabIndex = 164
@@ -106,7 +106,7 @@ Partial Class X360Panel
         Me.Label43.AutoSize = True
         Me.Label43.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label43.ForeColor = System.Drawing.Color.White
-        Me.Label43.Location = New System.Drawing.Point(40, 169)
+        Me.Label43.Location = New System.Drawing.Point(40, 161)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(57, 17)
         Me.Label43.TabIndex = 163
@@ -119,7 +119,7 @@ Partial Class X360Panel
         Me.Label55.BackColor = System.Drawing.Color.Transparent
         Me.Label55.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label55.ForeColor = System.Drawing.Color.White
-        Me.Label55.Location = New System.Drawing.Point(11, 313)
+        Me.Label55.Location = New System.Drawing.Point(11, 305)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(85, 17)
         Me.Label55.TabIndex = 162
@@ -131,7 +131,7 @@ Partial Class X360Panel
         Me.Label46.AutoSize = True
         Me.Label46.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label46.ForeColor = System.Drawing.Color.White
-        Me.Label46.Location = New System.Drawing.Point(26, 217)
+        Me.Label46.Location = New System.Drawing.Point(26, 209)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(71, 17)
         Me.Label46.TabIndex = 161
@@ -143,7 +143,7 @@ Partial Class X360Panel
         Me.Label47.AutoSize = True
         Me.Label47.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label47.ForeColor = System.Drawing.Color.White
-        Me.Label47.Location = New System.Drawing.Point(41, 121)
+        Me.Label47.Location = New System.Drawing.Point(41, 113)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(58, 17)
         Me.Label47.TabIndex = 160
@@ -155,7 +155,7 @@ Partial Class X360Panel
         Me.Label54.AutoSize = True
         Me.Label54.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label54.ForeColor = System.Drawing.Color.White
-        Me.Label54.Location = New System.Drawing.Point(35, 337)
+        Me.Label54.Location = New System.Drawing.Point(35, 329)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(60, 17)
         Me.Label54.TabIndex = 154
@@ -167,7 +167,7 @@ Partial Class X360Panel
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label45.ForeColor = System.Drawing.Color.White
-        Me.Label45.Location = New System.Drawing.Point(35, 241)
+        Me.Label45.Location = New System.Drawing.Point(35, 233)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(61, 17)
         Me.Label45.TabIndex = 155
@@ -179,7 +179,7 @@ Partial Class X360Panel
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label42.ForeColor = System.Drawing.Color.White
-        Me.Label42.Location = New System.Drawing.Point(42, 145)
+        Me.Label42.Location = New System.Drawing.Point(42, 137)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(56, 17)
         Me.Label42.TabIndex = 159
@@ -191,7 +191,7 @@ Partial Class X360Panel
         Me.Label53.AutoSize = True
         Me.Label53.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label53.ForeColor = System.Drawing.Color.White
-        Me.Label53.Location = New System.Drawing.Point(20, 289)
+        Me.Label53.Location = New System.Drawing.Point(20, 281)
         Me.Label53.Name = "Label53"
         Me.Label53.Size = New System.Drawing.Size(76, 17)
         Me.Label53.TabIndex = 156
@@ -203,7 +203,7 @@ Partial Class X360Panel
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label44.ForeColor = System.Drawing.Color.White
-        Me.Label44.Location = New System.Drawing.Point(42, 193)
+        Me.Label44.Location = New System.Drawing.Point(42, 185)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(55, 17)
         Me.Label44.TabIndex = 157
@@ -215,7 +215,7 @@ Partial Class X360Panel
         Me.Label48.AutoSize = True
         Me.Label48.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label48.ForeColor = System.Drawing.Color.White
-        Me.Label48.Location = New System.Drawing.Point(41, 97)
+        Me.Label48.Location = New System.Drawing.Point(41, 89)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(58, 17)
         Me.Label48.TabIndex = 158
@@ -227,7 +227,7 @@ Partial Class X360Panel
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label50.ForeColor = System.Drawing.Color.White
-        Me.Label50.Location = New System.Drawing.Point(102, 72)
+        Me.Label50.Location = New System.Drawing.Point(102, 64)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(93, 17)
         Me.Label50.TabIndex = 153
@@ -238,7 +238,7 @@ Partial Class X360Panel
         Me.Label51.AutoSize = True
         Me.Label51.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label51.ForeColor = System.Drawing.Color.White
-        Me.Label51.Location = New System.Drawing.Point(491, 72)
+        Me.Label51.Location = New System.Drawing.Point(491, 64)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(45, 17)
         Me.Label51.TabIndex = 152
@@ -248,7 +248,7 @@ Partial Class X360Panel
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(287, 73)
+        Me.Label2.Location = New System.Drawing.Point(287, 65)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(164, 13)
         Me.Label2.TabIndex = 167
@@ -259,7 +259,7 @@ Partial Class X360Panel
         Me.chkEnable360.BackColor = System.Drawing.Color.Black
         Me.chkEnable360.Checked = False
         Me.chkEnable360.ForeColor = System.Drawing.Color.White
-        Me.chkEnable360.Location = New System.Drawing.Point(271, 72)
+        Me.chkEnable360.Location = New System.Drawing.Point(271, 64)
         Me.chkEnable360.Name = "chkEnable360"
         Me.chkEnable360.Size = New System.Drawing.Size(16, 16)
         Me.chkEnable360.TabIndex = 166
@@ -269,7 +269,7 @@ Partial Class X360Panel
         Me.chkLeftStick.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkLeftStick.Checked = False
         Me.chkLeftStick.ForeColor = System.Drawing.Color.White
-        Me.chkLeftStick.Location = New System.Drawing.Point(504, 338)
+        Me.chkLeftStick.Location = New System.Drawing.Point(504, 330)
         Me.chkLeftStick.Name = "chkLeftStick"
         Me.chkLeftStick.Size = New System.Drawing.Size(15, 16)
         Me.chkLeftStick.TabIndex = 145
@@ -279,7 +279,7 @@ Partial Class X360Panel
         Me.chkDpadLeft.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkDpadLeft.Checked = False
         Me.chkDpadLeft.ForeColor = System.Drawing.Color.White
-        Me.chkDpadLeft.Location = New System.Drawing.Point(504, 242)
+        Me.chkDpadLeft.Location = New System.Drawing.Point(504, 234)
         Me.chkDpadLeft.Name = "chkDpadLeft"
         Me.chkDpadLeft.Size = New System.Drawing.Size(15, 16)
         Me.chkDpadLeft.TabIndex = 143
@@ -289,7 +289,7 @@ Partial Class X360Panel
         Me.chkButtonX.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkButtonX.Checked = False
         Me.chkButtonX.ForeColor = System.Drawing.Color.White
-        Me.chkButtonX.Location = New System.Drawing.Point(504, 146)
+        Me.chkButtonX.Location = New System.Drawing.Point(504, 138)
         Me.chkButtonX.Name = "chkButtonX"
         Me.chkButtonX.Size = New System.Drawing.Size(15, 16)
         Me.chkButtonX.TabIndex = 142
@@ -299,7 +299,7 @@ Partial Class X360Panel
         Me.chkLB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkLB.Checked = False
         Me.chkLB.ForeColor = System.Drawing.Color.White
-        Me.chkLB.Location = New System.Drawing.Point(504, 290)
+        Me.chkLB.Location = New System.Drawing.Point(504, 282)
         Me.chkLB.Name = "chkLB"
         Me.chkLB.Size = New System.Drawing.Size(15, 16)
         Me.chkLB.TabIndex = 141
@@ -309,7 +309,7 @@ Partial Class X360Panel
         Me.chkDpadUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkDpadUp.Checked = False
         Me.chkDpadUp.ForeColor = System.Drawing.Color.White
-        Me.chkDpadUp.Location = New System.Drawing.Point(504, 194)
+        Me.chkDpadUp.Location = New System.Drawing.Point(504, 186)
         Me.chkDpadUp.Name = "chkDpadUp"
         Me.chkDpadUp.Size = New System.Drawing.Size(15, 16)
         Me.chkDpadUp.TabIndex = 144
@@ -319,7 +319,7 @@ Partial Class X360Panel
         Me.chkButtonA.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkButtonA.Checked = False
         Me.chkButtonA.ForeColor = System.Drawing.Color.White
-        Me.chkButtonA.Location = New System.Drawing.Point(504, 98)
+        Me.chkButtonA.Location = New System.Drawing.Point(504, 90)
         Me.chkButtonA.Name = "chkButtonA"
         Me.chkButtonA.Size = New System.Drawing.Size(15, 16)
         Me.chkButtonA.TabIndex = 140
@@ -329,7 +329,7 @@ Partial Class X360Panel
         Me.chkRightStick.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkRightStick.Checked = False
         Me.chkRightStick.ForeColor = System.Drawing.Color.White
-        Me.chkRightStick.Location = New System.Drawing.Point(504, 362)
+        Me.chkRightStick.Location = New System.Drawing.Point(504, 354)
         Me.chkRightStick.Name = "chkRightStick"
         Me.chkRightStick.Size = New System.Drawing.Size(15, 16)
         Me.chkRightStick.TabIndex = 146
@@ -339,7 +339,7 @@ Partial Class X360Panel
         Me.chkDpadRight.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkDpadRight.Checked = False
         Me.chkDpadRight.ForeColor = System.Drawing.Color.White
-        Me.chkDpadRight.Location = New System.Drawing.Point(504, 266)
+        Me.chkDpadRight.Location = New System.Drawing.Point(504, 258)
         Me.chkDpadRight.Name = "chkDpadRight"
         Me.chkDpadRight.Size = New System.Drawing.Size(15, 16)
         Me.chkDpadRight.TabIndex = 147
@@ -349,7 +349,7 @@ Partial Class X360Panel
         Me.chkButtonY.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkButtonY.Checked = False
         Me.chkButtonY.ForeColor = System.Drawing.Color.White
-        Me.chkButtonY.Location = New System.Drawing.Point(504, 170)
+        Me.chkButtonY.Location = New System.Drawing.Point(504, 162)
         Me.chkButtonY.Name = "chkButtonY"
         Me.chkButtonY.Size = New System.Drawing.Size(15, 16)
         Me.chkButtonY.TabIndex = 148
@@ -359,7 +359,7 @@ Partial Class X360Panel
         Me.chkRB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkRB.Checked = False
         Me.chkRB.ForeColor = System.Drawing.Color.White
-        Me.chkRB.Location = New System.Drawing.Point(504, 314)
+        Me.chkRB.Location = New System.Drawing.Point(504, 306)
         Me.chkRB.Name = "chkRB"
         Me.chkRB.Size = New System.Drawing.Size(15, 16)
         Me.chkRB.TabIndex = 149
@@ -369,7 +369,7 @@ Partial Class X360Panel
         Me.chkDpadDown.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkDpadDown.Checked = False
         Me.chkDpadDown.ForeColor = System.Drawing.Color.White
-        Me.chkDpadDown.Location = New System.Drawing.Point(504, 218)
+        Me.chkDpadDown.Location = New System.Drawing.Point(504, 210)
         Me.chkDpadDown.Name = "chkDpadDown"
         Me.chkDpadDown.Size = New System.Drawing.Size(15, 16)
         Me.chkDpadDown.TabIndex = 150
@@ -379,7 +379,7 @@ Partial Class X360Panel
         Me.chkButtonB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkButtonB.Checked = False
         Me.chkButtonB.ForeColor = System.Drawing.Color.White
-        Me.chkButtonB.Location = New System.Drawing.Point(504, 122)
+        Me.chkButtonB.Location = New System.Drawing.Point(504, 114)
         Me.chkButtonB.Name = "chkButtonB"
         Me.chkButtonB.Size = New System.Drawing.Size(15, 16)
         Me.chkButtonB.TabIndex = 151
@@ -389,7 +389,7 @@ Partial Class X360Panel
         Me.txtLeftStickPress.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtLeftStickPress.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLeftStickPress.ForeColor = System.Drawing.Color.White
-        Me.txtLeftStickPress.Location = New System.Drawing.Point(105, 335)
+        Me.txtLeftStickPress.Location = New System.Drawing.Point(105, 327)
         Me.txtLeftStickPress.MaxCharacters = 32767
         Me.txtLeftStickPress.Name = "txtLeftStickPress"
         Me.txtLeftStickPress.Size = New System.Drawing.Size(375, 24)
@@ -402,7 +402,7 @@ Partial Class X360Panel
         Me.txtDpadLeft.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtDpadLeft.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDpadLeft.ForeColor = System.Drawing.Color.White
-        Me.txtDpadLeft.Location = New System.Drawing.Point(105, 239)
+        Me.txtDpadLeft.Location = New System.Drawing.Point(105, 231)
         Me.txtDpadLeft.MaxCharacters = 32767
         Me.txtDpadLeft.Name = "txtDpadLeft"
         Me.txtDpadLeft.Size = New System.Drawing.Size(375, 24)
@@ -415,7 +415,7 @@ Partial Class X360Panel
         Me.txtButtonX.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtButtonX.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtButtonX.ForeColor = System.Drawing.Color.White
-        Me.txtButtonX.Location = New System.Drawing.Point(105, 143)
+        Me.txtButtonX.Location = New System.Drawing.Point(105, 135)
         Me.txtButtonX.MaxCharacters = 32767
         Me.txtButtonX.Name = "txtButtonX"
         Me.txtButtonX.Size = New System.Drawing.Size(375, 24)
@@ -428,7 +428,7 @@ Partial Class X360Panel
         Me.txtRightStickPress.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtRightStickPress.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRightStickPress.ForeColor = System.Drawing.Color.White
-        Me.txtRightStickPress.Location = New System.Drawing.Point(105, 359)
+        Me.txtRightStickPress.Location = New System.Drawing.Point(105, 351)
         Me.txtRightStickPress.MaxCharacters = 32767
         Me.txtRightStickPress.Name = "txtRightStickPress"
         Me.txtRightStickPress.Size = New System.Drawing.Size(375, 24)
@@ -441,7 +441,7 @@ Partial Class X360Panel
         Me.txtDpadRight.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtDpadRight.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDpadRight.ForeColor = System.Drawing.Color.White
-        Me.txtDpadRight.Location = New System.Drawing.Point(105, 263)
+        Me.txtDpadRight.Location = New System.Drawing.Point(105, 255)
         Me.txtDpadRight.MaxCharacters = 32767
         Me.txtDpadRight.Name = "txtDpadRight"
         Me.txtDpadRight.Size = New System.Drawing.Size(375, 24)
@@ -454,7 +454,7 @@ Partial Class X360Panel
         Me.txtButtonY.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtButtonY.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtButtonY.ForeColor = System.Drawing.Color.White
-        Me.txtButtonY.Location = New System.Drawing.Point(105, 167)
+        Me.txtButtonY.Location = New System.Drawing.Point(105, 159)
         Me.txtButtonY.MaxCharacters = 32767
         Me.txtButtonY.Name = "txtButtonY"
         Me.txtButtonY.Size = New System.Drawing.Size(375, 24)
@@ -467,7 +467,7 @@ Partial Class X360Panel
         Me.txtLb.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtLb.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLb.ForeColor = System.Drawing.Color.White
-        Me.txtLb.Location = New System.Drawing.Point(105, 287)
+        Me.txtLb.Location = New System.Drawing.Point(105, 279)
         Me.txtLb.MaxCharacters = 32767
         Me.txtLb.Name = "txtLb"
         Me.txtLb.Size = New System.Drawing.Size(375, 24)
@@ -480,7 +480,7 @@ Partial Class X360Panel
         Me.txtRB.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtRB.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRB.ForeColor = System.Drawing.Color.White
-        Me.txtRB.Location = New System.Drawing.Point(105, 311)
+        Me.txtRB.Location = New System.Drawing.Point(105, 303)
         Me.txtRB.MaxCharacters = 32767
         Me.txtRB.Name = "txtRB"
         Me.txtRB.Size = New System.Drawing.Size(375, 24)
@@ -493,7 +493,7 @@ Partial Class X360Panel
         Me.txtDpadUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtDpadUp.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDpadUp.ForeColor = System.Drawing.Color.White
-        Me.txtDpadUp.Location = New System.Drawing.Point(105, 191)
+        Me.txtDpadUp.Location = New System.Drawing.Point(105, 183)
         Me.txtDpadUp.MaxCharacters = 32767
         Me.txtDpadUp.Name = "txtDpadUp"
         Me.txtDpadUp.Size = New System.Drawing.Size(375, 24)
@@ -506,7 +506,7 @@ Partial Class X360Panel
         Me.txtDpadDown.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtDpadDown.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDpadDown.ForeColor = System.Drawing.Color.White
-        Me.txtDpadDown.Location = New System.Drawing.Point(105, 215)
+        Me.txtDpadDown.Location = New System.Drawing.Point(105, 207)
         Me.txtDpadDown.MaxCharacters = 32767
         Me.txtDpadDown.Name = "txtDpadDown"
         Me.txtDpadDown.Size = New System.Drawing.Size(375, 24)
@@ -519,7 +519,7 @@ Partial Class X360Panel
         Me.txtButtonA.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtButtonA.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtButtonA.ForeColor = System.Drawing.Color.White
-        Me.txtButtonA.Location = New System.Drawing.Point(105, 95)
+        Me.txtButtonA.Location = New System.Drawing.Point(105, 87)
         Me.txtButtonA.MaxCharacters = 32767
         Me.txtButtonA.Name = "txtButtonA"
         Me.txtButtonA.Size = New System.Drawing.Size(375, 24)
@@ -532,7 +532,7 @@ Partial Class X360Panel
         Me.txtButtonB.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtButtonB.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtButtonB.ForeColor = System.Drawing.Color.White
-        Me.txtButtonB.Location = New System.Drawing.Point(105, 119)
+        Me.txtButtonB.Location = New System.Drawing.Point(105, 111)
         Me.txtButtonB.MaxCharacters = 32767
         Me.txtButtonB.Name = "txtButtonB"
         Me.txtButtonB.Size = New System.Drawing.Size(375, 24)

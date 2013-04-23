@@ -24,6 +24,7 @@ Partial Class SettingsPanel
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ReactorGroupBox9 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
+        Me.txtFeedback = New SACNR_Keybinder_Evolution.ReactorMultiLineTextBox()
         Me.btnSendRequest = New SACNR_Keybinder_Evolution.ReactorButton()
         Me.ReactorGroupBox6 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
         Me.btnLogs = New SACNR_Keybinder_Evolution.ReactorButton()
@@ -60,7 +61,6 @@ Partial Class SettingsPanel
         Me.Label61 = New System.Windows.Forms.Label()
         Me.ReactorGroupBox2 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
         Me.chkAutoupdates = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.txtFeedback = New SACNR_Keybinder_Evolution.ReactorMultiLineTextBox()
         Me.ReactorGroupBox9.SuspendLayout()
         Me.ReactorGroupBox6.SuspendLayout()
         Me.ReactorGroupBox8.SuspendLayout()
@@ -77,7 +77,7 @@ Partial Class SettingsPanel
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Impact", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(0, 10)
+        Me.Label1.Location = New System.Drawing.Point(0, 3)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(549, 23)
         Me.Label1.TabIndex = 128
@@ -89,11 +89,22 @@ Partial Class SettingsPanel
         Me.ReactorGroupBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.ReactorGroupBox9.Controls.Add(Me.txtFeedback)
         Me.ReactorGroupBox9.Controls.Add(Me.btnSendRequest)
-        Me.ReactorGroupBox9.Location = New System.Drawing.Point(0, 246)
+        Me.ReactorGroupBox9.Location = New System.Drawing.Point(0, 239)
         Me.ReactorGroupBox9.Name = "ReactorGroupBox9"
         Me.ReactorGroupBox9.Size = New System.Drawing.Size(542, 85)
         Me.ReactorGroupBox9.TabIndex = 137
         Me.ReactorGroupBox9.Text = "Feedback and Suggestions"
+        '
+        'txtFeedback
+        '
+        Me.txtFeedback.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.txtFeedback.ForeColor = System.Drawing.Color.White
+        Me.txtFeedback.Location = New System.Drawing.Point(5, 26)
+        Me.txtFeedback.MaxCharacters = 32767
+        Me.txtFeedback.Name = "txtFeedback"
+        Me.txtFeedback.Size = New System.Drawing.Size(450, 56)
+        Me.txtFeedback.TabIndex = 58
+        Me.txtFeedback.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'btnSendRequest
         '
@@ -110,7 +121,7 @@ Partial Class SettingsPanel
         Me.ReactorGroupBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.ReactorGroupBox6.Controls.Add(Me.btnLogs)
         Me.ReactorGroupBox6.Controls.Add(Me.chkEnableLogs)
-        Me.ReactorGroupBox6.Location = New System.Drawing.Point(0, 63)
+        Me.ReactorGroupBox6.Location = New System.Drawing.Point(0, 56)
         Me.ReactorGroupBox6.Name = "ReactorGroupBox6"
         Me.ReactorGroupBox6.Size = New System.Drawing.Size(139, 93)
         Me.ReactorGroupBox6.TabIndex = 136
@@ -147,7 +158,7 @@ Partial Class SettingsPanel
         Me.ReactorGroupBox8.Controls.Add(Me.Label65)
         Me.ReactorGroupBox8.Controls.Add(Me.Label66)
         Me.ReactorGroupBox8.Controls.Add(Me.TrackBar2)
-        Me.ReactorGroupBox8.Location = New System.Drawing.Point(145, 63)
+        Me.ReactorGroupBox8.Location = New System.Drawing.Point(145, 56)
         Me.ReactorGroupBox8.Name = "ReactorGroupBox8"
         Me.ReactorGroupBox8.Size = New System.Drawing.Size(156, 93)
         Me.ReactorGroupBox8.TabIndex = 135
@@ -230,7 +241,7 @@ Partial Class SettingsPanel
         Me.ReactorGroupBox7.Controls.Add(Me.Label33)
         Me.ReactorGroupBox7.Controls.Add(Me.txtSAMPUsername)
         Me.ReactorGroupBox7.Controls.Add(Me.Label32)
-        Me.ReactorGroupBox7.Location = New System.Drawing.Point(0, 159)
+        Me.ReactorGroupBox7.Location = New System.Drawing.Point(0, 152)
         Me.ReactorGroupBox7.Name = "ReactorGroupBox7"
         Me.ReactorGroupBox7.Size = New System.Drawing.Size(394, 81)
         Me.ReactorGroupBox7.TabIndex = 134
@@ -282,7 +293,7 @@ Partial Class SettingsPanel
         '
         Me.ReactorGroupBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.ReactorGroupBox5.Controls.Add(Me.btnReset)
-        Me.ReactorGroupBox5.Location = New System.Drawing.Point(469, 63)
+        Me.ReactorGroupBox5.Location = New System.Drawing.Point(469, 56)
         Me.ReactorGroupBox5.Name = "ReactorGroupBox5"
         Me.ReactorGroupBox5.Size = New System.Drawing.Size(73, 93)
         Me.ReactorGroupBox5.TabIndex = 133
@@ -315,7 +326,7 @@ Partial Class SettingsPanel
         Me.ReactorGroupBox4.Controls.Add(Me.Label25)
         Me.ReactorGroupBox4.Controls.Add(Me.Label49)
         Me.ReactorGroupBox4.Controls.Add(Me.Label61)
-        Me.ReactorGroupBox4.Location = New System.Drawing.Point(307, 63)
+        Me.ReactorGroupBox4.Location = New System.Drawing.Point(307, 56)
         Me.ReactorGroupBox4.Name = "ReactorGroupBox4"
         Me.ReactorGroupBox4.Size = New System.Drawing.Size(156, 93)
         Me.ReactorGroupBox4.TabIndex = 132
@@ -330,7 +341,6 @@ Partial Class SettingsPanel
         Me.txtMacroDelay.Name = "txtMacroDelay"
         Me.txtMacroDelay.Size = New System.Drawing.Size(117, 23)
         Me.txtMacroDelay.TabIndex = 62
-        ' Me.txtMacroDelay.Text = "1000"
         Me.txtMacroDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.txtMacroDelay.UsePasswordMask = False
         Me.txtMacroDelay.Visible = False
@@ -469,7 +479,7 @@ Partial Class SettingsPanel
         '
         Me.ReactorGroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.ReactorGroupBox2.Controls.Add(Me.chkAutoupdates)
-        Me.ReactorGroupBox2.Location = New System.Drawing.Point(397, 160)
+        Me.ReactorGroupBox2.Location = New System.Drawing.Point(397, 153)
         Me.ReactorGroupBox2.Name = "ReactorGroupBox2"
         Me.ReactorGroupBox2.Size = New System.Drawing.Size(145, 81)
         Me.ReactorGroupBox2.TabIndex = 131
@@ -485,17 +495,6 @@ Partial Class SettingsPanel
         Me.chkAutoupdates.Size = New System.Drawing.Size(126, 16)
         Me.chkAutoupdates.TabIndex = 2
         Me.chkAutoupdates.Text = "Enable AutoUpdates"
-        '
-        'txtFeedback
-        '
-        Me.txtFeedback.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtFeedback.ForeColor = System.Drawing.Color.White
-        Me.txtFeedback.Location = New System.Drawing.Point(5, 26)
-        Me.txtFeedback.MaxCharacters = 32767
-        Me.txtFeedback.Name = "txtFeedback"
-        Me.txtFeedback.Size = New System.Drawing.Size(450, 56)
-        Me.txtFeedback.TabIndex = 58
-        Me.txtFeedback.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'SettingsPanel
         '
